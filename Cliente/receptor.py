@@ -1,6 +1,12 @@
+import socket
+import threading
+import sys
+
+# Classe que recebe os dados do canal
 class Receptor(threading.Thread):
-    def __init__(self):
+    def __init__(self, BUFFER_SIZE):
         threading.Thread.__init__(self)
+        self.BUFFER_SIZE = BUFFER_SIZE
 
     def run(self):
         self._stopped = False
@@ -23,10 +29,10 @@ class Receptor(threading.Thread):
 
                 # Recebe o arquivo
                 with open(nome, 'wb') as down_file:
-                    recv_read = content.recv(BUFFER_SIZE)
+                    recv_read = content.recv(self.BUFFER_SIZE)
                     while recv_read:
                         down_file.write(recv_read)
-                        recv_read = content.recv(BUFFER_SIZE)
+                        recv_read = content.recv(self.BUFFER_SIZE)
 
                 content.close()
                 file_num += 1

@@ -1,0 +1,18 @@
+Requisitos:
+    + Sistema operacioanl Linux
+    + Python 3 instalado
+
+Instruções para testar com o servidor local:
+    + Servidor:
+        + Abir o terminal dentro da pasta "Servidor" do projeto;
+        + Com o terminal aberto, digite "python3 server.py" (sem aspas duplas);
+
+
+Execução do cliente:
+    + Cliente:
+        + Abir o terminal dentro da pasta "Cliente" do projeto;
+        + Com o terminal aberto, digite "python3 main.py" (sem aspas duplas);
+            + Esse comando irá executar o cliente;
+            + Caso algum erro ocorrá, verifique se o python 3 está instalado em sua máquina;
+                + Caso o erro persista, pesquise na internet;
+        + Quando a aplicação for iniciada, o usuário deverá preencher algumas informações 

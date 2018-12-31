@@ -5,7 +5,7 @@ from os import listdir
 
 WAIT_TIME   = 1.8
 BUFFER_SIZE = 1024
-PORTA_SAIDA = 6060
+PORTA_SAIDA = 9091
 
 MAX_CLIENTES_CANAL = 3
 
