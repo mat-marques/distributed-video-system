@@ -1,33 +1,32 @@
 import socket
 import threading
 import sys
-from Receptor import Receptor
-from ClientReseiver import ClientReseiver
+from Client import *
 
 # IP e porta do servidor
 TCP_HOST    = 'localhost'  # IP
 TCP_PORT    = 6060         #porta
 BUFFER_SIZE = 1024 # Normally 1024
-QTD_CLIENTS = 1
 opt = ""
 
 # 1 para servidor e 2 para cliente
 CONNECTION = 1
 
-#dest = (TCP_HOST, TCP_PORT)
-
 msg = None
 CLIENT_CONNECTED = None
 
-recep = Receptor(BUFFER_SIZE)
+recep = Receptor(BUFFER_SIZE, 9091)
+recep_client = Receptor(BUFFER_SIZE, 9092)
 
 # recep.daemon = True
 # Leitura da quantidade de clientes que podem se conectar neste cliente
 QTD_CLIENTS = int(input("Digite o número de clientes máximo: "), 10)
 
 #Thread para receber mensagens dos clientes
-thread_client_reseiver = ClientReseiver(QTD_CLIENTS)
-CLIENT_PORT = 9092
+CLIENT_PORT = int(input("Digite o número da porta de acesso para os clientes poderem se comunicar: "), 10)
+thread_client_reseiver = ClientReseiver(CLIENT_PORT)
+
+CLIENT_PORT = 9093
 thread_client_reseiver.start()
 
 while True:
@@ -43,41 +42,54 @@ while True:
     if CONNECTION == "1":
         TCP_HOST = input("Digite o IP do servidor: ")
         dest = (TCP_HOST, TCP_PORT)
-        break
     
     # Define a tupla com o ip e porta do cliente
     elif CONNECTION == "2":
         TCP_HOST = input("Digite o IP do cliente: ")
+        #CLIENT_PORT = input("Digite o número da porta do cliente: ")
         dest = (TCP_HOST, CLIENT_PORT)
-        break
+
     elif CONNECTION == "0":
         print("Aplicação finalizada!")
         break
     else:
         print("Opção incorreta! Tente novamente")
+        continue
 
     # Comunicação com o servidor
     if CONNECTION == "1":
         while True:
             print("\n\n\n##################################################")
-            print("Para entrar em uma canal XXC, XX=10 e C = um número de 0 a 9;")
-            print("Para listar os cliente de um canal XXC, XX=11 e C = um número de 0 a 9;")
-            print("Para sair de um canal XXC, XX=12 e C = um número de 0 a 9;")
-            print("Para verificar o número de cliente de um canal XXC, XX=13 e C = um número de 0 a 9;")
-            print("Digite 0 para finalizar a aplicação;")
+            print("- Para entrar em uma canal XXC, XX=10 e C = um número de 0 a 9;")
+            print("- Para listar os cliente de um canal XXC, XX=11 e C = um número de 0 a 9;")
+            print("- Para sair de um canal XXC, XX=12 e C = um número de 0 a 9;")
+            print("- Para verificar o número de cliente de um canal XXC, XX=13 e C = um número de 0 a 9;")
+            print("- Digite 0 para finalizar a aplicação;")
             msg = input("Digite a mensagem que será enviada ao servidor (XXC, sem espaço): ")
 
             # Finaliza a aplicação
             if msg[0:1] == '0':
+                if recep.is_alive():
+                    recep.stop()
+                    recep.join()
                 break
 
             #tcp.connect(dest)
+
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
 
                 tcp.connect(dest)
                 tcp.send(bytes(msg, encoding='utf-8'))
 
                 print("Mensagem Enviada: ", msg)
+                
+                # Sair do canal
+                if msg[0:2] == '12' and recep.is_alive():
+                    print("Aqui")
+                    recep.stop()
+                    recep.join()
+                    recep = Receptor(BUFFER_SIZE, 9091)
+                    print("Thread interrompida")
 
                 # Entrou em um canal
                 if msg[0:2] == '10':
@@ -104,17 +116,12 @@ while True:
 
                 # lista de clientes conectados
                 if msg[0:2] == '11':
+                    print('\nLista de IPs conectados:\n')
                     print(str(tcp.recv(BUFFER_SIZE), 'utf-8'))
-
-                # Sair do canal
-                if msg[0:2] == '12':
-                    recep.stop()
-                    recep.join()
-                    recep = Receptor(BUFFER_SIZE)
                     
                 # quantidade de clientes conectados
                 if msg[0:2] == '13':
-                    print(str(tcp.recv(BUFFER_SIZE), 'utf-8'))
+                    print('\nQuantidade de clientes conectados: ', str(tcp.recv(BUFFER_SIZE), 'utf-8'))
 
                 tcp.shutdown(socket.SHUT_RDWR)
 
@@ -135,6 +142,9 @@ while True:
                     elif str(tcp.recv(BUFFER_SIZE), 'utf-8') == "01":
                         print("Operação realizada com sucesso!")
                         is_connected = True
+
+                        if not recep_client.is_alive():
+                            recep_client.start()
                         
                     tcp.shutdown(socket.SHUT_RDWR)
                     
@@ -164,4 +174,6 @@ while True:
 
             if msg == "0":
                 print("Aplicação encerrada!")
+                recep_client.stop()
+                recep_client.join()
                 break

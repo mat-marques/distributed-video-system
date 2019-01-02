@@ -12,6 +12,9 @@ class ClientSender(threading.Thread):
 
         print("Thread de envio dos pacotes de stream para os clientes iniciada!")
 
+        while True:
+            
+
                 
     def stop(self):
         self._stopped = True
