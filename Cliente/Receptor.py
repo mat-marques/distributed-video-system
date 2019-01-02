@@ -11,6 +11,8 @@ class Receptor(threading.Thread):
     def run(self):
         self._stopped = False
 
+        print("Thread de captura de dados do servidor iniciada (vídeos)!")
+
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_server:
             sk_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
@@ -23,7 +25,7 @@ class Receptor(threading.Thread):
                 content, address = sk_server.accept()
 
                 # Recebe o nome do arquivo
-                nome = "{}.mkv".format(file_num)
+                nome = "./Movie/{}.mkv".format(file_num)
                 sys.stdout.write("Recebendo '{}' de {}.\n".format(nome, address[0]))
                 sys.stdout.flush()
 

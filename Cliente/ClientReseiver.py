@@ -3,7 +3,7 @@ import threading
 import sys
 
 # Classe que recebe dados dos clientes
-class Client(threading.Thread):
+class ClientReseiver(threading.Thread):
     def __init__(self, qtdClientsMax):
         threading.Thread.__init__(self)
         self.qtdClients = 0
@@ -22,6 +22,7 @@ class Client(threading.Thread):
         for self.clients in info:
             if info[0] == ip:
                 self.clients.remove(info)
+                print("O cliente ", dest ," foi removido!")
                 return True
         return False
 
@@ -30,17 +31,20 @@ class Client(threading.Thread):
         if not self.verifyClient(dest):
             # Insere o cliente
             self.clients.append(dest)
+            print("Um novo cliente foi adicionado: ", dest)
             return True
         return False
 
     def run(self):
         self._stopped = False
 
+        print("Thread de captura de dados dos clientes iniciada!")
+
         # Recebe o dado de um cliente
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
             tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-            tcp.bind(('', 9091))
+            tcp.bind(('', 9092))
             tcp.listen(1)
 
             file_num = 0
