@@ -261,3 +261,24 @@ class ClientSender(threading.Thread):
 
     def stop(self):
         self._stopped = True
+
+
+
+#classe que trabalha com o player vlc
+class player:
+    
+    #path = caminho dos arquivos. ex: '../videos/'
+    def __init__(self, path):
+        self.vlc_instance = vlc.Instance()
+        self.player = self.vlc_instance.media_player_new()
+        self.path = path
+
+    #file = nome do arquivo. ex: '_000040.mkv'
+    def play(self, file):
+        media = self.vlc_instance.media_new(self.path+file)
+        self.player.set_media(media)
+        self.player.play()
+        time.sleep(0.5)
+        duration = self.player.get_length() / 1000
+        time.sleep(duration-0.5)
+
