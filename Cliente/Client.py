@@ -5,13 +5,26 @@ import queue
 import random
 import time
 
-
+# Fila para utilizar na thread de transmissão
 queue_sender = queue.Queue(1)
+
+# Fila para usar na thread de vídeo
 queue_video = queue.Queue(1)
+
+# Fila para armazenar todos os nomes de arquivos que foram armazenados em disco
 file_names_stored = queue.Queue(0)
+
+# Armazena o nome do arquivo que vai ser processado no momento
 file_name_used = ""
+
+# Lista com os ips e portas dos clientes. 
+# Os dados são armazenados no formato de tuplas ("", "")
 clients = []
+
+# Quantidade máxima de clientes conectados
 QTD_CLIENTS = 1
+
+# Quantidade atual de clientes conectados
 qtd_clients_connected = 0
 
 # Classe que recebe dados dos clientes
@@ -104,7 +117,6 @@ class ClientReseiver(threading.Thread):
         self._stopped = True
 
 
-
 # Classe que recebe os dados do canal - Servidor
 class ServerReceptor(threading.Thread):
     def __init__(self, buffer_size):
@@ -163,7 +175,7 @@ class ClientReceptor(threading.Thread):
         print("Thread de captura de dados iniciada (vídeos)!")
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_server:
-            #sk_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+            sk_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
             sk_server.bind(('', 9092))
             sk_server.listen()
@@ -196,7 +208,7 @@ class ClientReceptor(threading.Thread):
         self._stopped = True
 
 
-# Classe que monitora a inserção de arquivos na pasta Movie - Produtor
+# Classe que pega os nomes dos arquivos armazenados e coloca em um fila - Produtor
 class ClientProducerVideo(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
@@ -218,8 +230,7 @@ class ClientProducerVideo(threading.Thread):
         self._stopped = True
 
 
-
-# Classe que envia os pacote de stream de video - Consumidor
+# Classe que envia os pacotes de stream de video - Consumidor
 class ClientSender(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)

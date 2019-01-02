@@ -10,14 +10,15 @@ opt = ""
 
 # 1 para servidor e 2 para cliente
 CONNECTION = 1
-
 msg = None
 CLIENT_CONNECTED = None
 
+# Thread que vai receber os vídeos do servidor
 recep_server = ServerReceptor(BUFFER_SIZE)
+
+# Thread que vai receber os vídeos do cliente
 recep_client = ClientReceptor(BUFFER_SIZE)
 
-# recep.daemon = True
 # Leitura da quantidade de clientes que podem se conectar neste cliente
 QTD_CLIENTS = int(input("Digite o número de clientes máximo: "), 10)
 
@@ -25,6 +26,7 @@ QTD_CLIENTS = int(input("Digite o número de clientes máximo: "), 10)
 #CLIENT_PORT = int(input("Digite o número da porta de acesso para os clientes poderem se comunicar: "), 10)
 #thread_client_reseiver = ClientReseiver(CLIENT_PORT)
 
+# Thread que monitora mensagens de possíveis clientes
 CLIENT_PORT = 9099
 thread_client_reseiver = ClientReseiver(BUFFER_SIZE, CLIENT_PORT)
 thread_client_reseiver.start()
@@ -126,6 +128,8 @@ while True:
     elif CONNECTION == "2":
         is_connected = False
         while True:
+
+            # Se conecta no cliente
             if not is_connected:
                 #tcp.connect(dest)
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
@@ -151,7 +155,7 @@ while True:
             print("2 - Para listar arquivos")
             print("0 - Finalizar aplicação")
             msg = input()
-
+            
             if msg == "1":
                 #tcp.connect(dest)
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
