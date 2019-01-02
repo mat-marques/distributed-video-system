@@ -1,6 +1,9 @@
 import socket
 import threading
 import sys
+import queue
+
+file_names_stored = queue.Queue(0)
 
 class Receptor(threading.Thread):
     def __init__(self):
@@ -8,6 +11,8 @@ class Receptor(threading.Thread):
 
     def run(self):
         self._stopped = False
+
+        print("Thread de captura de dados iniciada (vídeos)!")
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_server:
             sk_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -21,8 +26,8 @@ class Receptor(threading.Thread):
                 content, address = sk_server.accept()
 
                 # Recebe o nome do arquivo
-                nome = "{}.mkv".format(file_num)
-                sys.stdout.write("Recebendo '{}' de {}.\n".format(nome, address[0]))
+                nome = "./Movie/{}.mkv".format(file_num)
+                #sys.stdout.write("Recebendo '{}' de {}.\n".format(nome, address[0]))
                 sys.stdout.flush()
 
                 # Recebe o arquivo
@@ -31,11 +36,13 @@ class Receptor(threading.Thread):
                     while recv_read:
                         down_file.write(recv_read)
                         recv_read = content.recv(BUFFER_SIZE)
+                        # Armazena o nome do arquivo salvo na fila
+                        file_names_stored.put(nome)
 
                 content.close()
                 file_num += 1
 
-
+        print("Thread de captura de dados interrompida (vídeos)!")
 
     def stop(self):
         self._stopped = True

@@ -1,6 +1,5 @@
 import socket
-import threading
-import sys
+
 from Client import *
 
 # IP e porta do servidor
@@ -15,18 +14,19 @@ CONNECTION = 1
 msg = None
 CLIENT_CONNECTED = None
 
-recep = Receptor(BUFFER_SIZE, 9091)
-recep_client = Receptor(BUFFER_SIZE, 9092)
+recep_server = ServerReceptor(BUFFER_SIZE)
+recep_client = ClientReceptor(BUFFER_SIZE)
 
 # recep.daemon = True
 # Leitura da quantidade de clientes que podem se conectar neste cliente
 QTD_CLIENTS = int(input("Digite o número de clientes máximo: "), 10)
 
 #Thread para receber mensagens dos clientes
-CLIENT_PORT = int(input("Digite o número da porta de acesso para os clientes poderem se comunicar: "), 10)
-thread_client_reseiver = ClientReseiver(CLIENT_PORT)
+#CLIENT_PORT = int(input("Digite o número da porta de acesso para os clientes poderem se comunicar: "), 10)
+#thread_client_reseiver = ClientReseiver(CLIENT_PORT)
 
-CLIENT_PORT = 9093
+CLIENT_PORT = 9099
+thread_client_reseiver = ClientReseiver(BUFFER_SIZE, CLIENT_PORT)
 thread_client_reseiver.start()
 
 while True:
@@ -69,33 +69,30 @@ while True:
 
             # Finaliza a aplicação
             if msg[0:1] == '0':
-                if recep.is_alive():
-                    recep.stop()
-                    recep.join()
+                if not recep_server._stopped:
+                    recep_server.stop()
+                    recep_server.join()
                 break
-
-            #tcp.connect(dest)
-
+            
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
 
                 tcp.connect(dest)
-                tcp.send(bytes(msg, encoding='utf-8'))
 
-                print("Mensagem Enviada: ", msg)
-                
+                print("Enviado:", msg)
+
                 # Sair do canal
-                if msg[0:2] == '12' and recep.is_alive():
-                    print("Aqui")
-                    recep.stop()
-                    recep.join()
-                    recep = Receptor(BUFFER_SIZE, 9091)
-                    print("Thread interrompida")
+                if msg[0:2] == '12':
+                    recep_server.stop()
+                    recep_server.join()
+                    recep_server = ServerReceptor(BUFFER_SIZE)
+                    
+                tcp.send(bytes(msg, encoding='utf-8'))
 
                 # Entrou em um canal
                 if msg[0:2] == '10':
 
                     # Recebe a mensagem de resposta
-                    #   "10" -> conectou
+                    #   "10" -> conectcou
                     #   "00" -> nao conectou
                     message = ""
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_server:
@@ -111,19 +108,19 @@ while True:
 
                     if message == "00":
                         print("Limite de canais conectados excedidos.")
-                    elif not recep.is_alive():
-                        recep.start()
+                    elif not recep_server.is_alive():
+                        recep_server.start()
 
                 # lista de clientes conectados
                 if msg[0:2] == '11':
-                    print('\nLista de IPs conectados:\n')
                     print(str(tcp.recv(BUFFER_SIZE), 'utf-8'))
-                    
+
                 # quantidade de clientes conectados
                 if msg[0:2] == '13':
-                    print('\nQuantidade de clientes conectados: ', str(tcp.recv(BUFFER_SIZE), 'utf-8'))
+                    print(str(tcp.recv(BUFFER_SIZE), 'utf-8'))
 
                 tcp.shutdown(socket.SHUT_RDWR)
+
 
     # Comunicação com o cliente
     elif CONNECTION == "2":
@@ -133,7 +130,7 @@ while True:
                 #tcp.connect(dest)
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
                     tcp.connect(dest)
-                    tcp.send(bytes("10 " + TCP_PORT, encoding='utf-8'))
+                    tcp.send(bytes("10 " + CLIENT_PORT, encoding='utf-8'))
 
                     if str(tcp.recv(BUFFER_SIZE), 'utf-8') == "00":
                         print("Limite de clientes excedido!")
