@@ -4,6 +4,7 @@ import sys
 import queue
 import random
 import time
+import vlc
 
 # Fila para utilizar na thread de transmissão
 queue_sender = queue.Queue(1)
