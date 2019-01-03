@@ -4,6 +4,7 @@ import sys
 import queue
 import random
 import time
+import vlc
 
 # Fila para utilizar na thread de transmissão
 queue_sender = queue.Queue(1)
@@ -122,9 +123,13 @@ class ServerReceptor(threading.Thread):
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
         self.BUFFER_SIZE = buffer_size
+        self.producerVideo = ClientProducerVideo()
+        self.player_video = PlayerAuto()
 
     def run(self):
         self._stopped = False
+        self.producerVideo.start()
+        self.player_video.start()
 
         print("Thread de captura de dados iniciada (vídeos)!")
 
@@ -140,18 +145,19 @@ class ServerReceptor(threading.Thread):
                 content, address = sk_server.accept()
 
                 # Recebe o nome do arquivo
-                nome = "./Movie/{}.mkv".format(file_num)
+                nome0 = "./Movie/{}.mkv".format(file_num)
+                nome1 = "{}.mkv".format(file_num)
                 #sys.stdout.write("Recebendo '{}' de {}.\n".format(nome, address[0]))
                 sys.stdout.flush()
 
                 # Recebe o arquivo
-                with open(nome, 'wb') as down_file:
+                with open(nome0, 'wb') as down_file:
                     recv_read = content.recv(self.BUFFER_SIZE)
                     while recv_read:
                         down_file.write(recv_read)
                         recv_read = content.recv(self.BUFFER_SIZE)
                         # Armazena o nome do arquivo salvo na fila
-                        #file_names_stored.put(nome)
+                        file_names_stored.put(nome1)
 
                 content.close()
                 file_num += 1
@@ -218,10 +224,11 @@ class ClientProducerVideo(threading.Thread):
 
         print("Thread de monitoramento de pasta iniciada!")
 
-        while True:
+        while not self._stopped:
             if not file_names_stored.empty():
                 file_name_used = file_names_stored.get()
                 if not queue_sender.full():
+                    queue_video.put(file_name_used)
                     queue_sender.put(file_name_used)
                     time.sleep(random.random())
 
@@ -265,7 +272,7 @@ class ClientSender(threading.Thread):
 
 
 #classe que trabalha com o player vlc
-class player:
+class Player:
     
     #path = caminho dos arquivos. ex: '../videos/'
     def __init__(self, path):
@@ -282,3 +289,22 @@ class player:
         duration = self.player.get_length() / 1000
         time.sleep(duration-0.5)
 
+
+class PlayerAuto(threading.Thread, Player):
+    def __init__(self):
+        threading.Thread.__init__(self)
+        Player.__init__(self, "./Movie/")
+
+    def run(self):
+        self._stopped = False
+
+        print("Thread de execução de vídeos iniciada!")
+
+        while not self._stopped:
+            if not queue_video.full():
+                video_name = queue_video.put(file_name_used)
+                super(Player, self).play()
+                time.sleep(random.random())
+
+    def stop(self):
+        self._stopped = True
