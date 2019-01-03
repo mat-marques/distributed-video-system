@@ -15,8 +15,6 @@ queue_video = queue.Queue(1)
 # Fila para armazenar todos os nomes de arquivos que foram armazenados em disco
 file_names_stored = queue.Queue(0)
 
-# Armazena o nome do arquivo que vai ser processado no momento
-file_name_used = ""
 
 # Lista com os ips e portas dos clientes. 
 # Os dados são armazenados no formato de tuplas ("", "")
@@ -156,8 +154,9 @@ class ServerReceptor(threading.Thread):
                     while recv_read:
                         down_file.write(recv_read)
                         recv_read = content.recv(self.BUFFER_SIZE)
-                        # Armazena o nome do arquivo salvo na fila
-                        file_names_stored.put(nome1)
+                
+                # Armazena o nome do arquivo salvo na fila
+                file_names_stored.put(nome1)
 
                 content.close()
                 file_num += 1
@@ -271,7 +270,7 @@ class ClientSender(threading.Thread):
 
 
 
-#classe que trabalha com o player vlc
+# Classe que trabalha com o player vlc
 class Player:
     
     #path = caminho dos arquivos. ex: '../videos/'
@@ -290,6 +289,7 @@ class Player:
         time.sleep(duration-0.5)
 
 
+# Classe que vai executar os videos no VLC - Consumidor
 class PlayerAuto(threading.Thread, Player):
     def __init__(self):
         threading.Thread.__init__(self)
@@ -302,8 +302,8 @@ class PlayerAuto(threading.Thread, Player):
 
         while not self._stopped:
             if not queue_video.full():
-                video_name = queue_video.put(file_name_used)
-                super(Player, self).play()
+                video_name = queue_video.get()
+                Player.play(self, video_name)
                 time.sleep(random.random())
 
     def stop(self):
