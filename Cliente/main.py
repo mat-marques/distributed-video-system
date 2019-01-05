@@ -162,16 +162,22 @@ while True:
                     tcp.connect(dest)
                     tcp.send(bytes("11", encoding='utf-8'))
 
-                    if str(tcp.recv(BUFFER_SIZE), 'utf-8') == "00":
-                        print("Ocorreu um erro na operação!")
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
+                        tcp_cl.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-                    elif str(tcp.recv(BUFFER_SIZE), 'utf-8') == "01":
-                        print("Operação realizada com sucesso!")
+                        tcp_cl.bind(('', 9092))
+                        tcp_cl.listen(1)
+                        content, address = tcp.accept()
+                        received_msg = content.recvmsg(BUFFER_SIZE)
+
+                        print(received_msg)
+
+                        tcp_cl.shutdown(socket.SHUT_RDWR)
 
                     tcp.shutdown(socket.SHUT_RDWR)
 
             if msg == "2":
-                print("Lista os arquivos ...")
+                print(file_names_stored)
 
             if msg == "0":
                 print("Aplicação encerrada!")

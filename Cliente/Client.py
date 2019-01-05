@@ -15,7 +15,6 @@ queue_video = queue.Queue(1)
 # Fila para armazenar todos os nomes de arquivos que foram armazenados em disco
 file_names_stored = queue.Queue(0)
 
-
 # Lista com os ips e portas dos clientes. 
 # Os dados são armazenados no formato de tuplas ("", "")
 clients = []
@@ -68,7 +67,7 @@ class ClientReseiver(threading.Thread):
             tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
             tcp.bind(('', self.port))
-            tcp.listen()
+            tcp.listen(1)
 
             file_num = 0
 
@@ -122,11 +121,13 @@ class ServerReceptor(threading.Thread):
         threading.Thread.__init__(self)
         self.BUFFER_SIZE = buffer_size
         self.producerVideo = ClientProducerVideo()
+        self.send_video =  ClientSender()
         self.player_video = PlayerAuto()
 
     def run(self):
         self._stopped = False
         self.producerVideo.start()
+        self.send_video.start()
         self.player_video.start()
 
         print("Thread de captura de dados iniciada (vídeos)!")
@@ -227,8 +228,10 @@ class ClientProducerVideo(threading.Thread):
             if not file_names_stored.empty():
                 file_name_used = file_names_stored.get()
                 if not queue_sender.full():
-                    queue_video.put(file_name_used)
                     queue_sender.put(file_name_used)
+                    time.sleep(random.random())
+                if not queue_video.full():
+                    queue_video.put(file_name_used)
                     time.sleep(random.random())
 
                 
@@ -301,7 +304,7 @@ class PlayerAuto(threading.Thread, Player):
         print("Thread de execução de vídeos iniciada!")
 
         while not self._stopped:
-            if not queue_video.full():
+            if not queue_video.empty():
                 video_name = queue_video.get()
                 Player.play(self, video_name)
                 time.sleep(random.random())
