@@ -5,6 +5,7 @@ import queue
 import random
 import time
 import vlc
+import os
 
 # Fila para utilizar na thread de transmissão
 queue_sender = queue.Queue(1)
@@ -298,6 +299,9 @@ class PlayerAuto(threading.Thread, Player):
         threading.Thread.__init__(self)
         Player.__init__(self, "./Movie/")
 
+    def remove_video(self, file_name):
+        os.remove("./Movie/" + file_name)
+
     def run(self):
         self._stopped = False
 
@@ -307,6 +311,7 @@ class PlayerAuto(threading.Thread, Player):
             if not queue_video.empty():
                 video_name = queue_video.get()
                 Player.play(self, video_name)
+                self.remove_video(video_name)
                 time.sleep(random.random())
 
     def stop(self):
