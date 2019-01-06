@@ -137,18 +137,30 @@ while True:
                     tcp.connect(dest)
                     tcp.send(bytes("10 " + str(CLIENT_PORT), encoding='utf-8'))
 
-                    if str(tcp.recv(BUFFER_SIZE), 'utf-8') == "00":
-                        print("Limite de clientes excedido!")
-                        break
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
+                        tcp_cl.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-                    elif str(tcp.recv(BUFFER_SIZE), 'utf-8') == "01":
-                        print("Operação realizada com sucesso!")
-                        is_connected = True
+                        tcp_cl.bind(('', 9091))
+                        tcp_cl.listen(1)
+                        content, address = tcp_cl.accept()
+                        message = content.recvmsg(BUFFER_SIZE)
 
-                        if not recep_client.is_alive():
-                            recep_client.start()
+                        if message == "00":
+                            print("Limite de clientes excedido!")
+                            break
+
+                        elif message == "01":
+                            print("Operação realizada com sucesso!")
+                            is_connected = True
+
+                            if not recep_client.is_alive():
+                                recep_client.start()
+
+                        content.close()
+
+                        tcp_cl.close()
                         
-                    tcp.shutdown(socket.SHUT_RDWR)
+                    tcp.close()
                     
             print("\n\n\n##################################################")
             print("Opções:")
@@ -166,7 +178,7 @@ while True:
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
                         tcp_cl.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-                        tcp_cl.bind(('', 9092))
+                        tcp_cl.bind(('', 9091))
                         tcp_cl.listen(1)
                         content, address = tcp.accept()
                         received_msg = content.recvmsg(BUFFER_SIZE)

@@ -92,12 +92,15 @@ class ClientReseiver(threading.Thread):
                 if message[0:2] == "10":
                     # IP e Porta do cliente que fez a requisição
                     dest = (address[0], int(message[3:7]))
+
+                    # IP e uma Porta padrão do cliente para comunicação
+                    destResp = (address[0], 9091)
                     print("Solicitação de conexão com o cliente: ", str(dest))
                     
                     if qtd_clients_connected < QTD_CLIENTS:
                         if self.addClient(dest):
                             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
-                                tcp_cl.connect(dest)
+                                tcp_cl.connect(destResp)
 
                                 # Envia a confirmação da operação: Sucesso
                                 tcp_cl.send(bytes("01", encoding='utf-8'))
@@ -106,7 +109,7 @@ class ClientReseiver(threading.Thread):
                             qtd_clients_connected += 1
                         else:
                             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
-                                tcp_cl.connect(dest)
+                                tcp_cl.connect(destResp)
                                 
                                 # Envia a confirmação da operação: Fracasso
                                 tcp.send(bytes("00", encoding='utf-8'))
@@ -116,9 +119,9 @@ class ClientReseiver(threading.Thread):
                 # Listar Conexões
                 if message == "11":
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
-                        tcp_cl.connect(dest)
+                        tcp_cl.connect(destResp)
                         # Envia a string de IPs
-                        print("Listagem de IPs solicitada! Cliente: ", dest)
+                        print("Listagem de IPs solicitada! Cliente: ", destResp)
                         tcp_cl.send(bytes(str(clients), encoding='utf-8'))
                         tcp_cl.close()
             
