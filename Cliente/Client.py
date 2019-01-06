@@ -274,7 +274,7 @@ class ClientSender(threading.Thread):
                 while cont < qtd_clients_connected:
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_client:
                         sk_client.connect(clients[cont])
-
+                        print("Tranmitindo vídeo para: ", clients[cont])
                         # Envia o arquivo
                         with open(file_name, 'rb') as up_file:
                             send_read = up_file.read(self.BUFFER_SIZE)
