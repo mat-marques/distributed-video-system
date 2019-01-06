@@ -29,11 +29,10 @@ QTD_CLIENTS = 1
 # Quantidade atual de clientes conectados
 qtd_clients_connected = 0
 
-# Classe que recebe dados dos clientes
+# Classe que recebe dados dos clientes, porta 9092
 class ClientReseiver(threading.Thread):
-    def __init__(self, buffer_size, port):
+    def __init__(self, buffer_size):
         threading.Thread.__init__(self)
-        self.port = port
         self.BUFFER_SIZE = buffer_size
 
     # Verifica se o cliente já está inserido no canal
@@ -76,7 +75,7 @@ class ClientReseiver(threading.Thread):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
             tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-            tcp.bind(('', self.port))
+            tcp.bind(('', 9092))
             tcp.listen(1)
 
             file_num = 0
@@ -91,16 +90,14 @@ class ClientReseiver(threading.Thread):
                 # Conectar no canal
                 if message[0:2] == "10":
                     # IP e Porta do cliente que fez a requisição
-                    dest = (address[0], int(message[3:7]))
+                    dest = (address[0], 9092)
 
-                    # IP e uma Porta padrão do cliente para comunicação
-                    destResp = (address[0], 9091)
                     print("Solicitação de conexão com o cliente: ", str(dest))
                     
                     if qtd_clients_connected < QTD_CLIENTS:
                         if self.addClient(dest):
                             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
-                                tcp_cl.connect(destResp)
+                                tcp_cl.connect(dest)
 
                                 # Envia a confirmação da operação: Sucesso
                                 tcp_cl.send(bytes("01", encoding='utf-8'))
@@ -109,7 +106,7 @@ class ClientReseiver(threading.Thread):
                             qtd_clients_connected += 1
                         else:
                             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
-                                tcp_cl.connect(destResp)
+                                tcp_cl.connect(dest)
                                 
                                 # Envia a confirmação da operação: Fracasso
                                 tcp.send(bytes("00", encoding='utf-8'))
@@ -119,17 +116,19 @@ class ClientReseiver(threading.Thread):
                 # Listar Conexões
                 if message == "11":
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
-                        tcp_cl.connect(destResp)
+                        tcp_cl.connect(dest)
                         # Envia a string de IPs
-                        print("Listagem de IPs solicitada! Cliente: ", destResp)
+                        print("Listagem de IPs solicitada! Cliente: ", dest)
                         tcp_cl.send(bytes(str(clients), encoding='utf-8'))
                         tcp_cl.close()
-            
+
+                content.close()
+
     def stop(self):
         self._stopped = True
 
 
-# Classe que recebe os dados do canal - Servidor
+# Classe que recebe os dados do canal - Servidor, porta 9091
 class ServerReceptor(threading.Thread):
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
@@ -138,6 +137,7 @@ class ServerReceptor(threading.Thread):
         self.send_video =  ClientSender()
         self.player_video = PlayerAuto()
         self.garbage_collector = GarbageCollector()
+        self._stopped = False
 
     def run(self):
         self._stopped = False
@@ -180,14 +180,14 @@ class ServerReceptor(threading.Thread):
                 content.close()
                 file_num += 1
 
-        print("Thread de captura de dados interrompida (vídeos)!")
+        print("Thread de captura de dados interrompida, cliente/servidor (vídeos)!")
 
     def stop(self):
         self._stopped = True
         print(self._stopped)
 
 
-# Classe que recebe os dados do canal - Cliente
+# Classe que recebe os dados do canal - Cliente, porta 9092
 class ClientReceptor(threading.Thread):
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
@@ -227,7 +227,8 @@ class ClientReceptor(threading.Thread):
                 content.close()
                 file_num += 1
 
-        print("Thread de captura de dados interrompida (vídeos)!")
+            sk_server.close()
+        print("Thread de captura de dados interrompida, cliente/cliente (vídeos)!")
 
     def stop(self):
         self._stopped = True
@@ -263,7 +264,7 @@ class ClientProducerVideo(threading.Thread):
         self._stopped = True
 
 
-# Classe que envia os pacotes de stream de video - Consumidor
+# Classe que envia os pacotes de stream de video - Consumidor, porta 9092
 class ClientSender(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)

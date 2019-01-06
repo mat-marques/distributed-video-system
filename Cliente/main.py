@@ -27,8 +27,8 @@ QTD_CLIENTS = int(input("Digite o número de clientes máximo: "), 10)
 #thread_client_reseiver = ClientReseiver(CLIENT_PORT)
 
 # Thread que monitora mensagens de possíveis clientes
-CLIENT_PORT = 9099
-thread_client_reseiver = ClientReseiver(BUFFER_SIZE, CLIENT_PORT)
+CLIENT_PORT = 9092
+thread_client_reseiver = ClientReseiver(BUFFER_SIZE)
 thread_client_reseiver.start()
 
 while True:
@@ -71,7 +71,7 @@ while True:
 
             # Finaliza a aplicação
             if msg[0:1] == '0':
-                if not recep_server._stopped:
+                if recep_server._stopped:
                     recep_server.stop()
                     recep_server.join()
                 break
@@ -123,7 +123,6 @@ while True:
 
                 tcp.shutdown(socket.SHUT_RDWR)
 
-
     # Comunicação com o cliente
     elif CONNECTION == "2":
         is_connected = False
@@ -135,12 +134,12 @@ while True:
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
                     print(dest)
                     tcp.connect(dest)
-                    tcp.send(bytes("10 " + str(CLIENT_PORT), encoding='utf-8'))
+                    tcp.send(bytes("10", encoding='utf-8'))
 
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
                         tcp_cl.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-                        tcp_cl.bind(('', 9091))
+                        tcp_cl.bind(('', 9092))
                         tcp_cl.listen(1)
                         content, address = tcp_cl.accept()
                         received_msg = content.recvmsg(BUFFER_SIZE)
@@ -159,15 +158,15 @@ while True:
                             if not recep_client.is_alive():
                                 recep_client.start()
 
+                            break
+
                         content.close()
 
                         tcp_cl.close()
                         
                     tcp.close()
             
-            if not is_connected:
-                continue
-
+        while is_connected:
             print("\n\n\n##################################################")
             print("Opções:")
             print("1 - Para listar conexões")
@@ -184,20 +183,20 @@ while True:
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
                         tcp_cl.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-                        tcp_cl.bind(('', 9091))
+                        tcp_cl.bind(('', 9092))
                         tcp_cl.listen(1)
-                        content, address = tcp.accept()
+                        content, address = tcp_cl.accept()
                         received_msg = content.recvmsg(BUFFER_SIZE)
                         message = str(received_msg[0], 'utf-8')
 
-                        print(received_msg)
+                        print(message)
 
                         tcp_cl.shutdown(socket.SHUT_RDWR)
 
                     tcp.shutdown(socket.SHUT_RDWR)
 
             if msg == "2":
-                print(str(file_names_stored))
+                print(file_names_stored)
 
             if msg == "0":
                 print("Aplicação encerrada!")
