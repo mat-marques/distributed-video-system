@@ -27,7 +27,6 @@ QTD_CLIENTS = int(input("Digite o número de clientes máximo: "), 10)
 #thread_client_reseiver = ClientReseiver(CLIENT_PORT)
 
 # Thread que monitora mensagens de possíveis clientes
-CLIENT_PORT = 9092
 thread_client_reseiver = ClientReseiver(BUFFER_SIZE)
 thread_client_reseiver.start()
 
@@ -49,7 +48,7 @@ while True:
     elif CONNECTION == "2":
         TCP_HOST = input("Digite o IP do cliente: ")
         #CLIENT_PORT = input("Digite o número da porta do cliente: ")
-        dest = (TCP_HOST, CLIENT_PORT)
+        dest = (TCP_HOST, CLIENT_CLIENT_PORT)
 
     elif CONNECTION == "0":
         print("Aplicação finalizada!")
@@ -100,7 +99,7 @@ while True:
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_server:
                         sk_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-                        sk_server.bind(('', 9091))
+                        sk_server.bind(('', CLIENT_SERVER_PORT))
                         sk_server.listen(1)
 
                         content, address = sk_server.accept()
@@ -132,6 +131,7 @@ while True:
             if not is_connected:
                 #tcp.connect(dest)
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
+                    tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
                     print(dest)
                     tcp.connect(dest)
                     tcp.send(bytes("10", encoding='utf-8'))
@@ -139,7 +139,7 @@ while True:
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
                         tcp_cl.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-                        tcp_cl.bind(('', 9092))
+                        tcp_cl.bind(('', CLIENT_CLIENT_PORT))
                         tcp_cl.listen(1)
                         content, address = tcp_cl.accept()
                         received_msg = content.recvmsg(BUFFER_SIZE)
@@ -177,13 +177,14 @@ while True:
             if msg == "1":
                 #tcp.connect(dest)
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
+                    tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
                     tcp.connect(dest)
                     tcp.send(bytes("11", encoding='utf-8'))
 
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
                         tcp_cl.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-                        tcp_cl.bind(('', 9092))
+                        tcp_cl.bind(('', CLIENT_CLIENT_PORT))
                         tcp_cl.listen(1)
                         content, address = tcp_cl.accept()
                         received_msg = content.recvmsg(BUFFER_SIZE)

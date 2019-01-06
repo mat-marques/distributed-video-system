@@ -29,7 +29,10 @@ QTD_CLIENTS = 1
 # Quantidade atual de clientes conectados
 qtd_clients_connected = 0
 
-# Classe que recebe dados dos clientes, porta 9092
+CLIENT_SERVER_PORT = 9091
+CLIENT_CLIENT_PORT = 9092
+
+# Classe que recebe dados dos clientes, porta CLIENT_CLIENT_PORT
 class ClientReseiver(threading.Thread):
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
@@ -75,7 +78,7 @@ class ClientReseiver(threading.Thread):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
             tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-            tcp.bind(('', 9092))
+            tcp.bind(('', CLIENT_CLIENT_PORT))
             tcp.listen(1)
 
             file_num = 0
@@ -90,7 +93,7 @@ class ClientReseiver(threading.Thread):
                 # Conectar no canal
                 if message[0:2] == "10":
                     # IP e Porta do cliente que fez a requisição
-                    dest = (address[0], 9092)
+                    dest = (address[0], CLIENT_CLIENT_PORT)
 
                     print("Solicitação de conexão com o cliente: ", str(dest))
                     
@@ -128,7 +131,7 @@ class ClientReseiver(threading.Thread):
         self._stopped = True
 
 
-# Classe que recebe os dados do canal - Servidor, porta 9091
+# Classe que recebe os dados do canal - Servidor, porta CLIENT_SERVER_PORT
 class ServerReceptor(threading.Thread):
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
@@ -153,7 +156,7 @@ class ServerReceptor(threading.Thread):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_server:
             sk_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-            sk_server.bind(('', 9091))
+            sk_server.bind(('', CLIENT_SERVER_PORT))
             sk_server.listen(1)
 
             file_num = 0
@@ -187,7 +190,7 @@ class ServerReceptor(threading.Thread):
         print(self._stopped)
 
 
-# Classe que recebe os dados do canal - Cliente, porta 9092
+# Classe que recebe os dados do canal - Cliente, porta CLIENT_CLIENT_PORT
 class ClientReceptor(threading.Thread):
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
@@ -202,7 +205,7 @@ class ClientReceptor(threading.Thread):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_server:
             sk_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-            sk_server.bind(('', 9092))
+            sk_server.bind(('', CLIENT_CLIENT_PORT))
             sk_server.listen()
 
             file_num = 0
@@ -264,7 +267,7 @@ class ClientProducerVideo(threading.Thread):
         self._stopped = True
 
 
-# Classe que envia os pacotes de stream de video - Consumidor, porta 9092
+# Classe que envia os pacotes de stream de video - Consumidor, porta CLIENT_CLIENT_PORT
 class ClientSender(threading.Thread):
     def __init__(self):
         threading.Thread.__init__(self)
