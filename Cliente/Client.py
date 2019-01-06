@@ -83,6 +83,8 @@ class ClientReseiver(threading.Thread):
                 if message[0:2] == "10":
                     # IP e Porta do cliente que fez a requisição
                     dest = (address[0], message[3:7])
+                    print("Solicitação de conexão com o cliente: ", str(dest))
+                    
                     if qtd_clients_connected < QTD_CLIENTS:
                         if self.addClient(dest):
                             
@@ -97,17 +99,9 @@ class ClientReseiver(threading.Thread):
                 # Listar Conexões
                 if message == "11":
                     # Envia a string de IPs
+                    print("Listagem de IPs solicitada!")
                     tcp.send(bytes(str(clients), encoding='utf-8'))
 
-                # Sair do canal
-                if message == "12":
-                    # Remove cliente
-                    self.removeClient(address[0])
-
-                    qtd_clients_connected -= 1
-
-                    # Envia a confirmação da operação: Sucesso
-                    tcp.send(bytes("01", encoding='utf-8'))
                 
                 content.close()
 

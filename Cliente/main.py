@@ -133,8 +133,9 @@ while True:
             if not is_connected:
                 #tcp.connect(dest)
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
+                    print(dest)
                     tcp.connect(dest)
-                    tcp.send(bytes("10 " + CLIENT_PORT, encoding='utf-8'))
+                    tcp.send(bytes("10 " + str(CLIENT_PORT), encoding='utf-8'))
 
                     if str(tcp.recv(BUFFER_SIZE), 'utf-8') == "00":
                         print("Limite de clientes excedido!")
