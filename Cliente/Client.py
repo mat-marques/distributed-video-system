@@ -35,14 +35,16 @@ class ClientReseiver(threading.Thread):
 
     # Verifica se o cliente já está inserido no canal
     def verifyClient(self, dest):
-        for clients in info:
+        global clients
+        for info in clients:
             if info[0] == dest[0]:
                 return True
         return False
 
     # Remove um cliente de um canal
     def removeClient(self, ip):
-        for clients in info:
+        global clients
+        for info in clients:
             if info[0] == ip:
                 clients.remove(info)
                 print("O cliente ", info ," foi removido!")
@@ -51,6 +53,7 @@ class ClientReseiver(threading.Thread):
 
     # Insere um cliente
     def addClient(self, dest):
+        global clients
         if not self.verifyClient(dest):
             # Insere o cliente
             clients.append(dest)
@@ -60,6 +63,9 @@ class ClientReseiver(threading.Thread):
 
     def run(self):
         self._stopped = False
+        global clients
+        global qtd_clients_connected
+        global QTD_CLIENTS
 
         print("Thread de captura de dados dos clientes iniciada!")
 
@@ -82,29 +88,36 @@ class ClientReseiver(threading.Thread):
                 # Conectar no canal
                 if message[0:2] == "10":
                     # IP e Porta do cliente que fez a requisição
-                    dest = (address[0], message[3:7])
+                    dest = (address[0], int(message[3:7]))
                     print("Solicitação de conexão com o cliente: ", str(dest))
                     
                     if qtd_clients_connected < QTD_CLIENTS:
                         if self.addClient(dest):
-                            
-                            # Envia a confirmação da operação: Sucesso
-                            tcp.send(bytes("01", encoding='utf-8'))
+                            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
+                                tcp_cl.connect(dest)
 
+                                # Envia a confirmação da operação: Sucesso
+                                tcp_cl.send(bytes("01", encoding='utf-8'))
+
+                                tcp_cl.close()
                             qtd_clients_connected += 1
-                    else:
-                        # Envia a confirmação da operação: Fracasso
-                        tcp.send(bytes("00", encoding='utf-8'))
+                        else:
+                            with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
+                                tcp_cl.connect(dest)
+                                
+                                # Envia a confirmação da operação: Fracasso
+                                tcp.send(bytes("00", encoding='utf-8'))
+
+                                tcp_cl.close()
 
                 # Listar Conexões
                 if message == "11":
-                    # Envia a string de IPs
-                    print("Listagem de IPs solicitada!")
-                    tcp.send(bytes(str(clients), encoding='utf-8'))
-
-                
-                content.close()
-
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
+                        tcp_cl.connect(dest)
+                        # Envia a string de IPs
+                        print("Listagem de IPs solicitada! Cliente: ", dest)
+                        tcp_cl.send(bytes(str(clients), encoding='utf-8'))
+                        tcp_cl.close()
             
     def stop(self):
         self._stopped = True
@@ -121,6 +134,8 @@ class ServerReceptor(threading.Thread):
 
     def run(self):
         self._stopped = False
+        global file_names_stored
+
         self.producerVideo.start()
         self.send_video.start()
         self.player_video.start()
@@ -172,6 +187,7 @@ class ClientReceptor(threading.Thread):
 
     def run(self):
         self._stopped = False
+        global file_names_stored
 
         print("Thread de captura de dados iniciada (vídeos)!")
 
@@ -216,6 +232,9 @@ class ClientProducerVideo(threading.Thread):
 
     def run(self):
         self._stopped = False
+        global queue_sender
+        global queue_video
+        global file_names_stored
 
         print("Thread de monitoramento de pasta iniciada!")
 
@@ -242,6 +261,9 @@ class ClientSender(threading.Thread):
         
     def run(self):
         self._stopped = False
+        global queue_sender
+        global file_names_stored
+        global qtd_clients_connected
 
         print("Thread de envio dos pacotes de stream para os clientes iniciada!")
 
@@ -260,7 +282,7 @@ class ClientSender(threading.Thread):
                                 sk_client.send(send_read)
                                 send_read = up_file.read(self.BUFFER_SIZE)
                                 cont+=1
-
+            
                 time.sleep(random.random())
 
     def stop(self):
@@ -298,6 +320,7 @@ class PlayerAuto(threading.Thread, Player):
 
     def run(self):
         self._stopped = False
+        global queue_video
 
         print("Thread de execução de vídeos iniciada!")
 
