@@ -143,7 +143,10 @@ while True:
                         tcp_cl.bind(('', 9091))
                         tcp_cl.listen(1)
                         content, address = tcp_cl.accept()
-                        message = content.recvmsg(BUFFER_SIZE)
+                        received_msg = content.recvmsg(BUFFER_SIZE)
+                        message = str(received_msg[0], 'utf-8')
+
+                        print(message)
 
                         if message == "00":
                             print("Limite de clientes excedido!")
@@ -161,7 +164,10 @@ while True:
                         tcp_cl.close()
                         
                     tcp.close()
-                    
+            
+            if not is_connected:
+                continue
+
             print("\n\n\n##################################################")
             print("Opções:")
             print("1 - Para listar conexões")
@@ -182,6 +188,7 @@ while True:
                         tcp_cl.listen(1)
                         content, address = tcp.accept()
                         received_msg = content.recvmsg(BUFFER_SIZE)
+                        message = str(received_msg[0], 'utf-8')
 
                         print(received_msg)
 
@@ -190,7 +197,7 @@ while True:
                     tcp.shutdown(socket.SHUT_RDWR)
 
             if msg == "2":
-                print(file_names_stored)
+                print(str(file_names_stored))
 
             if msg == "0":
                 print("Aplicação encerrada!")
