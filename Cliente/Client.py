@@ -16,6 +16,9 @@ queue_video = queue.Queue(1)
 # Fila para armazenar todos os nomes de arquivos que foram armazenados em disco
 file_names_stored = queue.Queue(0)
 
+#fila para armazenar os videos que serão removidos pela thread de remoção
+queue_video_remove = queue.Queue(0)
+
 # Lista com os ips e portas dos clientes. 
 # Os dados são armazenados no formato de tuplas ("", "")
 clients = []
@@ -131,6 +134,7 @@ class ServerReceptor(threading.Thread):
         self.producerVideo = ClientProducerVideo()
         self.send_video =  ClientSender()
         self.player_video = PlayerAuto()
+        self.garbage_collector = GarbageCollector()
 
     def run(self):
         self._stopped = False
@@ -139,6 +143,7 @@ class ServerReceptor(threading.Thread):
         self.producerVideo.start()
         self.send_video.start()
         self.player_video.start()
+        self.garbage_collector.start()
 
         print("Thread de captura de dados iniciada (vídeos)!")
 
@@ -241,12 +246,14 @@ class ClientProducerVideo(threading.Thread):
         while not self._stopped:
             if not file_names_stored.empty():
                 file_name_used = file_names_stored.get()
-                if not queue_sender.full():
-                    queue_sender.put(file_name_used)
-                    time.sleep(random.random())
-                if not queue_video.full():
-                    queue_video.put(file_name_used)
-                    time.sleep(random.random())
+                if queue_sender.full():
+                    queue_sender.get()
+                if queue_video.full():
+                    queue_video_remove.put(queue_video.get())
+                    
+                queue_sender.put(file_name_used)
+                queue_video.put(file_name_used)
+
 
                 
     def stop(self):
@@ -295,7 +302,7 @@ class Player:
     
     #path = caminho dos arquivos. ex: '../videos/'
     def __init__(self, path):
-        self.vlc_instance = vlc.Instance()
+        self.vlc_instance = vlc.Instance('--quiet')
         self.player = self.vlc_instance.media_player_new()
         self.path = path
 
@@ -304,9 +311,9 @@ class Player:
         media = self.vlc_instance.media_new(self.path+file)
         self.player.set_media(media)
         self.player.play()
-        time.sleep(0.5)
-        duration = self.player.get_length() / 1000
-        time.sleep(duration-0.5)
+        #time.sleep(0.5)
+        #duration = self.player.get_length() / 1000
+        #time.sleep(duration-0.5)
 
 
 # Classe que vai executar os videos no VLC - Consumidor
@@ -314,22 +321,48 @@ class PlayerAuto(threading.Thread, Player):
     def __init__(self):
         threading.Thread.__init__(self)
         Player.__init__(self, "./Movie/")
-
+    
+    """
     def remove_video(self, file_name):
         os.remove("./Movie/" + file_name)
-
+    """
+    
     def run(self):
         self._stopped = False
-        global queue_video
 
         print("Thread de execução de vídeos iniciada!")
 
         while not self._stopped:
             if not queue_video.empty():
                 video_name = queue_video.get()
+                
                 Player.play(self, video_name)
-                self.remove_video(video_name)
-                time.sleep(random.random())
+                time.sleep(2)
+                queue_video_remove.put(video_name)
+
+                #self.remove_video(video_name)
 
     def stop(self):
         self._stopped = True
+
+
+class GarbageCollector(threading.Thread, Player):
+    def __init__(self):
+        threading.Thread.__init__(self)
+
+    def remove_video(self, file_name):
+        os.remove("./Movie/" + file_name)
+
+    def run(self):
+        self.stopped = False
+
+        print('Thread de remoção de videos iniciada!')
+
+        while not self.stopped:
+            if not queue_video_remove.empty():
+                video_name = queue_video_remove.get()
+                self.remove_video(video_name)
+            time.sleep(random.random())
+    
+    def stop(self):
+        self.stopped = True
