@@ -29,7 +29,9 @@ QTD_CLIENTS = 1
 # Quantidade atual de clientes conectados
 qtd_clients_connected = 0
 
+# Número da porta da comunicação entre cliente e servidor
 CLIENT_SERVER_PORT = 9091
+# Número da porta da comunicação entre cliente e cliente
 CLIENT_CLIENT_PORT = 9092
 
 # Classe que recebe dados dos clientes, porta CLIENT_CLIENT_PORT
@@ -71,6 +73,7 @@ class ClientReseiver(threading.Thread):
         global clients
         global qtd_clients_connected
         global QTD_CLIENTS
+        global CLIENT_CLIENT_PORT
 
         print("Thread de captura de dados dos clientes iniciada!")
 
@@ -145,6 +148,7 @@ class ServerReceptor(threading.Thread):
     def run(self):
         self._stopped = False
         global file_names_stored
+        global CLIENT_SERVER_PORT
 
         self.producerVideo.start()
         self.send_video.start()
@@ -199,7 +203,8 @@ class ClientReceptor(threading.Thread):
     def run(self):
         self._stopped = False
         global file_names_stored
-
+        global CLIENT_SERVER_PORT
+        
         print("Thread de captura de dados iniciada (vídeos)!")
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_server:
