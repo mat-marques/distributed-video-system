@@ -1,0 +1,14 @@
+<map id="_Ctype" name="_Ctype">
+<area shape="rect" id="node3" href="$classvlc_1_1_audio_equalizer.html" title="AudioEqualizer" alt="" coords="237,5,347,32"/>
+<area shape="rect" id="node4" href="$classvlc_1_1_event_manager.html" title="EventManager" alt="" coords="239,56,345,83"/>
+<area shape="rect" id="node5" href="$classvlc_1_1_instance.html" title="Instance" alt="" coords="256,107,328,133"/>
+<area shape="rect" id="node6" href="$classvlc_1_1_log_iterator.html" title="LogIterator" alt="" coords="250,157,334,184"/>
+<area shape="rect" id="node7" href="$classvlc_1_1_media.html" title="Media" alt="" coords="263,208,321,235"/>
+<area shape="rect" id="node8" href="$classvlc_1_1_media_discoverer.html" title="MediaDiscoverer" alt="" coords="232,259,352,285"/>
+<area shape="rect" id="node9" href="$classvlc_1_1_media_library.html" title="MediaLibrary" alt="" coords="244,309,340,336"/>
+<area shape="rect" id="node10" href="$classvlc_1_1_media_list.html" title="MediaList" alt="" coords="253,360,331,387"/>
+<area shape="rect" id="node11" href="$classvlc_1_1_media_list_player.html" title="MediaListPlayer" alt="" coords="235,411,349,437"/>
+<area shape="rect" id="node12" href="$classvlc_1_1_media_player.html" title="MediaPlayer" alt="" coords="245,461,339,488"/>
+<area shape="rect" id="node13" href="$classvlc_1_1_renderer.html" title="Renderer" alt="" coords="255,512,329,539"/>
+<area shape="rect" id="node14" href="$classvlc_1_1_renderer_discoverer.html" title="RendererDiscoverer" alt="" coords="223,563,361,589"/>
+</map>

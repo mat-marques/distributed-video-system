@@ -1,0 +1,138 @@
+\hypertarget{classvlc_1_1_renderer_discoverer}{}\section{Renderer\+Discoverer Class Reference}
+\label{classvlc_1_1_renderer_discoverer}\index{Renderer\+Discoverer@{Renderer\+Discoverer}}
+
+
+Inheritance diagram for Renderer\+Discoverer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classvlc_1_1_renderer_discoverer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Renderer\+Discoverer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{classvlc_1_1_renderer_discoverer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classvlc_1_1_renderer_discoverer_a2ed91930af7622fec54ade5b2d4b2315}{\+\_\+\+\_\+new\+\_\+\+\_\+} (cls, ptr=\+\_\+internal\+\_\+guard)
+\item 
+def \hyperlink{classvlc_1_1_renderer_discoverer_a4cd51e19135e5ad4a19eae3ea9c60537}{release} (self)
+\item 
+def \hyperlink{classvlc_1_1_renderer_discoverer_af1af6ddf04f00f958949618f79c33b82}{start} (self)
+\item 
+def \hyperlink{classvlc_1_1_renderer_discoverer_a26ca7c1c7fcdd35378e7be97727047a6}{stop} (self)
+\item 
+def \hyperlink{classvlc_1_1_renderer_discoverer_ab7c92812cd259eb8e4e4fd292b81bfaa}{event\+\_\+manager} (self)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}N/A
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classvlc_1_1_renderer_discoverer_a2ed91930af7622fec54ade5b2d4b2315}\label{classvlc_1_1_renderer_discoverer_a2ed91930af7622fec54ade5b2d4b2315}} 
+\index{vlc\+::\+Renderer\+Discoverer@{vlc\+::\+Renderer\+Discoverer}!\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}!vlc\+::\+Renderer\+Discoverer@{vlc\+::\+Renderer\+Discoverer}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+new\+\_\+\+\_\+()}{\_\_new\_\_()}}
+{\footnotesize\ttfamily def \+\_\+\+\_\+new\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{ptr = {\ttfamily \+\_\+internal\+\_\+guard} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}(INTERNAL) ctypes wrapper constructor.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classvlc_1_1_renderer_discoverer_ab7c92812cd259eb8e4e4fd292b81bfaa}\label{classvlc_1_1_renderer_discoverer_ab7c92812cd259eb8e4e4fd292b81bfaa}} 
+\index{vlc\+::\+Renderer\+Discoverer@{vlc\+::\+Renderer\+Discoverer}!event\+\_\+manager@{event\+\_\+manager}}
+\index{event\+\_\+manager@{event\+\_\+manager}!vlc\+::\+Renderer\+Discoverer@{vlc\+::\+Renderer\+Discoverer}}
+\subsubsection{\texorpdfstring{event\+\_\+manager()}{event\_manager()}}
+{\footnotesize\ttfamily def event\+\_\+manager (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the event manager of the renderer discoverer
+The possible events to attach are @ref libvlc_RendererDiscovererItemAdded
+and @ref libvlc_RendererDiscovererItemDeleted.
+The @ref L{Renderer} struct passed to event callbacks is owned by
+VLC, users should take care of holding/releasing this struct for their
+internal usage.
+See libvlc_event_t.u.renderer_discoverer_item_added.item
+See libvlc_event_t.u.renderer_discoverer_item_removed.item.
+@return: a valid event manager (can't fail).
+@version: LibVLC 3.0.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvlc_1_1_renderer_discoverer_ab7c92812cd259eb8e4e4fd292b81bfaa_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_renderer_discoverer_a4cd51e19135e5ad4a19eae3ea9c60537}\label{classvlc_1_1_renderer_discoverer_a4cd51e19135e5ad4a19eae3ea9c60537}} 
+\index{vlc\+::\+Renderer\+Discoverer@{vlc\+::\+Renderer\+Discoverer}!release@{release}}
+\index{release@{release}!vlc\+::\+Renderer\+Discoverer@{vlc\+::\+Renderer\+Discoverer}}
+\subsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily def release (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Release a renderer discoverer object.
+@version: LibVLC 3.0.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classvlc_1_1_renderer_discoverer_a4cd51e19135e5ad4a19eae3ea9c60537_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_renderer_discoverer_af1af6ddf04f00f958949618f79c33b82}\label{classvlc_1_1_renderer_discoverer_af1af6ddf04f00f958949618f79c33b82}} 
+\index{vlc\+::\+Renderer\+Discoverer@{vlc\+::\+Renderer\+Discoverer}!start@{start}}
+\index{start@{start}!vlc\+::\+Renderer\+Discoverer@{vlc\+::\+Renderer\+Discoverer}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily def start (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Start renderer discovery
+To stop it, call L{stop}() or
+L{release}() directly.
+See L{stop}().
+@return: -1 in case of error, 0 otherwise.
+@version: LibVLC 3.0.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=247pt]{classvlc_1_1_renderer_discoverer_af1af6ddf04f00f958949618f79c33b82_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_renderer_discoverer_a26ca7c1c7fcdd35378e7be97727047a6}\label{classvlc_1_1_renderer_discoverer_a26ca7c1c7fcdd35378e7be97727047a6}} 
+\index{vlc\+::\+Renderer\+Discoverer@{vlc\+::\+Renderer\+Discoverer}!stop@{stop}}
+\index{stop@{stop}!vlc\+::\+Renderer\+Discoverer@{vlc\+::\+Renderer\+Discoverer}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily def stop (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Stop renderer discovery.
+See L{start}().
+@version: LibVLC 3.0.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classvlc_1_1_renderer_discoverer_a26ca7c1c7fcdd35378e7be97727047a6_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

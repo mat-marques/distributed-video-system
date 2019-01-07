@@ -1,0 +1,172 @@
+\hypertarget{classvlc_1_1_audio_equalizer}{}\section{Audio\+Equalizer Class Reference}
+\label{classvlc_1_1_audio_equalizer}\index{Audio\+Equalizer@{Audio\+Equalizer}}
+
+
+Inheritance diagram for Audio\+Equalizer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classvlc_1_1_audio_equalizer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Audio\+Equalizer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=162pt]{classvlc_1_1_audio_equalizer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classvlc_1_1_audio_equalizer_acc2aa3fac6a63e8bac4f19efc327102b}{\+\_\+\+\_\+new\+\_\+\+\_\+} (cls, args)
+\item 
+def \hyperlink{classvlc_1_1_audio_equalizer_a4cd51e19135e5ad4a19eae3ea9c60537}{release} (self)
+\item 
+def \hyperlink{classvlc_1_1_audio_equalizer_ab88c103714ca495bcaabdc3d8d6b0986}{set\+\_\+preamp} (self, f\+\_\+preamp)
+\item 
+def \hyperlink{classvlc_1_1_audio_equalizer_ae95fe34603e8e5b5a646e309fb38f324}{get\+\_\+preamp} (self)
+\item 
+def \hyperlink{classvlc_1_1_audio_equalizer_aab7e0f4d960155c9ae37a54e56991124}{set\+\_\+amp\+\_\+at\+\_\+index} (self, f\+\_\+amp, u\+\_\+band)
+\item 
+def \hyperlink{classvlc_1_1_audio_equalizer_a6e57bd49d3e905307ae97d8f1398b72f}{get\+\_\+amp\+\_\+at\+\_\+index} (self, u\+\_\+band)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Create a new default equalizer, with all frequency values zeroed.
+
+The new equalizer can subsequently be applied to a media player by invoking
+L{MediaPlayer.set_equalizer}.
+The returned handle should be freed via libvlc_audio_equalizer_release() when
+it is no longer needed.
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classvlc_1_1_audio_equalizer_acc2aa3fac6a63e8bac4f19efc327102b}\label{classvlc_1_1_audio_equalizer_acc2aa3fac6a63e8bac4f19efc327102b}} 
+\index{vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}!\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}!vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+new\+\_\+\+\_\+()}{\_\_new\_\_()}}
+{\footnotesize\ttfamily def \+\_\+\+\_\+new\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{args }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvlc_1_1_audio_equalizer_acc2aa3fac6a63e8bac4f19efc327102b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_audio_equalizer_a6e57bd49d3e905307ae97d8f1398b72f}\label{classvlc_1_1_audio_equalizer_a6e57bd49d3e905307ae97d8f1398b72f}} 
+\index{vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}!get\+\_\+amp\+\_\+at\+\_\+index@{get\+\_\+amp\+\_\+at\+\_\+index}}
+\index{get\+\_\+amp\+\_\+at\+\_\+index@{get\+\_\+amp\+\_\+at\+\_\+index}!vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}}
+\subsubsection{\texorpdfstring{get\+\_\+amp\+\_\+at\+\_\+index()}{get\_amp\_at\_index()}}
+{\footnotesize\ttfamily def get\+\_\+amp\+\_\+at\+\_\+index (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{u\+\_\+band }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the amplification value for a particular equalizer frequency band.
+@param u_band: index, counting from zero, of the frequency band to get.
+@return: amplification value (Hz); NaN if there is no such frequency band.
+@version: LibVLC 2.2.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classvlc_1_1_audio_equalizer_a6e57bd49d3e905307ae97d8f1398b72f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_audio_equalizer_ae95fe34603e8e5b5a646e309fb38f324}\label{classvlc_1_1_audio_equalizer_ae95fe34603e8e5b5a646e309fb38f324}} 
+\index{vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}!get\+\_\+preamp@{get\+\_\+preamp}}
+\index{get\+\_\+preamp@{get\+\_\+preamp}!vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}}
+\subsubsection{\texorpdfstring{get\+\_\+preamp()}{get\_preamp()}}
+{\footnotesize\ttfamily def get\+\_\+preamp (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the current pre-amplification value from an equalizer.
+@return: preamp value (Hz).
+@version: LibVLC 2.2.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classvlc_1_1_audio_equalizer_ae95fe34603e8e5b5a646e309fb38f324_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_audio_equalizer_a4cd51e19135e5ad4a19eae3ea9c60537}\label{classvlc_1_1_audio_equalizer_a4cd51e19135e5ad4a19eae3ea9c60537}} 
+\index{vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}!release@{release}}
+\index{release@{release}!vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}}
+\subsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily def release (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Release a previously created equalizer instance.
+The equalizer was previously created by using L{new}() or
+L{new_from_preset}().
+It is safe to invoke this method with a None p_equalizer parameter for no effect.
+@version: LibVLC 2.2.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classvlc_1_1_audio_equalizer_a4cd51e19135e5ad4a19eae3ea9c60537_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_audio_equalizer_aab7e0f4d960155c9ae37a54e56991124}\label{classvlc_1_1_audio_equalizer_aab7e0f4d960155c9ae37a54e56991124}} 
+\index{vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}!set\+\_\+amp\+\_\+at\+\_\+index@{set\+\_\+amp\+\_\+at\+\_\+index}}
+\index{set\+\_\+amp\+\_\+at\+\_\+index@{set\+\_\+amp\+\_\+at\+\_\+index}!vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}}
+\subsubsection{\texorpdfstring{set\+\_\+amp\+\_\+at\+\_\+index()}{set\_amp\_at\_index()}}
+{\footnotesize\ttfamily def set\+\_\+amp\+\_\+at\+\_\+index (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{f\+\_\+amp,  }\item[{}]{u\+\_\+band }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set a new amplification value for a particular equalizer frequency band.
+The new equalizer settings are subsequently applied to a media player by invoking
+L{media_player_set_equalizer}().
+The supplied amplification value will be clamped to the -20.0 to +20.0 range.
+@param f_amp: amplification value (-20.0 to 20.0 Hz).
+@param u_band: index, counting from zero, of the frequency band to set.
+@return: zero on success, -1 on error.
+@version: LibVLC 2.2.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{classvlc_1_1_audio_equalizer_aab7e0f4d960155c9ae37a54e56991124_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_audio_equalizer_ab88c103714ca495bcaabdc3d8d6b0986}\label{classvlc_1_1_audio_equalizer_ab88c103714ca495bcaabdc3d8d6b0986}} 
+\index{vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}!set\+\_\+preamp@{set\+\_\+preamp}}
+\index{set\+\_\+preamp@{set\+\_\+preamp}!vlc\+::\+Audio\+Equalizer@{vlc\+::\+Audio\+Equalizer}}
+\subsubsection{\texorpdfstring{set\+\_\+preamp()}{set\_preamp()}}
+{\footnotesize\ttfamily def set\+\_\+preamp (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{f\+\_\+preamp }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Set a new pre-amplification value for an equalizer.
+The new equalizer settings are subsequently applied to a media player by invoking
+L{media_player_set_equalizer}().
+The supplied amplification value will be clamped to the -20.0 to +20.0 range.
+@param f_preamp: preamp value (-20.0 to 20.0 Hz).
+@return: zero on success, -1 on error.
+@version: LibVLC 2.2.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{classvlc_1_1_audio_equalizer_ab88c103714ca495bcaabdc3d8d6b0986_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

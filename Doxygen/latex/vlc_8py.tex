@@ -1,0 +1,924 @@
+\hypertarget{vlc_8py}{}\section{/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/vlc.py File Reference}
+\label{vlc_8py}\index{/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/vlc.\+py@{/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/vlc.\+py}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classvlc_1_1_v_l_c_exception}{V\+L\+C\+Exception}
+\item 
+class \hyperlink{classvlc_1_1memoize__parameterless}{memoize\+\_\+parameterless}
+\item 
+class \hyperlink{classvlc_1_1___cstruct}{\+\_\+\+Cstruct}
+\item 
+class \hyperlink{classvlc_1_1___ctype}{\+\_\+\+Ctype}
+\item 
+class \hyperlink{classvlc_1_1_list_p_o_i_n_t_e_r}{List\+P\+O\+I\+N\+T\+ER}
+\item 
+class \hyperlink{classvlc_1_1_log}{Log}
+\item 
+class \hyperlink{classvlc_1_1_f_i_l_e}{F\+I\+LE}
+\item 
+class \hyperlink{classvlc_1_1___enum}{\+\_\+\+Enum}
+\item 
+class \hyperlink{classvlc_1_1_log_level}{Log\+Level}
+\item 
+class \hyperlink{classvlc_1_1_media_discoverer_category}{Media\+Discoverer\+Category}
+\item 
+class \hyperlink{classvlc_1_1_dialog_question_type}{Dialog\+Question\+Type}
+\item 
+class \hyperlink{classvlc_1_1_event_type}{Event\+Type}
+\item 
+class \hyperlink{classvlc_1_1_meta}{Meta}
+\item 
+class \hyperlink{classvlc_1_1_state}{State}
+\item 
+class \hyperlink{classvlc_1_1_track_type}{Track\+Type}
+\item 
+class \hyperlink{classvlc_1_1_video_orient}{Video\+Orient}
+\item 
+class \hyperlink{classvlc_1_1_video_projection}{Video\+Projection}
+\item 
+class \hyperlink{classvlc_1_1_media_type}{Media\+Type}
+\item 
+class \hyperlink{classvlc_1_1_media_parse_flag}{Media\+Parse\+Flag}
+\item 
+class \hyperlink{classvlc_1_1_media_parsed_status}{Media\+Parsed\+Status}
+\item 
+class \hyperlink{classvlc_1_1_media_slave_type}{Media\+Slave\+Type}
+\item 
+class \hyperlink{classvlc_1_1_video_marquee_option}{Video\+Marquee\+Option}
+\item 
+class \hyperlink{classvlc_1_1_navigate_mode}{Navigate\+Mode}
+\item 
+class \hyperlink{classvlc_1_1_position}{Position}
+\item 
+class \hyperlink{classvlc_1_1_teletext_key}{Teletext\+Key}
+\item 
+class \hyperlink{classvlc_1_1_video_logo_option}{Video\+Logo\+Option}
+\item 
+class \hyperlink{classvlc_1_1_video_adjust_option}{Video\+Adjust\+Option}
+\item 
+class \hyperlink{classvlc_1_1_audio_output_device_types}{Audio\+Output\+Device\+Types}
+\item 
+class \hyperlink{classvlc_1_1_audio_output_channel}{Audio\+Output\+Channel}
+\item 
+class \hyperlink{classvlc_1_1_media_player_role}{Media\+Player\+Role}
+\item 
+class \hyperlink{classvlc_1_1_playback_mode}{Playback\+Mode}
+\item 
+class \hyperlink{classvlc_1_1_callback}{Callback}
+\item 
+class \hyperlink{classvlc_1_1_log_cb}{Log\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_media_open_cb}{Media\+Open\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_media_read_cb}{Media\+Read\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_media_seek_cb}{Media\+Seek\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_media_close_cb}{Media\+Close\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_video_lock_cb}{Video\+Lock\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_video_unlock_cb}{Video\+Unlock\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_video_display_cb}{Video\+Display\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_video_format_cb}{Video\+Format\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_video_cleanup_cb}{Video\+Cleanup\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_audio_play_cb}{Audio\+Play\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_audio_pause_cb}{Audio\+Pause\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_audio_resume_cb}{Audio\+Resume\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_audio_flush_cb}{Audio\+Flush\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_audio_drain_cb}{Audio\+Drain\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_audio_set_volume_cb}{Audio\+Set\+Volume\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_audio_setup_cb}{Audio\+Setup\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_audio_cleanup_cb}{Audio\+Cleanup\+Cb}
+\item 
+class \hyperlink{classvlc_1_1_callback_decorators}{Callback\+Decorators}
+\item 
+class \hyperlink{classvlc_1_1_audio_output}{Audio\+Output}
+\item 
+class \hyperlink{classvlc_1_1_log_message}{Log\+Message}
+\item 
+class \hyperlink{classvlc_1_1_media_event}{Media\+Event}
+\item 
+class \hyperlink{classvlc_1_1_media_stats}{Media\+Stats}
+\item 
+class \hyperlink{classvlc_1_1_media_track_info}{Media\+Track\+Info}
+\item 
+class \hyperlink{classvlc_1_1_audio_track}{Audio\+Track}
+\item 
+class \hyperlink{classvlc_1_1_video_track}{Video\+Track}
+\item 
+class \hyperlink{classvlc_1_1_subtitle_track}{Subtitle\+Track}
+\item 
+class \hyperlink{classvlc_1_1_media_track_tracks}{Media\+Track\+Tracks}
+\item 
+class \hyperlink{classvlc_1_1_media_track}{Media\+Track}
+\item 
+class \hyperlink{classvlc_1_1_playlist_item}{Playlist\+Item}
+\item 
+class \hyperlink{classvlc_1_1_position}{Position}
+\item 
+class \hyperlink{classvlc_1_1_rectangle}{Rectangle}
+\item 
+class \hyperlink{classvlc_1_1_track_description}{Track\+Description}
+\item 
+class \hyperlink{classvlc_1_1_event_union}{Event\+Union}
+\item 
+class \hyperlink{classvlc_1_1_event}{Event}
+\item 
+class \hyperlink{classvlc_1_1_module_description}{Module\+Description}
+\item 
+class \hyperlink{classvlc_1_1_audio_output_device}{Audio\+Output\+Device}
+\item 
+class \hyperlink{classvlc_1_1_title_description}{Title\+Description}
+\item 
+class \hyperlink{classvlc_1_1_chapter_description}{Chapter\+Description}
+\item 
+class \hyperlink{classvlc_1_1_video_viewpoint}{Video\+Viewpoint}
+\item 
+class \hyperlink{classvlc_1_1_media_discoverer_description}{Media\+Discoverer\+Description}
+\item 
+class \hyperlink{classvlc_1_1_media_slave}{Media\+Slave}
+\item 
+class \hyperlink{classvlc_1_1_r_d_description}{R\+D\+Description}
+\item 
+class \hyperlink{classvlc_1_1_media_thumbnail_request}{Media\+Thumbnail\+Request}
+\item 
+class \hyperlink{classvlc_1_1_audio_equalizer}{Audio\+Equalizer}
+\item 
+class \hyperlink{classvlc_1_1_event_manager}{Event\+Manager}
+\item 
+class \hyperlink{classvlc_1_1_instance}{Instance}
+\item 
+class \hyperlink{classvlc_1_1_log_iterator}{Log\+Iterator}
+\item 
+class \hyperlink{classvlc_1_1_media}{Media}
+\item 
+class \hyperlink{classvlc_1_1_media_discoverer}{Media\+Discoverer}
+\item 
+class \hyperlink{classvlc_1_1_media_library}{Media\+Library}
+\item 
+class \hyperlink{classvlc_1_1_media_list}{Media\+List}
+\item 
+class \hyperlink{classvlc_1_1_media_list_player}{Media\+List\+Player}
+\item 
+class \hyperlink{classvlc_1_1_media_player}{Media\+Player}
+\item 
+class \hyperlink{classvlc_1_1_renderer}{Renderer}
+\item 
+class \hyperlink{classvlc_1_1_renderer_discoverer}{Renderer\+Discoverer}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacevlc}{vlc}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacevlc_a8cb85ab12eb35180b6cf2897d7847e46}{str\+\_\+to\+\_\+bytes} (s)
+\item 
+def \hyperlink{namespacevlc_acbb0aea5298eb7fbb31bea66b069b1b2}{bytes\+\_\+to\+\_\+str} (b)
+\item 
+def \hyperlink{namespacevlc_abf92ade0b4708a70f460beddb052b761}{find\+\_\+lib} ()
+\item 
+def \hyperlink{namespacevlc_a3e00cfbbf5aa7ede16e3877359d8212e}{get\+\_\+default\+\_\+instance} ()
+\item 
+def \hyperlink{namespacevlc_a6b173f59be4b100a9fef397e47cbdda1}{string\+\_\+result} (result, func, arguments)
+\item 
+def \hyperlink{namespacevlc_abd89c56c1c1f69dc7c4c602ed938d5b4}{class\+\_\+result} (classname)
+\item 
+def \hyperlink{namespacevlc_a7641c1329f78164fb94c4a89738ff38a}{track\+\_\+description\+\_\+list} (head)
+\item 
+def \hyperlink{namespacevlc_a0b7d068d11a5e7daf054d28358952cc3}{module\+\_\+description\+\_\+list} (head)
+\item 
+def \hyperlink{namespacevlc_ae40baed0009415ac5d90fe5fce6a0c7f}{libvlc\+\_\+clearerr} ()
+\item 
+def \hyperlink{namespacevlc_a0282aceb7f75c89abe13b1b3e31cf077}{libvlc\+\_\+vprinterr} (fmt, ap)
+\item 
+def \hyperlink{namespacevlc_a061db38b4ce8fdc316f730963401676c}{libvlc\+\_\+new} (argc, argv)
+\item 
+def \hyperlink{namespacevlc_acb9159355d8b06728e1c00a49ae25309}{libvlc\+\_\+release} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_aeb98ef45d43c6f9348d8450963f08840}{libvlc\+\_\+retain} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_ab8767ae6377ad6875f5034a12a4cd409}{libvlc\+\_\+add\+\_\+intf} (p\+\_\+instance, name)
+\item 
+def \hyperlink{namespacevlc_ac417c29edf981dc1f14649d41624e2b5}{libvlc\+\_\+set\+\_\+user\+\_\+agent} (p\+\_\+instance, name, http)
+\item 
+def \hyperlink{namespacevlc_a4d48c4354ffe3aa12ee4201cca0f0dac}{libvlc\+\_\+set\+\_\+app\+\_\+id} (p\+\_\+instance, id, version, icon)
+\item 
+def \hyperlink{namespacevlc_abf0d92070a21456079ca64ef86649828}{libvlc\+\_\+get\+\_\+version} ()
+\item 
+def \hyperlink{namespacevlc_a10e241078a2da73d9ba308448d3c3192}{libvlc\+\_\+get\+\_\+compiler} ()
+\item 
+def \hyperlink{namespacevlc_abb66509718afd388f3b587c0e28813fa}{libvlc\+\_\+get\+\_\+changeset} ()
+\item 
+def \hyperlink{namespacevlc_a517c22313b52ae70f97af003f7ef7d5a}{libvlc\+\_\+free} (ptr)
+\item 
+def \hyperlink{namespacevlc_a850485fc3bc6fa1c7a93adfd2ac93f2b}{libvlc\+\_\+event\+\_\+attach} (p\+\_\+event\+\_\+manager, i\+\_\+event\+\_\+type, f\+\_\+callback, user\+\_\+data)
+\item 
+def \hyperlink{namespacevlc_a67ba99f7479ae36483024ec3e8746380}{libvlc\+\_\+event\+\_\+detach} (p\+\_\+event\+\_\+manager, i\+\_\+event\+\_\+type, f\+\_\+callback, p\+\_\+user\+\_\+data)
+\item 
+def \hyperlink{namespacevlc_aaec28b9045ae171b47c2212bcd8058fa}{libvlc\+\_\+event\+\_\+type\+\_\+name} (event\+\_\+type)
+\item 
+def \hyperlink{namespacevlc_a9694de9d8c9b9070e0108982c90dd379}{libvlc\+\_\+log\+\_\+get\+\_\+context} (ctx)
+\item 
+def \hyperlink{namespacevlc_ac7af2ab7238d542708ec0da84c3d3a71}{libvlc\+\_\+log\+\_\+get\+\_\+object} (ctx, id)
+\item 
+def \hyperlink{namespacevlc_ab8183b479ddf3d672f4044a9a3805b06}{libvlc\+\_\+log\+\_\+unset} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_aff40c0e783a0949925936432b4beba34}{libvlc\+\_\+log\+\_\+set} (p\+\_\+instance, cb, data)
+\item 
+def \hyperlink{namespacevlc_aa18225aa223a1abfd7245a682fd599a0}{libvlc\+\_\+log\+\_\+set\+\_\+file} (p\+\_\+instance, stream)
+\item 
+def \hyperlink{namespacevlc_a3ae49966acbd43a6b3c1b286cf609912}{libvlc\+\_\+module\+\_\+description\+\_\+list\+\_\+release} (p\+\_\+list)
+\item 
+def \hyperlink{namespacevlc_aff772ccc6681b4466b87298f076e20f5}{libvlc\+\_\+audio\+\_\+filter\+\_\+list\+\_\+get} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a9a36ab0bc4560c42db45708f4c31e1f2}{libvlc\+\_\+video\+\_\+filter\+\_\+list\+\_\+get} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a87be950b9641fe8db6fdbbbf35a472ab}{libvlc\+\_\+clock} ()
+\item 
+def \hyperlink{namespacevlc_aca3af54c1b5d61bc7877d189b8fda18b}{libvlc\+\_\+media\+\_\+discoverer\+\_\+new} (p\+\_\+inst, psz\+\_\+name)
+\item 
+def \hyperlink{namespacevlc_a717cf33da5cb426ea198e5cc7c23fcac}{libvlc\+\_\+media\+\_\+discoverer\+\_\+start} (p\+\_\+mdis)
+\item 
+def \hyperlink{namespacevlc_a90f5d66c443b544188e64f67dc85e95a}{libvlc\+\_\+media\+\_\+discoverer\+\_\+stop} (p\+\_\+mdis)
+\item 
+def \hyperlink{namespacevlc_adddb8a8785beb08b0599ccb43c3ddffd}{libvlc\+\_\+media\+\_\+discoverer\+\_\+release} (p\+\_\+mdis)
+\item 
+def \hyperlink{namespacevlc_a7a67121178840567c764d45a7965d52b}{libvlc\+\_\+media\+\_\+discoverer\+\_\+media\+\_\+list} (p\+\_\+mdis)
+\item 
+def \hyperlink{namespacevlc_a67f645168455fbbbb9199ff602583113}{libvlc\+\_\+media\+\_\+discoverer\+\_\+is\+\_\+running} (p\+\_\+mdis)
+\item 
+def \hyperlink{namespacevlc_ad4eb84abb29b0c9c742ce5444bb21d69}{libvlc\+\_\+media\+\_\+discoverer\+\_\+list\+\_\+get} (p\+\_\+inst, i\+\_\+cat, ppp\+\_\+services)
+\item 
+def \hyperlink{namespacevlc_a0b232d83e1c5d5876f6438665a63532f}{libvlc\+\_\+media\+\_\+discoverer\+\_\+list\+\_\+release} (pp\+\_\+services, i\+\_\+count)
+\item 
+def \hyperlink{namespacevlc_ae2518de4fc487b909f150484dbf7b457}{libvlc\+\_\+dialog\+\_\+set\+\_\+context} (p\+\_\+id, p\+\_\+context)
+\item 
+def \hyperlink{namespacevlc_a5ea0badeed0f8c755ec3c2ba8d575120}{libvlc\+\_\+dialog\+\_\+get\+\_\+context} (p\+\_\+id)
+\item 
+def \hyperlink{namespacevlc_a91274ca62987d6dc96fab02187a0ab11}{libvlc\+\_\+dialog\+\_\+post\+\_\+login} (p\+\_\+id, psz\+\_\+username, psz\+\_\+password, b\+\_\+store)
+\item 
+def \hyperlink{namespacevlc_ae828437593ff045f13c2befbe418d3f4}{libvlc\+\_\+dialog\+\_\+post\+\_\+action} (p\+\_\+id, i\+\_\+action)
+\item 
+def \hyperlink{namespacevlc_a27caf08ba5684529165692463fc5d346}{libvlc\+\_\+dialog\+\_\+dismiss} (p\+\_\+id)
+\item 
+def \hyperlink{namespacevlc_a4f0c42c16464e769b411cbcf38091eeb}{libvlc\+\_\+media\+\_\+library\+\_\+new} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_ab8ba23cb322d7e138eb8873e23796646}{libvlc\+\_\+media\+\_\+library\+\_\+release} (p\+\_\+mlib)
+\item 
+def \hyperlink{namespacevlc_a16294700c444448851d5055267aa57aa}{libvlc\+\_\+media\+\_\+library\+\_\+retain} (p\+\_\+mlib)
+\item 
+def \hyperlink{namespacevlc_aeaee7cdfd32d61475c51834969d42314}{libvlc\+\_\+media\+\_\+library\+\_\+load} (p\+\_\+mlib)
+\item 
+def \hyperlink{namespacevlc_a0df1f618236bf73ed4b0b4d17ca37a7c}{libvlc\+\_\+media\+\_\+library\+\_\+media\+\_\+list} (p\+\_\+mlib)
+\item 
+def \hyperlink{namespacevlc_a4aa32acd52d832cb9637629d14af97fb}{libvlc\+\_\+vlm\+\_\+release} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a7560226e5cabbe0664a8e51c772e07cf}{libvlc\+\_\+vlm\+\_\+add\+\_\+broadcast} (p\+\_\+instance, psz\+\_\+name, psz\+\_\+input, psz\+\_\+output, i\+\_\+options, ppsz\+\_\+options, b\+\_\+enabled, b\+\_\+loop)
+\item 
+def \hyperlink{namespacevlc_a2ce4add01e56693cb8ca2fdefa8233bb}{libvlc\+\_\+vlm\+\_\+add\+\_\+vod} (p\+\_\+instance, psz\+\_\+name, psz\+\_\+input, i\+\_\+options, ppsz\+\_\+options, b\+\_\+enabled, psz\+\_\+mux)
+\item 
+def \hyperlink{namespacevlc_a7142455eda42a304940d0c22450ede79}{libvlc\+\_\+vlm\+\_\+del\+\_\+media} (p\+\_\+instance, psz\+\_\+name)
+\item 
+def \hyperlink{namespacevlc_affb9bce216fa7e0b538a0d907e657c2c}{libvlc\+\_\+vlm\+\_\+set\+\_\+enabled} (p\+\_\+instance, psz\+\_\+name, b\+\_\+enabled)
+\item 
+def \hyperlink{namespacevlc_a2e543e6f50ea55fcf49d57eeb79dc5cc}{libvlc\+\_\+vlm\+\_\+set\+\_\+output} (p\+\_\+instance, psz\+\_\+name, psz\+\_\+output)
+\item 
+def \hyperlink{namespacevlc_a21fb77c5d5ad58c7f98cebf8ee173ad9}{libvlc\+\_\+vlm\+\_\+set\+\_\+input} (p\+\_\+instance, psz\+\_\+name, psz\+\_\+input)
+\item 
+def \hyperlink{namespacevlc_a59da7a569de70dd7f4b85f35706b0aa1}{libvlc\+\_\+vlm\+\_\+add\+\_\+input} (p\+\_\+instance, psz\+\_\+name, psz\+\_\+input)
+\item 
+def \hyperlink{namespacevlc_a7084066e89dbf3c908a9674d892875a1}{libvlc\+\_\+vlm\+\_\+set\+\_\+loop} (p\+\_\+instance, psz\+\_\+name, b\+\_\+loop)
+\item 
+def \hyperlink{namespacevlc_a34e533d7d8d01fefe3242f7de5773237}{libvlc\+\_\+vlm\+\_\+set\+\_\+mux} (p\+\_\+instance, psz\+\_\+name, psz\+\_\+mux)
+\item 
+def \hyperlink{namespacevlc_ad4124336e48ffb5c6aef3bd166c3ff77}{libvlc\+\_\+vlm\+\_\+change\+\_\+media} (p\+\_\+instance, psz\+\_\+name, psz\+\_\+input, psz\+\_\+output, i\+\_\+options, ppsz\+\_\+options, b\+\_\+enabled, b\+\_\+loop)
+\item 
+def \hyperlink{namespacevlc_ab243eae217981fa16592409c1d5b9caa}{libvlc\+\_\+vlm\+\_\+play\+\_\+media} (p\+\_\+instance, psz\+\_\+name)
+\item 
+def \hyperlink{namespacevlc_a9ad79a1cc59f030bc4dbbfaa8ca7924e}{libvlc\+\_\+vlm\+\_\+stop\+\_\+media} (p\+\_\+instance, psz\+\_\+name)
+\item 
+def \hyperlink{namespacevlc_aaad0efdc3c62f78fc9653c58d562e323}{libvlc\+\_\+vlm\+\_\+pause\+\_\+media} (p\+\_\+instance, psz\+\_\+name)
+\item 
+def \hyperlink{namespacevlc_a0cdf20f1c8371b2f626c6bee76089a91}{libvlc\+\_\+vlm\+\_\+seek\+\_\+media} (p\+\_\+instance, psz\+\_\+name, f\+\_\+percentage)
+\item 
+def \hyperlink{namespacevlc_a23b89ca7dee175880ded4a71f076bc8a}{libvlc\+\_\+vlm\+\_\+show\+\_\+media} (p\+\_\+instance, psz\+\_\+name)
+\item 
+def \hyperlink{namespacevlc_ad88fbcae963bb382bafa5f582c073ed9}{libvlc\+\_\+vlm\+\_\+get\+\_\+media\+\_\+instance\+\_\+position} (p\+\_\+instance, psz\+\_\+name, i\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a7cc16a54030b527e482741447ba35aef}{libvlc\+\_\+vlm\+\_\+get\+\_\+media\+\_\+instance\+\_\+time} (p\+\_\+instance, psz\+\_\+name, i\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_ae253451e4dd490269fe9131dbf1abebd}{libvlc\+\_\+vlm\+\_\+get\+\_\+media\+\_\+instance\+\_\+length} (p\+\_\+instance, psz\+\_\+name, i\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a27709abc252d4ddc97dc2ea272a85acf}{libvlc\+\_\+vlm\+\_\+get\+\_\+media\+\_\+instance\+\_\+rate} (p\+\_\+instance, psz\+\_\+name, i\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_aa50fef0c1e8a8a03f23275fca6642a1e}{libvlc\+\_\+vlm\+\_\+get\+\_\+media\+\_\+instance\+\_\+title} (p\+\_\+instance, psz\+\_\+name, i\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a6f3929a65f89f072354d79c5000a8651}{libvlc\+\_\+vlm\+\_\+get\+\_\+media\+\_\+instance\+\_\+chapter} (p\+\_\+instance, psz\+\_\+name, i\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_aeb4b8ac59f98ba964d1963665404ee8d}{libvlc\+\_\+vlm\+\_\+get\+\_\+media\+\_\+instance\+\_\+seekable} (p\+\_\+instance, psz\+\_\+name, i\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_aeeafd7297de31ccc1034c0e37175715f}{libvlc\+\_\+vlm\+\_\+get\+\_\+event\+\_\+manager} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a19cace5a9aa822730b23b7b38f46de31}{libvlc\+\_\+media\+\_\+new\+\_\+location} (p\+\_\+instance, psz\+\_\+mrl)
+\item 
+def \hyperlink{namespacevlc_af8a94ee24b767ca229760d6630f20475}{libvlc\+\_\+media\+\_\+new\+\_\+path} (p\+\_\+instance, path)
+\item 
+def \hyperlink{namespacevlc_ab47a8f7f91485525472a13de0e66b7ff}{libvlc\+\_\+media\+\_\+new\+\_\+fd} (p\+\_\+instance, fd)
+\item 
+def \hyperlink{namespacevlc_a06f233cba42468c4eb2128bef3bd44c9}{libvlc\+\_\+media\+\_\+new\+\_\+callbacks} (instance, open\+\_\+cb, read\+\_\+cb, seek\+\_\+cb, close\+\_\+cb, opaque)
+\item 
+def \hyperlink{namespacevlc_ac0fdd830232f9a278f6631b2cf3f32d9}{libvlc\+\_\+media\+\_\+new\+\_\+as\+\_\+node} (p\+\_\+instance, psz\+\_\+name)
+\item 
+def \hyperlink{namespacevlc_adbf254196790831139b165b8f20bab19}{libvlc\+\_\+media\+\_\+add\+\_\+option} (p\+\_\+md, psz\+\_\+options)
+\item 
+def \hyperlink{namespacevlc_a7dc1f3fd16f555dec3a3bf5466c86d5f}{libvlc\+\_\+media\+\_\+add\+\_\+option\+\_\+flag} (p\+\_\+md, psz\+\_\+options, i\+\_\+flags)
+\item 
+def \hyperlink{namespacevlc_a2b167bfab4fb7404a19959b120c74587}{libvlc\+\_\+media\+\_\+retain} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_ae668655a5e78df06ce22579586bb62bc}{libvlc\+\_\+media\+\_\+release} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_aafa8b7a81c78b84c54b79a80aa1fc63f}{libvlc\+\_\+media\+\_\+get\+\_\+mrl} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a20f923172a3ea8b7f3c254e234336d7b}{libvlc\+\_\+media\+\_\+duplicate} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a6c1e8a08c9abed8c2f421cd6a2036990}{libvlc\+\_\+media\+\_\+get\+\_\+meta} (p\+\_\+md, e\+\_\+meta)
+\item 
+def \hyperlink{namespacevlc_aaef688f523878755ccf5425b1c5ea3a1}{libvlc\+\_\+media\+\_\+set\+\_\+meta} (p\+\_\+md, e\+\_\+meta, psz\+\_\+value)
+\item 
+def \hyperlink{namespacevlc_ad95c7299c647fa68384b974e4561f9b4}{libvlc\+\_\+media\+\_\+save\+\_\+meta} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a08910af5cb2ffede600654c5a567ab85}{libvlc\+\_\+media\+\_\+get\+\_\+state} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a8bf54d145e8e2f4b0de4a3981be8fe66}{libvlc\+\_\+media\+\_\+get\+\_\+stats} (p\+\_\+md, p\+\_\+stats)
+\item 
+def \hyperlink{namespacevlc_a344d49b0fc84dc1cfa63ab5d03872d5f}{libvlc\+\_\+media\+\_\+subitems} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a2b3476422efeca7d595d8371533eaa58}{libvlc\+\_\+media\+\_\+event\+\_\+manager} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a44fa6ccd1bf97cbb7229bbc23903752d}{libvlc\+\_\+media\+\_\+get\+\_\+duration} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_ac6734416f4493c5b44911e1ad49d0444}{libvlc\+\_\+media\+\_\+parse\+\_\+with\+\_\+options} (p\+\_\+md, parse\+\_\+flag, timeout)
+\item 
+def \hyperlink{namespacevlc_ad065972236e02109d2814383f5dfaaf8}{libvlc\+\_\+media\+\_\+parse\+\_\+stop} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a54f57e0bca8341f88e32cc2eb5b2b419}{libvlc\+\_\+media\+\_\+get\+\_\+parsed\+\_\+status} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_affc60076c09dcc9f852525c10e09c095}{libvlc\+\_\+media\+\_\+set\+\_\+user\+\_\+data} (p\+\_\+md, p\+\_\+new\+\_\+user\+\_\+data)
+\item 
+def \hyperlink{namespacevlc_ad55abeb96ec792844832bd7fd31ac0ed}{libvlc\+\_\+media\+\_\+get\+\_\+user\+\_\+data} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a0698f7a1ab5f3f3c2d408c42530720dc}{libvlc\+\_\+media\+\_\+tracks\+\_\+get} (p\+\_\+md, tracks)
+\item 
+def \hyperlink{namespacevlc_a9f7b1ab0dd2f4efbdd9f1d9fd8cf5fc9}{libvlc\+\_\+media\+\_\+get\+\_\+codec\+\_\+description} (i\+\_\+type, i\+\_\+codec)
+\item 
+def \hyperlink{namespacevlc_a4fbc816f9ca8c1b1033c24404d555e23}{libvlc\+\_\+media\+\_\+tracks\+\_\+release} (p\+\_\+tracks, i\+\_\+count)
+\item 
+def \hyperlink{namespacevlc_a0c521348122d78764b8a4e7cae989a7f}{libvlc\+\_\+media\+\_\+get\+\_\+type} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a1982967514b4a8cb9ac19f3edbdc4702}{libvlc\+\_\+media\+\_\+slaves\+\_\+add} (p\+\_\+md, i\+\_\+type, i\+\_\+priority, psz\+\_\+uri)
+\item 
+def \hyperlink{namespacevlc_ad3b2622646a9b47d26c66d7ba9ba8759}{libvlc\+\_\+media\+\_\+slaves\+\_\+clear} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a8e0842606e258c50d03baa1ecae992b3}{libvlc\+\_\+media\+\_\+slaves\+\_\+get} (p\+\_\+md, ppp\+\_\+slaves)
+\item 
+def \hyperlink{namespacevlc_a0f88998fe6f9a81c6d9d4476acfd9b36}{libvlc\+\_\+media\+\_\+slaves\+\_\+release} (pp\+\_\+slaves, i\+\_\+count)
+\item 
+def \hyperlink{namespacevlc_a18b5ce5a1f7fedb1834c9f80d444b08e}{libvlc\+\_\+renderer\+\_\+item\+\_\+hold} (p\+\_\+item)
+\item 
+def \hyperlink{namespacevlc_a5086523148dd38cc9d179a9cbf9e47b1}{libvlc\+\_\+renderer\+\_\+item\+\_\+release} (p\+\_\+item)
+\item 
+def \hyperlink{namespacevlc_af07b197185f16792044c2e60d04dc412}{libvlc\+\_\+renderer\+\_\+item\+\_\+name} (p\+\_\+item)
+\item 
+def \hyperlink{namespacevlc_ab762670fe5ec4fce2445ec301981eb59}{libvlc\+\_\+renderer\+\_\+item\+\_\+type} (p\+\_\+item)
+\item 
+def \hyperlink{namespacevlc_a52e4801a24e87686f2503e8314b0faf9}{libvlc\+\_\+renderer\+\_\+item\+\_\+icon\+\_\+uri} (p\+\_\+item)
+\item 
+def \hyperlink{namespacevlc_ad174676e7111c33c43ffdee9650725fd}{libvlc\+\_\+renderer\+\_\+item\+\_\+flags} (p\+\_\+item)
+\item 
+def \hyperlink{namespacevlc_a3f696d66405b9f0cf8d2c6932f763cfa}{libvlc\+\_\+renderer\+\_\+discoverer\+\_\+new} (p\+\_\+inst, psz\+\_\+name)
+\item 
+def \hyperlink{namespacevlc_a81262d81bc9835dc7bdaea45c9d20b06}{libvlc\+\_\+renderer\+\_\+discoverer\+\_\+release} (p\+\_\+rd)
+\item 
+def \hyperlink{namespacevlc_a0386aa768d1743a6462da7bd8266c7b6}{libvlc\+\_\+renderer\+\_\+discoverer\+\_\+start} (p\+\_\+rd)
+\item 
+def \hyperlink{namespacevlc_a2fab3a4810e94af669b4ac595dd32632}{libvlc\+\_\+renderer\+\_\+discoverer\+\_\+stop} (p\+\_\+rd)
+\item 
+def \hyperlink{namespacevlc_a1ea941d7c32dbab6a943838c3d2dda32}{libvlc\+\_\+renderer\+\_\+discoverer\+\_\+event\+\_\+manager} (p\+\_\+rd)
+\item 
+def \hyperlink{namespacevlc_af59f382bb827e83d0dfa826e209d12ef}{libvlc\+\_\+renderer\+\_\+discoverer\+\_\+list\+\_\+get} (p\+\_\+inst, ppp\+\_\+services)
+\item 
+def \hyperlink{namespacevlc_af443e940d4a3485bd04c20d1895b57f7}{libvlc\+\_\+renderer\+\_\+discoverer\+\_\+list\+\_\+release} (pp\+\_\+services, i\+\_\+count)
+\item 
+def \hyperlink{namespacevlc_ade7073aea18b2eb92b103ed962f73d95}{libvlc\+\_\+media\+\_\+list\+\_\+new} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a45316f80cd7384457137cf0154c99dd7}{libvlc\+\_\+media\+\_\+list\+\_\+release} (p\+\_\+ml)
+\item 
+def \hyperlink{namespacevlc_a2261e153f34f4ba9fca2040530402c06}{libvlc\+\_\+media\+\_\+list\+\_\+retain} (p\+\_\+ml)
+\item 
+def \hyperlink{namespacevlc_a0d46d9803abd7e8b6dfca391921dcff0}{libvlc\+\_\+media\+\_\+list\+\_\+set\+\_\+media} (p\+\_\+ml, p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a9057b31381e40f017185409aaf8c8ab7}{libvlc\+\_\+media\+\_\+list\+\_\+media} (p\+\_\+ml)
+\item 
+def \hyperlink{namespacevlc_a98a21d94dfa80441792c173767f7df39}{libvlc\+\_\+media\+\_\+list\+\_\+add\+\_\+media} (p\+\_\+ml, p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_ad202a19648373b42178fdb688b342e63}{libvlc\+\_\+media\+\_\+list\+\_\+insert\+\_\+media} (p\+\_\+ml, p\+\_\+md, i\+\_\+pos)
+\item 
+def \hyperlink{namespacevlc_a22579a827e1b9e58c69bac7de72b1ab7}{libvlc\+\_\+media\+\_\+list\+\_\+remove\+\_\+index} (p\+\_\+ml, i\+\_\+pos)
+\item 
+def \hyperlink{namespacevlc_ac1e38d46f64d31d883c7404de7d2fa19}{libvlc\+\_\+media\+\_\+list\+\_\+count} (p\+\_\+ml)
+\item 
+def \hyperlink{namespacevlc_a80caa9f399a4da1b6c5fd68173fc867b}{libvlc\+\_\+media\+\_\+list\+\_\+item\+\_\+at\+\_\+index} (p\+\_\+ml, i\+\_\+pos)
+\item 
+def \hyperlink{namespacevlc_a69f02560a16855c9e173826e68abeecb}{libvlc\+\_\+media\+\_\+list\+\_\+index\+\_\+of\+\_\+item} (p\+\_\+ml, p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a3ce52be946efb72c7364aaf27e35d43d}{libvlc\+\_\+media\+\_\+list\+\_\+is\+\_\+readonly} (p\+\_\+ml)
+\item 
+def \hyperlink{namespacevlc_aec544fc1d8f2faa7ec426291fe7cd3da}{libvlc\+\_\+media\+\_\+list\+\_\+lock} (p\+\_\+ml)
+\item 
+def \hyperlink{namespacevlc_a6bfee9141e7623012496f9586c55aac6}{libvlc\+\_\+media\+\_\+list\+\_\+unlock} (p\+\_\+ml)
+\item 
+def \hyperlink{namespacevlc_a624be8eb190ea1c0d3f6b275efaa736c}{libvlc\+\_\+media\+\_\+list\+\_\+event\+\_\+manager} (p\+\_\+ml)
+\item 
+def \hyperlink{namespacevlc_a29146dbf43a47a18afeb6834dcc3c51b}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+fps} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a71a776d5201caa9efb0f154678044ce7}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+agl} (p\+\_\+mi, drawable)
+\item 
+def \hyperlink{namespacevlc_a801a636edb9f5b1a8b3095f7feb10aa6}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+agl} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a7f44252e965f874e76b3c2f7a831d88d}{libvlc\+\_\+track\+\_\+description\+\_\+release} (p\+\_\+track\+\_\+description)
+\item 
+def \hyperlink{namespacevlc_a7c264d39e3dc764d025e7e8ae19017e9}{libvlc\+\_\+video\+\_\+get\+\_\+height} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a8f9436337022e7452520f9d626fe2be4}{libvlc\+\_\+video\+\_\+get\+\_\+width} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_aff9b7b91e260510010e50e5fdf038bc1}{libvlc\+\_\+video\+\_\+get\+\_\+title\+\_\+description} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a5104946a600f435d5bc0493607457ea5}{libvlc\+\_\+video\+\_\+get\+\_\+chapter\+\_\+description} (p\+\_\+mi, i\+\_\+title)
+\item 
+def \hyperlink{namespacevlc_a51adbf5641c80acf9c96eb0a6395157b}{libvlc\+\_\+video\+\_\+set\+\_\+subtitle\+\_\+file} (p\+\_\+mi, psz\+\_\+subtitle)
+\item 
+def \hyperlink{namespacevlc_a02d8dbdfe4e01b1399fb964450fa557e}{libvlc\+\_\+toggle\+\_\+teletext} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_ab26cd1fc475f71b8faa4e86f9c95ce21}{libvlc\+\_\+audio\+\_\+output\+\_\+device\+\_\+count} (p\+\_\+instance, psz\+\_\+audio\+\_\+output)
+\item 
+def \hyperlink{namespacevlc_a88c35604ea93344aaec29a2967e5ffa8}{libvlc\+\_\+audio\+\_\+output\+\_\+device\+\_\+longname} (p\+\_\+instance, psz\+\_\+output, i\+\_\+device)
+\item 
+def \hyperlink{namespacevlc_a058a41cbf5946ba44fdb114876c47d81}{libvlc\+\_\+audio\+\_\+output\+\_\+device\+\_\+id} (p\+\_\+instance, psz\+\_\+audio\+\_\+output, i\+\_\+device)
+\item 
+def \hyperlink{namespacevlc_ab3d4fc6015921771f0ec5292b51ec157}{libvlc\+\_\+media\+\_\+parse} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a37423ae6fdd1861b4823c167ec4662d1}{libvlc\+\_\+media\+\_\+parse\+\_\+async} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_af75d6b6731001b99235738f78e0cf67f}{libvlc\+\_\+media\+\_\+is\+\_\+parsed} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_ac5660b2bf617ac8dfd1ea85a31a42b66}{libvlc\+\_\+media\+\_\+get\+\_\+tracks\+\_\+info} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a767b87c1a19544f94b98794de5728cde}{libvlc\+\_\+media\+\_\+discoverer\+\_\+new\+\_\+from\+\_\+name} (p\+\_\+inst, psz\+\_\+name)
+\item 
+def \hyperlink{namespacevlc_a3b2a41bfb1a505c80af56dad8ce507ac}{libvlc\+\_\+media\+\_\+discoverer\+\_\+localized\+\_\+name} (p\+\_\+mdis)
+\item 
+def \hyperlink{namespacevlc_ae17b8e9a27594920a38298179a0198e6}{libvlc\+\_\+media\+\_\+discoverer\+\_\+event\+\_\+manager} (p\+\_\+mdis)
+\item 
+def \hyperlink{namespacevlc_a613ca585b96e960eb518af03fec03484}{libvlc\+\_\+wait} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a137f63c88981266f69851dd13a25658e}{libvlc\+\_\+get\+\_\+log\+\_\+verbosity} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_aca5f2f88af6fc65ce68b4a68a0e1cf5a}{libvlc\+\_\+set\+\_\+log\+\_\+verbosity} (p\+\_\+instance, level)
+\item 
+def \hyperlink{namespacevlc_a03e79554e536d7e5cb215042e619966e}{libvlc\+\_\+log\+\_\+open} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a403030949bc4a5343c6a01b162395981}{libvlc\+\_\+log\+\_\+close} (p\+\_\+log)
+\item 
+def \hyperlink{namespacevlc_a9743e8e0f94d5dc4855f541f9d736d7c}{libvlc\+\_\+log\+\_\+count} (p\+\_\+log)
+\item 
+def \hyperlink{namespacevlc_a1cc8217001030138b1f0ada005ce72d9}{libvlc\+\_\+log\+\_\+clear} (p\+\_\+log)
+\item 
+def \hyperlink{namespacevlc_acc5cfe5868875686d30894d6a631b517}{libvlc\+\_\+log\+\_\+get\+\_\+iterator} (p\+\_\+log)
+\item 
+def \hyperlink{namespacevlc_a37c59e68be0d4bce98e1f75b4468493b}{libvlc\+\_\+log\+\_\+iterator\+\_\+free} (p\+\_\+iter)
+\item 
+def \hyperlink{namespacevlc_a7637cd4511fa87f32eeff4bbfa44907b}{libvlc\+\_\+log\+\_\+iterator\+\_\+has\+\_\+next} (p\+\_\+iter)
+\item 
+def \hyperlink{namespacevlc_ae704638f284c91d4cb97d6731606dbef}{libvlc\+\_\+log\+\_\+iterator\+\_\+next} (p\+\_\+iter, p\+\_\+buf)
+\item 
+def \hyperlink{namespacevlc_ac8504e0fea6e5eb569fd5b008db60263}{libvlc\+\_\+playlist\+\_\+play} (p\+\_\+instance, i\+\_\+id, i\+\_\+options, ppsz\+\_\+options)
+\item 
+def \hyperlink{namespacevlc_afb765953dae813dbf71b86a8aec719fe}{libvlc\+\_\+media\+\_\+player\+\_\+new} (p\+\_\+libvlc\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a552e823b93376bc5531aaea72b1526c5}{libvlc\+\_\+media\+\_\+player\+\_\+new\+\_\+from\+\_\+media} (p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_a81e3d692fb602bd1b936420d32fd5cff}{libvlc\+\_\+media\+\_\+player\+\_\+release} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_aa0ba6b8fa96181ca59a4b12aa2b2ccde}{libvlc\+\_\+media\+\_\+player\+\_\+retain} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_ad66d2344f5584cd004b224120ade9077}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+media} (p\+\_\+mi, p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_afeedcdc930247eca6504d41de3af7275}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+media} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a342f922c85a8846fd115bc0dfb1db186}{libvlc\+\_\+media\+\_\+player\+\_\+event\+\_\+manager} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_ab4fefef2802730d42090b8fdcaf8dc8a}{libvlc\+\_\+media\+\_\+player\+\_\+is\+\_\+playing} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a17af4b7be817987cbc47625092cb49f3}{libvlc\+\_\+media\+\_\+player\+\_\+play} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a4e7da817fafe9c1c27e7b6724bb744b8}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+pause} (mp, do\+\_\+pause)
+\item 
+def \hyperlink{namespacevlc_a14e54bf8f28013d3b04df6b07a717fba}{libvlc\+\_\+media\+\_\+player\+\_\+pause} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a66bcd32fe71f703084d52d175874f6e1}{libvlc\+\_\+media\+\_\+player\+\_\+stop} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_af049b733fbfa570005d2cb436dc7edf1}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+renderer} (p\+\_\+mi, p\+\_\+item)
+\item 
+def \hyperlink{namespacevlc_abbf3342ec38822cac666ab799e12c0e0}{libvlc\+\_\+video\+\_\+set\+\_\+callbacks} (mp, lock, unlock, display, opaque)
+\item 
+def \hyperlink{namespacevlc_acb41fcc3e8fb44271b3af9cfa0899473}{libvlc\+\_\+video\+\_\+set\+\_\+format} (mp, chroma, width, height, pitch)
+\item 
+def \hyperlink{namespacevlc_a285e546903b5f0a9e27beb4d2763dab3}{libvlc\+\_\+video\+\_\+set\+\_\+format\+\_\+callbacks} (mp, setup, cleanup)
+\item 
+def \hyperlink{namespacevlc_aaf2252c49a6e14c5fbcab04065b8b6f5}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+nsobject} (p\+\_\+mi, drawable)
+\item 
+def \hyperlink{namespacevlc_ac916d9f7b58a94ee7e081b110bb983fc}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+nsobject} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a9f137196660c7428467e8275ebebe8b6}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+xwindow} (p\+\_\+mi, drawable)
+\item 
+def \hyperlink{namespacevlc_a9d0e29b3ab21c037abe445f60d224ae9}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+xwindow} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a7b6f415070dbcd8fc7e50311853bbb26}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+hwnd} (p\+\_\+mi, drawable)
+\item 
+def \hyperlink{namespacevlc_a30619d7bd21f38cf0e01306c37635269}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+hwnd} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_ae9303e0d1bd96d748e62523a28d6c391}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+android\+\_\+context} (p\+\_\+mi, p\+\_\+awindow\+\_\+handler)
+\item 
+def \hyperlink{namespacevlc_a1ba42eb92d2829216be25aa31ec8982d}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+evas\+\_\+object} (p\+\_\+mi, p\+\_\+evas\+\_\+object)
+\item 
+def \hyperlink{namespacevlc_a8edc679f928c8870c5412270fea57b6c}{libvlc\+\_\+audio\+\_\+set\+\_\+callbacks} (mp, play, pause, resume, flush, drain, opaque)
+\item 
+def \hyperlink{namespacevlc_a304ceaa4a56a980bf12623e54edd3444}{libvlc\+\_\+audio\+\_\+set\+\_\+volume\+\_\+callback} (mp, set\+\_\+volume)
+\item 
+def \hyperlink{namespacevlc_a0191b731e6860891d7788976a24c73b9}{libvlc\+\_\+audio\+\_\+set\+\_\+format\+\_\+callbacks} (mp, setup, cleanup)
+\item 
+def \hyperlink{namespacevlc_ab91a179094998e8bf3c5be9ab109e206}{libvlc\+\_\+audio\+\_\+set\+\_\+format} (mp, format, rate, channels)
+\item 
+def \hyperlink{namespacevlc_a203cb0f1728c244d74defe39fabf686d}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+length} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a63c5311e72fe1f8cb66ba3cf689bcdea}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+time} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a5c3c0d97463b2f97e3d68d1a2a8934dd}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+time} (p\+\_\+mi, i\+\_\+time)
+\item 
+def \hyperlink{namespacevlc_a1f0992a5cb5ad9dd56c91efbaa4c3804}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+position} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a2e1683c42a5d9814960546bf84bf2a6a}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+position} (p\+\_\+mi, f\+\_\+pos)
+\item 
+def \hyperlink{namespacevlc_a4ab44fdaf74a35fb2faa8fa6eb11a367}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+chapter} (p\+\_\+mi, i\+\_\+chapter)
+\item 
+def \hyperlink{namespacevlc_aa17d018cd364f0d9248f7dacf0ce6686}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+chapter} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_aff9bc2c045b943e08689f0880af3c9ff}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+chapter\+\_\+count} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_af96b4d82a14cecf87ad162cd688dd86e}{libvlc\+\_\+media\+\_\+player\+\_\+will\+\_\+play} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a9c238cb76d091ddb073f43ec17c559df}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+chapter\+\_\+count\+\_\+for\+\_\+title} (p\+\_\+mi, i\+\_\+title)
+\item 
+def \hyperlink{namespacevlc_a046141b3f0caa945606a55fd49c07a7f}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+title} (p\+\_\+mi, i\+\_\+title)
+\item 
+def \hyperlink{namespacevlc_af14b0c9e3e60e215a97f32ee65a5bb2d}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+title} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a928f5b0cc17b98170b0a0bf9b045a504}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+title\+\_\+count} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_abec40b98a43df9c42c55c24dbfb08b67}{libvlc\+\_\+media\+\_\+player\+\_\+previous\+\_\+chapter} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a3aeeb47d986476bf88849c78532bf066}{libvlc\+\_\+media\+\_\+player\+\_\+next\+\_\+chapter} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a3630bafb220ea8c988c4d7c7e4a9f0a6}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+rate} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a2b9fb9b6a7652775b6ae4b4cb0782854}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+rate} (p\+\_\+mi, rate)
+\item 
+def \hyperlink{namespacevlc_a60436fe75d714191a7df72db2c83e8b9}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+state} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_aa73c70b2cb89d51766a528e4ba329f06}{libvlc\+\_\+media\+\_\+player\+\_\+has\+\_\+vout} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a0dfac2d253dd73294fbc61a21a0dab61}{libvlc\+\_\+media\+\_\+player\+\_\+is\+\_\+seekable} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a175c3b4575fc50df873cc8efaa052522}{libvlc\+\_\+media\+\_\+player\+\_\+can\+\_\+pause} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a17e9b0dc6a8244a4c018d79adb86095a}{libvlc\+\_\+media\+\_\+player\+\_\+program\+\_\+scrambled} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a421aba27bf34a6bc342d3d0a019efb64}{libvlc\+\_\+media\+\_\+player\+\_\+next\+\_\+frame} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a1fea7d3530a5c500357969307e5bea7e}{libvlc\+\_\+media\+\_\+player\+\_\+navigate} (p\+\_\+mi, navigate)
+\item 
+def \hyperlink{namespacevlc_a9dd5dd28c47ef1630ebf1c9da682eed2}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+video\+\_\+title\+\_\+display} (p\+\_\+mi, position, timeout)
+\item 
+def \hyperlink{namespacevlc_a1b31a681e5dab5d45ec9c0ed1badd839}{libvlc\+\_\+media\+\_\+player\+\_\+add\+\_\+slave} (p\+\_\+mi, i\+\_\+type, psz\+\_\+uri, b\+\_\+select)
+\item 
+def \hyperlink{namespacevlc_a15a83a58b01dc7546ad799fffe743a93}{libvlc\+\_\+track\+\_\+description\+\_\+list\+\_\+release} (p\+\_\+track\+\_\+description)
+\item 
+def \hyperlink{namespacevlc_a370780527977cf3a710b9c542f88b0aa}{libvlc\+\_\+toggle\+\_\+fullscreen} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a22a30fc3b5a348e7363b5ad4dba42564}{libvlc\+\_\+set\+\_\+fullscreen} (p\+\_\+mi, b\+\_\+fullscreen)
+\item 
+def \hyperlink{namespacevlc_a9533bb014114561474c90a91497dc7d6}{libvlc\+\_\+get\+\_\+fullscreen} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a76625220c6c679321e8b22df8a1070d1}{libvlc\+\_\+video\+\_\+set\+\_\+key\+\_\+input} (p\+\_\+mi, on)
+\item 
+def \hyperlink{namespacevlc_a441b6e87f5bb7c378d9c47250ab21607}{libvlc\+\_\+video\+\_\+set\+\_\+mouse\+\_\+input} (p\+\_\+mi, on)
+\item 
+def \hyperlink{namespacevlc_a58dd475be13d1393cc878b2dd94df81a}{libvlc\+\_\+video\+\_\+get\+\_\+size} (p\+\_\+mi, num)
+\item 
+def \hyperlink{namespacevlc_a228937b07392d999417491489e90f7f0}{libvlc\+\_\+video\+\_\+get\+\_\+cursor} (p\+\_\+mi, num)
+\item 
+def \hyperlink{namespacevlc_a28d5c283978b730a725f3a892f93ba7f}{libvlc\+\_\+video\+\_\+get\+\_\+scale} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_afd16d3990030b2fa33195d13e9c0bb27}{libvlc\+\_\+video\+\_\+set\+\_\+scale} (p\+\_\+mi, f\+\_\+factor)
+\item 
+def \hyperlink{namespacevlc_ae8a30662bf8336cac0e165ab5eac932a}{libvlc\+\_\+video\+\_\+get\+\_\+aspect\+\_\+ratio} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a34236e9eeb606f47fe5fc1f183ff28f8}{libvlc\+\_\+video\+\_\+set\+\_\+aspect\+\_\+ratio} (p\+\_\+mi, psz\+\_\+aspect)
+\item 
+def \hyperlink{namespacevlc_ae66cd567ec307d388c3faa3a303ff70e}{libvlc\+\_\+video\+\_\+new\+\_\+viewpoint} ()
+\item 
+def \hyperlink{namespacevlc_a3950e442a1f8e253586957f4e0c7dcd0}{libvlc\+\_\+video\+\_\+update\+\_\+viewpoint} (p\+\_\+mi, p\+\_\+viewpoint, b\+\_\+absolute)
+\item 
+def \hyperlink{namespacevlc_ae6db3de1105a1c4365693745b2517c7d}{libvlc\+\_\+video\+\_\+get\+\_\+spu} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_aa022f0d518cb2fbf8f6601ee2489570a}{libvlc\+\_\+video\+\_\+get\+\_\+spu\+\_\+count} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a4dee99f1b8023bb53f698403c94b2573}{libvlc\+\_\+video\+\_\+get\+\_\+spu\+\_\+description} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a429c12d1cb5157663d43472108bd1eeb}{libvlc\+\_\+video\+\_\+set\+\_\+spu} (p\+\_\+mi, i\+\_\+spu)
+\item 
+def \hyperlink{namespacevlc_a1ea9c1d1ba99cac0cd71cb670c54d6f2}{libvlc\+\_\+video\+\_\+get\+\_\+spu\+\_\+delay} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_aef6c3b516812532dbf6a1b52e3e0a9db}{libvlc\+\_\+video\+\_\+set\+\_\+spu\+\_\+delay} (p\+\_\+mi, i\+\_\+delay)
+\item 
+def \hyperlink{namespacevlc_a61a2bcf2cf564f255a1087a54d5df1b6}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+full\+\_\+title\+\_\+descriptions} (p\+\_\+mi, titles)
+\item 
+def \hyperlink{namespacevlc_a39ff76a9d36a5266dfcb66c078455da8}{libvlc\+\_\+title\+\_\+descriptions\+\_\+release} (p\+\_\+titles, i\+\_\+count)
+\item 
+def \hyperlink{namespacevlc_adf5d3e952881c8a2d36db4a98bfda4a2}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+full\+\_\+chapter\+\_\+descriptions} (p\+\_\+mi, i\+\_\+chapters\+\_\+of\+\_\+title, pp\+\_\+chapters)
+\item 
+def \hyperlink{namespacevlc_a57028e9c3f2b8ddc8722423bb560e2f7}{libvlc\+\_\+chapter\+\_\+descriptions\+\_\+release} (p\+\_\+chapters, i\+\_\+count)
+\item 
+def \hyperlink{namespacevlc_a90ce254d86107126899a45083478af1c}{libvlc\+\_\+video\+\_\+get\+\_\+crop\+\_\+geometry} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_abdfc647c45f0b22d8aa3ad8f87b9bd12}{libvlc\+\_\+video\+\_\+set\+\_\+crop\+\_\+geometry} (p\+\_\+mi, psz\+\_\+geometry)
+\item 
+def \hyperlink{namespacevlc_a5109017fbef0af0ea955b6aad723b1e3}{libvlc\+\_\+video\+\_\+get\+\_\+teletext} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_af977323ec20485a5a0ea9b824eca479f}{libvlc\+\_\+video\+\_\+set\+\_\+teletext} (p\+\_\+mi, i\+\_\+page)
+\item 
+def \hyperlink{namespacevlc_a87f53e3e2f2f5b5a0c24aaa72e6575b0}{libvlc\+\_\+video\+\_\+get\+\_\+track\+\_\+count} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a68edc909fdc25c8f1fc60031778445af}{libvlc\+\_\+video\+\_\+get\+\_\+track\+\_\+description} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a0f6ee7f1555386407042f47c88cef65d}{libvlc\+\_\+video\+\_\+get\+\_\+track} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a5a93e0861484a0b67acaf7e76601edcb}{libvlc\+\_\+video\+\_\+set\+\_\+track} (p\+\_\+mi, i\+\_\+track)
+\item 
+def \hyperlink{namespacevlc_a0c671a906d1cdfe68ca7e1cb644a3bee}{libvlc\+\_\+video\+\_\+take\+\_\+snapshot} (p\+\_\+mi, num, psz\+\_\+filepath, i\+\_\+width, i\+\_\+height)
+\item 
+def \hyperlink{namespacevlc_a32c28e8b47f625bc8dc4a3634548fe65}{libvlc\+\_\+video\+\_\+set\+\_\+deinterlace} (p\+\_\+mi, psz\+\_\+mode)
+\item 
+def \hyperlink{namespacevlc_a401766594b9c4244e6a0d82f41bb197d}{libvlc\+\_\+video\+\_\+get\+\_\+marquee\+\_\+int} (p\+\_\+mi, option)
+\item 
+def \hyperlink{namespacevlc_ac9f15587fc7e277e517c65164b9bdf6f}{libvlc\+\_\+video\+\_\+get\+\_\+marquee\+\_\+string} (p\+\_\+mi, option)
+\item 
+def \hyperlink{namespacevlc_ae19a8b8caacacd5289023bee28ccff47}{libvlc\+\_\+video\+\_\+set\+\_\+marquee\+\_\+int} (p\+\_\+mi, option, i\+\_\+val)
+\item 
+def \hyperlink{namespacevlc_a820aaf1f58ece503b1e97ca798c8f117}{libvlc\+\_\+video\+\_\+set\+\_\+marquee\+\_\+string} (p\+\_\+mi, option, psz\+\_\+text)
+\item 
+def \hyperlink{namespacevlc_a3b3d43d9f8102e847bc0ecc9c7bf734d}{libvlc\+\_\+video\+\_\+get\+\_\+logo\+\_\+int} (p\+\_\+mi, option)
+\item 
+def \hyperlink{namespacevlc_a08e6d3ec08615034c79b7692c3048aa5}{libvlc\+\_\+video\+\_\+set\+\_\+logo\+\_\+int} (p\+\_\+mi, option, value)
+\item 
+def \hyperlink{namespacevlc_a20561b3917572011df2fb28924f6160c}{libvlc\+\_\+video\+\_\+set\+\_\+logo\+\_\+string} (p\+\_\+mi, option, psz\+\_\+value)
+\item 
+def \hyperlink{namespacevlc_ab0a3bb5f8036e686a3dedc3703aa7c06}{libvlc\+\_\+video\+\_\+get\+\_\+adjust\+\_\+int} (p\+\_\+mi, option)
+\item 
+def \hyperlink{namespacevlc_ad26714380b95c5d52496d67b570860ee}{libvlc\+\_\+video\+\_\+set\+\_\+adjust\+\_\+int} (p\+\_\+mi, option, value)
+\item 
+def \hyperlink{namespacevlc_af6b4ba880f091b003978517c9ef566cb}{libvlc\+\_\+video\+\_\+get\+\_\+adjust\+\_\+float} (p\+\_\+mi, option)
+\item 
+def \hyperlink{namespacevlc_ae64d6c4f5dad0c6b67e7eae0b4e1d2e3}{libvlc\+\_\+video\+\_\+set\+\_\+adjust\+\_\+float} (p\+\_\+mi, option, value)
+\item 
+def \hyperlink{namespacevlc_a8261ae46b9414ab68671c6c9d2799d47}{libvlc\+\_\+audio\+\_\+output\+\_\+list\+\_\+get} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_aa3a70d05c0ceda7ef8abf29e5f0237bc}{libvlc\+\_\+audio\+\_\+output\+\_\+list\+\_\+release} (p\+\_\+list)
+\item 
+def \hyperlink{namespacevlc_a78552faa46d9cfa68ff163224b9a5c40}{libvlc\+\_\+audio\+\_\+output\+\_\+set} (p\+\_\+mi, psz\+\_\+name)
+\item 
+def \hyperlink{namespacevlc_ad0eaa466313964c4c8f8fca0cdb4dc03}{libvlc\+\_\+audio\+\_\+output\+\_\+device\+\_\+enum} (mp)
+\item 
+def \hyperlink{namespacevlc_a398beca7c466c6dee8cf8f97dec6664e}{libvlc\+\_\+audio\+\_\+output\+\_\+device\+\_\+list\+\_\+get} (p\+\_\+instance, aout)
+\item 
+def \hyperlink{namespacevlc_a0bab07db85d9932daaa7f9bd017702eb}{libvlc\+\_\+audio\+\_\+output\+\_\+device\+\_\+list\+\_\+release} (p\+\_\+list)
+\item 
+def \hyperlink{namespacevlc_a25b3f026d49515a2d0ae0906495c5fcb}{libvlc\+\_\+audio\+\_\+output\+\_\+device\+\_\+set} (mp, module, device\+\_\+id)
+\item 
+def \hyperlink{namespacevlc_a5b5babcb373f2af5cfa81ff75f932192}{libvlc\+\_\+audio\+\_\+output\+\_\+device\+\_\+get} (mp)
+\item 
+def \hyperlink{namespacevlc_ad72cfaafb813c822567cc1a8fcfc8429}{libvlc\+\_\+audio\+\_\+toggle\+\_\+mute} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a4cdfbd29f8712d56aed3fa83b76a1b56}{libvlc\+\_\+audio\+\_\+get\+\_\+mute} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a76eac9d168adc4bab5d64c0e08e0333c}{libvlc\+\_\+audio\+\_\+set\+\_\+mute} (p\+\_\+mi, status)
+\item 
+def \hyperlink{namespacevlc_a5bd4ab471d93bb2285affbfb6b865010}{libvlc\+\_\+audio\+\_\+get\+\_\+volume} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a29afce2ad9d6cc26546b735653fe67b7}{libvlc\+\_\+audio\+\_\+set\+\_\+volume} (p\+\_\+mi, i\+\_\+volume)
+\item 
+def \hyperlink{namespacevlc_a7a1549dd2aa2d4cbd98a3fcc8da9cb09}{libvlc\+\_\+audio\+\_\+get\+\_\+track\+\_\+count} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_aeef886dffdb2d28ef62fb5a2314c69b3}{libvlc\+\_\+audio\+\_\+get\+\_\+track\+\_\+description} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_aacb5cb891887883b6969a152656bfb75}{libvlc\+\_\+audio\+\_\+get\+\_\+track} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a98ac26f41a3d8271d1ec63d4a5c40289}{libvlc\+\_\+audio\+\_\+set\+\_\+track} (p\+\_\+mi, i\+\_\+track)
+\item 
+def \hyperlink{namespacevlc_aaea673f933311af160dd682a91e0cd89}{libvlc\+\_\+audio\+\_\+get\+\_\+channel} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_abc0358f7a4053006f13577861532937c}{libvlc\+\_\+audio\+\_\+set\+\_\+channel} (p\+\_\+mi, channel)
+\item 
+def \hyperlink{namespacevlc_a62ec4fd04e704236c3bb48f2bada26e1}{libvlc\+\_\+audio\+\_\+get\+\_\+delay} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a4f69c99e5eaf09175dd4353d56e934d8}{libvlc\+\_\+audio\+\_\+set\+\_\+delay} (p\+\_\+mi, i\+\_\+delay)
+\item 
+def \hyperlink{namespacevlc_a8cabffd55794bdd6207aafcebaaba562}{libvlc\+\_\+audio\+\_\+equalizer\+\_\+get\+\_\+preset\+\_\+count} ()
+\item 
+def \hyperlink{namespacevlc_a77eb7037c0e4a29b89dc541b0fac240d}{libvlc\+\_\+audio\+\_\+equalizer\+\_\+get\+\_\+preset\+\_\+name} (u\+\_\+index)
+\item 
+def \hyperlink{namespacevlc_ac28be065813cf41bff2b697298292012}{libvlc\+\_\+audio\+\_\+equalizer\+\_\+get\+\_\+band\+\_\+count} ()
+\item 
+def \hyperlink{namespacevlc_a14f45eb50bd638168970304368353603}{libvlc\+\_\+audio\+\_\+equalizer\+\_\+get\+\_\+band\+\_\+frequency} (u\+\_\+index)
+\item 
+def \hyperlink{namespacevlc_a12209b15e0da9a0481e4f7571f617dda}{libvlc\+\_\+audio\+\_\+equalizer\+\_\+new} ()
+\item 
+def \hyperlink{namespacevlc_aeaf5e53ef0f358b71fc1796b0bc0a114}{libvlc\+\_\+audio\+\_\+equalizer\+\_\+new\+\_\+from\+\_\+preset} (u\+\_\+index)
+\item 
+def \hyperlink{namespacevlc_ae82eed728fae30f533e3bdaaeeb2fb24}{libvlc\+\_\+audio\+\_\+equalizer\+\_\+release} (p\+\_\+equalizer)
+\item 
+def \hyperlink{namespacevlc_a10afe2e2760d5e0929afd7544bd08fc7}{libvlc\+\_\+audio\+\_\+equalizer\+\_\+set\+\_\+preamp} (p\+\_\+equalizer, f\+\_\+preamp)
+\item 
+def \hyperlink{namespacevlc_a0f558cf51d137d01323634077b0f4b4e}{libvlc\+\_\+audio\+\_\+equalizer\+\_\+get\+\_\+preamp} (p\+\_\+equalizer)
+\item 
+def \hyperlink{namespacevlc_afa112c9fa2e01582526543f4cc824132}{libvlc\+\_\+audio\+\_\+equalizer\+\_\+set\+\_\+amp\+\_\+at\+\_\+index} (p\+\_\+equalizer, f\+\_\+amp, u\+\_\+band)
+\item 
+def \hyperlink{namespacevlc_ab14a271ab740aa688682202d8957f024}{libvlc\+\_\+audio\+\_\+equalizer\+\_\+get\+\_\+amp\+\_\+at\+\_\+index} (p\+\_\+equalizer, u\+\_\+band)
+\item 
+def \hyperlink{namespacevlc_a236caf234257aa13be369f848074238f}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+equalizer} (p\+\_\+mi, p\+\_\+equalizer)
+\item 
+def \hyperlink{namespacevlc_a14ecc9df7e469ebd985efdfd70701d1e}{libvlc\+\_\+media\+\_\+player\+\_\+get\+\_\+role} (p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a6a98b9503c22b828717b774246b1252d}{libvlc\+\_\+media\+\_\+player\+\_\+set\+\_\+role} (p\+\_\+mi, role)
+\item 
+def \hyperlink{namespacevlc_ab4b8362acc8c1e94658a0dd96bc5a120}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+new} (p\+\_\+instance)
+\item 
+def \hyperlink{namespacevlc_a3763e35fa1176f0fafd4fe033738e96f}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+release} (p\+\_\+mlp)
+\item 
+def \hyperlink{namespacevlc_ac79a3046c80d6a0269c84975dd996085}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+retain} (p\+\_\+mlp)
+\item 
+def \hyperlink{namespacevlc_ace48e0ef2379ca0f1fbdbefdcc251cfe}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+event\+\_\+manager} (p\+\_\+mlp)
+\item 
+def \hyperlink{namespacevlc_ae77d2d55e63161551bc26b440c28743c}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+set\+\_\+media\+\_\+player} (p\+\_\+mlp, p\+\_\+mi)
+\item 
+def \hyperlink{namespacevlc_a2da962bb3cca726aa13428060f11e7e8}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+get\+\_\+media\+\_\+player} (p\+\_\+mlp)
+\item 
+def \hyperlink{namespacevlc_ad7bd543571d19ee4ae115ec8ff31db94}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+set\+\_\+media\+\_\+list} (p\+\_\+mlp, p\+\_\+mlist)
+\item 
+def \hyperlink{namespacevlc_a613ec3b14b03b7c91c89783e633bc031}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+play} (p\+\_\+mlp)
+\item 
+def \hyperlink{namespacevlc_a789787fb851dce24255c0e24199818de}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+pause} (p\+\_\+mlp)
+\item 
+def \hyperlink{namespacevlc_ab9597e2c2fd5fb8a8ea9f1c259796605}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+set\+\_\+pause} (p\+\_\+mlp, do\+\_\+pause)
+\item 
+def \hyperlink{namespacevlc_a0c4e9ab9a5ffb361e99a2d4f61386e4c}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+is\+\_\+playing} (p\+\_\+mlp)
+\item 
+def \hyperlink{namespacevlc_a763990d86ad08b9968f1f4263d634f26}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+get\+\_\+state} (p\+\_\+mlp)
+\item 
+def \hyperlink{namespacevlc_a460c1773285fe9fed9795e86e8039c0d}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+play\+\_\+item\+\_\+at\+\_\+index} (p\+\_\+mlp, i\+\_\+index)
+\item 
+def \hyperlink{namespacevlc_a222147643807a3c36fe41538526528d9}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+play\+\_\+item} (p\+\_\+mlp, p\+\_\+md)
+\item 
+def \hyperlink{namespacevlc_afdd34bfadc2c26d87c721ac0c71089d7}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+stop} (p\+\_\+mlp)
+\item 
+def \hyperlink{namespacevlc_ad7b227a78e34e99300dfa0d794b906cb}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+next} (p\+\_\+mlp)
+\item 
+def \hyperlink{namespacevlc_a528f3b4e34c0d8591691fb2f4aaf2aff}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+previous} (p\+\_\+mlp)
+\item 
+def \hyperlink{namespacevlc_a31fd24c2a75a7af7b6f1d19de6b66e21}{libvlc\+\_\+media\+\_\+list\+\_\+player\+\_\+set\+\_\+playback\+\_\+mode} (p\+\_\+mlp, e\+\_\+mode)
+\item 
+def \hyperlink{namespacevlc_aaddf7ebb083eb66131f099136cf6f583}{callbackmethod} (callback)
+\item 
+def \hyperlink{namespacevlc_a24d18f95ac8282ca98ec1740f7f6b7cc}{hex\+\_\+version} ()
+\item 
+def \hyperlink{namespacevlc_a53e26e809dfb7c1f1a1f25d5e0530472}{libvlc\+\_\+hex\+\_\+version} ()
+\item 
+def \hyperlink{namespacevlc_a14ed115618edb9fde8ca534d70c5e283}{debug\+\_\+callback} (event, args, kwds)
+\item 
+def \hyperlink{namespacevlc_a26c66231b8919b9ec0736a57bab415b9}{getch} ()
+\item 
+def \hyperlink{namespacevlc_a93ea3b472864341c8419502bd4c6a1a7}{end\+\_\+callback} (event)
+\item 
+def \hyperlink{namespacevlc_a78c9205b41c98f83d6b893ec6857ed05}{pos\+\_\+callback} (event, player)
+\item 
+def \hyperlink{namespacevlc_ae0936d317dae71f70be626cab39c5358}{print\+\_\+python} ()
+\item 
+def \hyperlink{namespacevlc_afaf7aed42d25971d0efaf408a51c8f2d}{print\+\_\+version} ()
+\item 
+def \hyperlink{namespacevlc_a9bb9b7542f15491284d77fa0a47e711f}{mspf} ()
+\item 
+def \hyperlink{namespacevlc_afdc9487efb7cea9b4f2b1da4a075dc76}{print\+\_\+info} ()
+\item 
+def \hyperlink{namespacevlc_ad254a0934cc16b0efe81da452ace868b}{sec\+\_\+forward} ()
+\item 
+def \hyperlink{namespacevlc_a07c403b7dd6c2fb6ca0db5f0c198686d}{sec\+\_\+backward} ()
+\item 
+def \hyperlink{namespacevlc_a8ca4660553489d4345fe15e1ff1267a6}{frame\+\_\+forward} ()
+\item 
+def \hyperlink{namespacevlc_ae7c9e2320876e2cfde006a90ff8ebd90}{frame\+\_\+backward} ()
+\item 
+def \hyperlink{namespacevlc_a815d75452a68207d96a6cd38f438bd71}{print\+\_\+help} ()
+\item 
+def \hyperlink{namespacevlc_a6a0bba2d1163dfc99df31893cd79e079}{quit\+\_\+app} ()
+\item 
+def \hyperlink{namespacevlc_abe636627cfa8857acea999214e26263b}{toggle\+\_\+echo\+\_\+position} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespacevlc_a0b14e488ae28d98d262453f3e9cd6e4d}{logger} = logging.\+get\+Logger(\+\_\+\+\_\+name\+\_\+\+\_\+)
+\item 
+string \hyperlink{namespacevlc_a9d9b637ad5b2c71a1a6464d5321dd702}{build\+\_\+date} = \char`\"{}Mon Nov 12 23\+:07\+:30 2018 3.\+0.\+4\char`\"{}
+\item 
+string \hyperlink{namespacevlc_afe27f0e1c4864c0be1ff0061994415f2}{D\+E\+F\+A\+U\+L\+T\+\_\+\+E\+N\+C\+O\+D\+I\+NG} = \textquotesingle{}utf-\/8\textquotesingle{}
+\item 
+\hyperlink{namespacevlc_a4b99ff73a8a869319570237b5c57ab03}{str} = str
+\item 
+\hyperlink{namespacevlc_aa3c0e7a8f2695defce5d510420b4f347}{unicode} = str
+\item 
+\hyperlink{namespacevlc_ab5b288623cd78ddf5eeabe825d17a1c1}{bytes} = bytes
+\item 
+tuple \hyperlink{namespacevlc_a8a82bca121a0ad060450443ae990517d}{basestring} = (str, bytes)
+\item 
+bool \hyperlink{namespacevlc_a8d13049f8a8796da0124a57cec5d7738}{P\+Y\+T\+H\+O\+N3} = True
+\item 
+\hyperlink{namespacevlc_a6a30cabf154659a9b4616bc59bf46b22}{Log\+\_\+ptr} = ctypes.\+P\+O\+I\+N\+T\+ER(Log)
+\item 
+\hyperlink{namespacevlc_ac4b5cdcbcf94f4dbe7eb3007f11fe7c0}{F\+I\+L\+E\+\_\+ptr} = ctypes.\+P\+O\+I\+N\+T\+ER(F\+I\+LE)
+\item 
+\hyperlink{namespacevlc_af733ca8028b4ec8a35c42132b850f65b}{Py\+File\+\_\+\+From\+Fd} = ctypes.\+pythonapi.\+Py\+File\+\_\+\+From\+Fd
+\item 
+\hyperlink{namespacevlc_ab2283b4bbda0fbadaf5d9500e886ecbe}{restype}
+\item 
+\hyperlink{namespacevlc_a4ad1eb96239eecf8f075ae4c92adab5e}{argtypes}
+\item 
+\hyperlink{namespacevlc_aa8ee5f62a4363311eecbf26c79fd6556}{Py\+File\+\_\+\+As\+Fd} = ctypes.\+pythonapi.\+Py\+Object\+\_\+\+As\+File\+Descriptor
+\item 
+\hyperlink{namespacevlc_a19ea06542f07b72fac5ee1e04a56cc83}{Py\+File\+\_\+\+From\+File} = ctypes.\+pythonapi.\+Py\+File\+\_\+\+From\+File
+\item 
+\hyperlink{namespacevlc_ab2062f3cf434a12c9ea8c111c5ea6b9b}{Py\+File\+\_\+\+As\+File} = ctypes.\+pythonapi.\+Py\+File\+\_\+\+As\+File
+\item 
+\hyperlink{namespacevlc_a48994b0a618061e8aa4b2d314712d3da}{cb} = Callback\+Decorators
+\item 
+\hyperlink{namespacevlc_a7469cfb80443db78c5bf2aaea5ba2f15}{libc\+\_\+path} = find\+\_\+library(\textquotesingle{}c\textquotesingle{})
+\item 
+\hyperlink{namespacevlc_a23b02f3fc0fc2663e64b4d51b19ebb56}{libc} = ctypes.\+C\+D\+LL(libc\+\_\+path)
+\item 
+\hyperlink{namespacevlc_aa77795730bdcb92194198c19c0fb0274}{libvlc\+\_\+free} = libc.\+free
+\item 
+\hyperlink{namespacevlc_afde8e18a788ccc92fc61cab298bca7e3}{level}
+\item 
+bool \hyperlink{namespacevlc_a65d3edd39984571c052e38ddc4455267}{echo\+\_\+position} = False
+\item 
+\hyperlink{namespacevlc_ae484bbb4e2af6e2c896075fdb5c69e3e}{movie} = os.\+path.\+expanduser(sys.\+argv.\+pop())
+\item 
+\hyperlink{namespacevlc_a5ffaf17e178b3a6fa2012fe3050ede22}{instance} = Instance(\mbox{[}\char`\"{}-\/-\/sub-\/source=marq\char`\"{}\mbox{]} + sys.\+argv\mbox{[}1\+:\mbox{]})
+\item 
+\hyperlink{namespacevlc_a4ad19ab45fc97cae6d0da6365a6a08a4}{media} = instance.\+media\+\_\+new(movie)
+\item 
+\hyperlink{namespacevlc_a46afbb77ee4b53026dff7b4f65384dc4}{player} = instance.\+media\+\_\+player\+\_\+new()
+\item 
+\hyperlink{namespacevlc_ad64bbe5580664e0978bbe69a4b7abb1e}{t} = media.\+get\+\_\+mrl()
+\begin{DoxyCompactList}\small\item\em t = \textquotesingle{}\$L / \$D or \$P at \$T\textquotesingle{} \end{DoxyCompactList}\item 
+\hyperlink{namespacevlc_af1c54e30e2e3ab4f89adf23ede0db23e}{event\+\_\+manager} = player.\+event\+\_\+manager()
+\item 
+dictionary \hyperlink{namespacevlc_a3540c8e41ef509a65a719ad6b7e5261c}{keybindings}
+\item 
+def \hyperlink{namespacevlc_a1abc95f8cbff85a4001af40c469444e6}{k} = getch()
+\end{DoxyCompactItemize}

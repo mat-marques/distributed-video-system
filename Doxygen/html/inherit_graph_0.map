@@ -1,0 +1,26 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$classvlc_1_1_media_track.html" title="MediaTrack" alt="" coords="5,512,96,539"/>
+<area shape="rect" id="node2" href="$classvlc_1_1___cstruct.html" title="_Cstruct" alt="" coords="144,487,216,513"/>
+<area shape="rect" id="node23" href="$classvlc_1_1_f_i_l_e.html" title="FILE" alt="" coords="155,537,205,564"/>
+<area shape="rect" id="node24" href="$classvlc_1_1_log.html" title="Log" alt="" coords="159,588,201,615"/>
+<area shape="rect" id="node3" href="$classvlc_1_1_audio_output.html" title="AudioOutput" alt="" coords="310,5,405,32"/>
+<area shape="rect" id="node4" href="$classvlc_1_1_audio_output_device.html" title="AudioOutputDevice" alt="" coords="290,56,425,83"/>
+<area shape="rect" id="node5" href="$classvlc_1_1_audio_track.html" title="AudioTrack" alt="" coords="313,107,401,133"/>
+<area shape="rect" id="node6" href="$classvlc_1_1_chapter_description.html" title="ChapterDescription" alt="" coords="290,157,425,184"/>
+<area shape="rect" id="node7" href="$classvlc_1_1_event.html" title="Event" alt="" coords="329,208,385,235"/>
+<area shape="rect" id="node8" href="$classvlc_1_1_log_message.html" title="LogMessage" alt="" coords="309,259,405,285"/>
+<area shape="rect" id="node9" href="$classvlc_1_1_media_discoverer_description.html" title="MediaDiscovererDescription" alt="" coords="264,309,451,336"/>
+<area shape="rect" id="node10" href="$classvlc_1_1_media_event.html" title="MediaEvent" alt="" coords="312,360,403,387"/>
+<area shape="rect" id="node11" href="$classvlc_1_1_media_slave.html" title="MediaSlave" alt="" coords="312,411,403,437"/>
+<area shape="rect" id="node12" href="$classvlc_1_1_media_stats.html" title="MediaStats" alt="" coords="313,461,401,488"/>
+<area shape="rect" id="node13" href="$classvlc_1_1_media_track_info.html" title="MediaTrackInfo" alt="" coords="301,512,413,539"/>
+<area shape="rect" id="node14" href="$classvlc_1_1_module_description.html" title="ModuleDescription" alt="" coords="292,563,423,589"/>
+<area shape="rect" id="node15" href="$classvlc_1_1_playlist_item.html" title="PlaylistItem" alt="" coords="312,613,403,640"/>
+<area shape="rect" id="node16" href="$classvlc_1_1_r_d_description.html" title="RDDescription" alt="" coords="303,664,411,691"/>
+<area shape="rect" id="node17" href="$classvlc_1_1_rectangle.html" title="Rectangle" alt="" coords="317,715,398,741"/>
+<area shape="rect" id="node18" href="$classvlc_1_1_subtitle_track.html" title="SubtitleTrack" alt="" coords="308,765,407,792"/>
+<area shape="rect" id="node19" href="$classvlc_1_1_title_description.html" title="TitleDescription" alt="" coords="301,816,414,843"/>
+<area shape="rect" id="node20" href="$classvlc_1_1_track_description.html" title="TrackDescription" alt="" coords="297,867,418,893"/>
+<area shape="rect" id="node21" href="$classvlc_1_1_video_track.html" title="VideoTrack" alt="" coords="313,917,401,944"/>
+<area shape="rect" id="node22" href="$classvlc_1_1_video_viewpoint.html" title="VideoViewpoint" alt="" coords="301,968,413,995"/>
+</map>

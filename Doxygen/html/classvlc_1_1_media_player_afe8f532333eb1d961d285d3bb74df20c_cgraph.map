@@ -1,0 +1,4 @@
+<map id="audio_output_set" name="audio_output_set">
+<area shape="rect" id="node2" href="$namespacevlc.html#a78552faa46d9cfa68ff163224b9a5c40" title="vlc.libvlc_audio_output_set" alt="" coords="175,5,353,32"/>
+<area shape="rect" id="node3" href="$namespacevlc.html#a8cb85ab12eb35180b6cf2897d7847e46" title="vlc.str_to_bytes" alt="" coords="207,56,321,83"/>
+</map>

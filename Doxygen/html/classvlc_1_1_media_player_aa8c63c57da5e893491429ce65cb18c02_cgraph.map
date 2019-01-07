@@ -1,0 +1,4 @@
+<map id="video_take_snapshot" name="video_take_snapshot">
+<area shape="rect" id="node2" href="$namespacevlc.html#a0c671a906d1cdfe68ca7e1cb644a3bee" title="vlc.libvlc_video_take\l_snapshot" alt="" coords="199,5,341,47"/>
+<area shape="rect" id="node3" href="$namespacevlc.html#a8cb85ab12eb35180b6cf2897d7847e46" title="vlc.str_to_bytes" alt="" coords="213,71,327,98"/>
+</map>

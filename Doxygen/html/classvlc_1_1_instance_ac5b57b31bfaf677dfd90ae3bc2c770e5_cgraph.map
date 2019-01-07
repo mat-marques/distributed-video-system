@@ -1,0 +1,4 @@
+<map id="audio_output_device_list_get" name="audio_output_device_list_get">
+<area shape="rect" id="node2" href="$namespacevlc.html#a398beca7c466c6dee8cf8f97dec6664e" title="vlc.libvlc_audio_output\l_device_list_get" alt="" coords="195,5,349,47"/>
+<area shape="rect" id="node3" href="$namespacevlc.html#a8cb85ab12eb35180b6cf2897d7847e46" title="vlc.str_to_bytes" alt="" coords="215,71,329,98"/>
+</map>

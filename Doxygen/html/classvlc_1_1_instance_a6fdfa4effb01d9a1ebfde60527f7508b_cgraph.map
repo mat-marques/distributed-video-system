@@ -1,0 +1,4 @@
+<map id="audio_output_enumerate_devices" name="audio_output_enumerate_devices">
+<area shape="rect" id="node2" href="$namespacevlc.html#a8261ae46b9414ab68671c6c9d2799d47" title="vlc.libvlc_audio_output\l_list_get" alt="" coords="217,5,372,47"/>
+<area shape="rect" id="node3" href="$namespacevlc.html#aa3a70d05c0ceda7ef8abf29e5f0237bc" title="vlc.libvlc_audio_output\l_list_release" alt="" coords="217,71,372,112"/>
+</map>

@@ -1,0 +1,190 @@
+\hypertarget{classvlc_1_1_renderer}{}\section{Renderer Class Reference}
+\label{classvlc_1_1_renderer}\index{Renderer@{Renderer}}
+
+
+Inheritance diagram for Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classvlc_1_1_renderer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Renderer\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classvlc_1_1_renderer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classvlc_1_1_renderer_a2ed91930af7622fec54ade5b2d4b2315}{\+\_\+\+\_\+new\+\_\+\+\_\+} (cls, ptr=\+\_\+internal\+\_\+guard)
+\item 
+def \hyperlink{classvlc_1_1_renderer_a3d005406da2434646eee68e2f7175b35}{hold} (self)
+\item 
+def \hyperlink{classvlc_1_1_renderer_a4cd51e19135e5ad4a19eae3ea9c60537}{release} (self)
+\item 
+def \hyperlink{classvlc_1_1_renderer_a5907ca3bbf8e7cd8f40c3007338f6d02}{name} (self)
+\item 
+def \hyperlink{classvlc_1_1_renderer_aff464267544e4efc9b770c8320c8f199}{type} (self)
+\item 
+def \hyperlink{classvlc_1_1_renderer_a879c6fc8fa45e9dee1502bcc1379924e}{icon\+\_\+uri} (self)
+\item 
+def \hyperlink{classvlc_1_1_renderer_af775bd05363da54958bd28e5dbe4a2a9}{flags} (self)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}N/A
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classvlc_1_1_renderer_a2ed91930af7622fec54ade5b2d4b2315}\label{classvlc_1_1_renderer_a2ed91930af7622fec54ade5b2d4b2315}} 
+\index{vlc\+::\+Renderer@{vlc\+::\+Renderer}!\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}!vlc\+::\+Renderer@{vlc\+::\+Renderer}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+new\+\_\+\+\_\+()}{\_\_new\_\_()}}
+{\footnotesize\ttfamily def \+\_\+\+\_\+new\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{ptr = {\ttfamily \+\_\+internal\+\_\+guard} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}(INTERNAL) ctypes wrapper constructor.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classvlc_1_1_renderer_af775bd05363da54958bd28e5dbe4a2a9}\label{classvlc_1_1_renderer_af775bd05363da54958bd28e5dbe4a2a9}} 
+\index{vlc\+::\+Renderer@{vlc\+::\+Renderer}!flags@{flags}}
+\index{flags@{flags}!vlc\+::\+Renderer@{vlc\+::\+Renderer}}
+\subsubsection{\texorpdfstring{flags()}{flags()}}
+{\footnotesize\ttfamily def flags (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the flags of a renderer item
+See LIBVLC_RENDERER_CAN_AUDIO
+See LIBVLC_RENDERER_CAN_VIDEO.
+@return: bitwise flag: capabilities of the renderer, see.
+@version: LibVLC 3.0.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{classvlc_1_1_renderer_af775bd05363da54958bd28e5dbe4a2a9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_renderer_a3d005406da2434646eee68e2f7175b35}\label{classvlc_1_1_renderer_a3d005406da2434646eee68e2f7175b35}} 
+\index{vlc\+::\+Renderer@{vlc\+::\+Renderer}!hold@{hold}}
+\index{hold@{hold}!vlc\+::\+Renderer@{vlc\+::\+Renderer}}
+\subsubsection{\texorpdfstring{hold()}{hold()}}
+{\footnotesize\ttfamily def hold (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Hold a renderer item, i.e. creates a new reference
+This functions need to called from the libvlc_RendererDiscovererItemAdded
+callback if the libvlc user wants to use this item after. (for display or
+for passing it to the mediaplayer for example).
+@return: the current item.
+@version: LibVLC 3.0.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvlc_1_1_renderer_a3d005406da2434646eee68e2f7175b35_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_renderer_a879c6fc8fa45e9dee1502bcc1379924e}\label{classvlc_1_1_renderer_a879c6fc8fa45e9dee1502bcc1379924e}} 
+\index{vlc\+::\+Renderer@{vlc\+::\+Renderer}!icon\+\_\+uri@{icon\+\_\+uri}}
+\index{icon\+\_\+uri@{icon\+\_\+uri}!vlc\+::\+Renderer@{vlc\+::\+Renderer}}
+\subsubsection{\texorpdfstring{icon\+\_\+uri()}{icon\_uri()}}
+{\footnotesize\ttfamily def icon\+\_\+uri (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the icon uri of a renderer item.
+@return: the uri of the item's icon (can be None, must *not* be freed).
+@version: LibVLC 3.0.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{classvlc_1_1_renderer_a879c6fc8fa45e9dee1502bcc1379924e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_renderer_a5907ca3bbf8e7cd8f40c3007338f6d02}\label{classvlc_1_1_renderer_a5907ca3bbf8e7cd8f40c3007338f6d02}} 
+\index{vlc\+::\+Renderer@{vlc\+::\+Renderer}!name@{name}}
+\index{name@{name}!vlc\+::\+Renderer@{vlc\+::\+Renderer}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily def name (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the human readable name of a renderer item.
+@return: the name of the item (can't be None, must *not* be freed).
+@version: LibVLC 3.0.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{classvlc_1_1_renderer_a5907ca3bbf8e7cd8f40c3007338f6d02_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=315pt]{classvlc_1_1_renderer_a5907ca3bbf8e7cd8f40c3007338f6d02_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_renderer_a4cd51e19135e5ad4a19eae3ea9c60537}\label{classvlc_1_1_renderer_a4cd51e19135e5ad4a19eae3ea9c60537}} 
+\index{vlc\+::\+Renderer@{vlc\+::\+Renderer}!release@{release}}
+\index{release@{release}!vlc\+::\+Renderer@{vlc\+::\+Renderer}}
+\subsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily def release (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Releases a renderer item, i.e. decrements its reference counter.
+@version: LibVLC 3.0.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{classvlc_1_1_renderer_a4cd51e19135e5ad4a19eae3ea9c60537_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_renderer_aff464267544e4efc9b770c8320c8f199}\label{classvlc_1_1_renderer_aff464267544e4efc9b770c8320c8f199}} 
+\index{vlc\+::\+Renderer@{vlc\+::\+Renderer}!type@{type}}
+\index{type@{type}!vlc\+::\+Renderer@{vlc\+::\+Renderer}}
+\subsubsection{\texorpdfstring{type()}{type()}}
+{\footnotesize\ttfamily def type (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get the type (not translated) of a renderer item. For now, the type can only
+be "chromecast" ("upnp", "airplay" may come later).
+@return: the type of the item (can't be None, must *not* be freed).
+@version: LibVLC 3.0.0 or later.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=246pt]{classvlc_1_1_renderer_aff464267544e4efc9b770c8320c8f199_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=274pt]{classvlc_1_1_renderer_aff464267544e4efc9b770c8320c8f199_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

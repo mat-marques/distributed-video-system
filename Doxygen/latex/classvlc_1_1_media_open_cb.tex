@@ -1,0 +1,38 @@
+\hypertarget{classvlc_1_1_media_open_cb}{}\section{Media\+Open\+Cb Class Reference}
+\label{classvlc_1_1_media_open_cb}\index{Media\+Open\+Cb@{Media\+Open\+Cb}}
+
+
+Inheritance diagram for Media\+Open\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classvlc_1_1_media_open_cb__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Media\+Open\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classvlc_1_1_media_open_cb__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Callback prototype to open a custom bitstream input media.
+The same media item can be opened multiple times. Each time, this callback
+is invoked. It should allocate and initialize any instance-specific
+resources, then store them in *datap. The instance resources can be freed
+in the @ref libvlc_media_close_cb callback.
+@param opaque: private pointer as passed to L{libvlc_media_new_callbacks}().
+@return: datap storage space for a private data pointer, sizep byte length of the bitstream or UINT64_MAX if unknown.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

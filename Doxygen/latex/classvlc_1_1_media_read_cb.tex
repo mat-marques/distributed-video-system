@@ -1,0 +1,36 @@
+\hypertarget{classvlc_1_1_media_read_cb}{}\section{Media\+Read\+Cb Class Reference}
+\label{classvlc_1_1_media_read_cb}\index{Media\+Read\+Cb@{Media\+Read\+Cb}}
+
+
+Inheritance diagram for Media\+Read\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classvlc_1_1_media_read_cb__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Media\+Read\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=159pt]{classvlc_1_1_media_read_cb__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Callback prototype to read data from a custom bitstream input media.
+@param opaque: private pointer as set by the @ref libvlc_media_open_cb callback.
+@param buf: start address of the buffer to read data into.
+@param len: bytes length of the buffer.
+@return: strictly positive number of bytes read, 0 on end-of-stream, or -1 on non-recoverable error @note If no data is immediately available, then the callback should sleep. @warning The application is responsible for avoiding deadlock situations. In particular, the callback should return an error if playback is stopped; if it does not return, then L{libvlc_media_player_stop}() will never return.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

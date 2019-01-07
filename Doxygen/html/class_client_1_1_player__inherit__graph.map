@@ -1,0 +1,4 @@
+<map id="Player" name="Player">
+<area shape="rect" id="node2" href="$class_client_1_1_garbage_collector.html" title="GarbageCollector" alt="" coords="5,80,128,107"/>
+<area shape="rect" id="node3" href="$class_client_1_1_player_auto.html" title="PlayerAuto" alt="" coords="153,80,239,107"/>
+</map>

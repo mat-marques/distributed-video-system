@@ -1,0 +1,9 @@
+<map id="libvlc_renderer_item_name" name="libvlc_renderer_item_name">
+<area shape="rect" id="node2" href="$classvlc_1_1_renderer.html#a5907ca3bbf8e7cd8f40c3007338f6d02" title="vlc.Renderer.name" alt="" coords="231,163,363,189"/>
+<area shape="rect" id="node3" href="$classvlc_1_1_audio_output.html#a23e8041ce1015febe4fdace3225714f9" title="vlc.AudioOutput.__str__" alt="" coords="435,5,597,32"/>
+<area shape="rect" id="node4" href="$classvlc_1_1_playlist_item.html#a23e8041ce1015febe4fdace3225714f9" title="vlc.PlaylistItem._\l_str__" alt="" coords="455,57,577,98"/>
+<area shape="rect" id="node5" href="$classvlc_1_1_track_description.html#a23e8041ce1015febe4fdace3225714f9" title="vlc.TrackDescription.\l__str__" alt="" coords="443,122,589,163"/>
+<area shape="rect" id="node6" href="$classvlc_1_1_module_description.html#a23e8041ce1015febe4fdace3225714f9" title="vlc.ModuleDescription.\l__str__" alt="" coords="439,187,593,229"/>
+<area shape="rect" id="node7" href="$classvlc_1_1_audio_output_device.html#a23e8041ce1015febe4fdace3225714f9" title="vlc.AudioOutputDevice.\l__str__" alt="" coords="436,253,596,294"/>
+<area shape="rect" id="node8" href="$classvlc_1_1_media_discoverer_description.html#a23e8041ce1015febe4fdace3225714f9" title="vlc.MediaDiscovererDescription.\l__str__" alt="" coords="411,318,621,359"/>
+</map>

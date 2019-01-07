@@ -1,0 +1,5 @@
+<map id="libvlc_get_version" name="libvlc_get_version">
+<area shape="rect" id="node2" href="$namespacevlc.html#a53e26e809dfb7c1f1a1f25d5e0530472" title="libvlc_hex_version" alt="" coords="180,5,309,32"/>
+<area shape="rect" id="node3" href="$namespacevlc.html#afaf7aed42d25971d0efaf408a51c8f2d" title="print_version" alt="" coords="357,31,453,57"/>
+<area shape="rect" id="node4" href="$namespacevlc.html#afdc9487efb7cea9b4f2b1da4a075dc76" title="print_info" alt="" coords="501,31,576,57"/>
+</map>

@@ -1,0 +1,37 @@
+\hypertarget{classvlc_1_1_log_cb}{}\section{Log\+Cb Class Reference}
+\label{classvlc_1_1_log_cb}\index{Log\+Cb@{Log\+Cb}}
+
+
+Inheritance diagram for Log\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classvlc_1_1_log_cb__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Log\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{classvlc_1_1_log_cb__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Callback prototype for LibVLC log message handler.
+@param data: data pointer as given to L{libvlc_log_set}().
+@param level: message level (@ref L{LogLevel}).
+@param ctx: message context (meta-information about the message).
+@param fmt: printf() format string (as defined by ISO C11).
+@param args: variable argument list for the format @note Log message handlers B{must} be thread-safe. @warning The message context pointer, the format string parameters and the variable arguments are only valid until the callback returns.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

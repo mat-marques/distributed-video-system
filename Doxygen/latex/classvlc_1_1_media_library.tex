@@ -1,0 +1,127 @@
+\hypertarget{classvlc_1_1_media_library}{}\section{Media\+Library Class Reference}
+\label{classvlc_1_1_media_library}\index{Media\+Library@{Media\+Library}}
+
+
+Inheritance diagram for Media\+Library\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classvlc_1_1_media_library__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Media\+Library\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{classvlc_1_1_media_library__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classvlc_1_1_media_library_a2ed91930af7622fec54ade5b2d4b2315}{\+\_\+\+\_\+new\+\_\+\+\_\+} (cls, ptr=\+\_\+internal\+\_\+guard)
+\item 
+def \hyperlink{classvlc_1_1_media_library_a4cd51e19135e5ad4a19eae3ea9c60537}{release} (self)
+\item 
+def \hyperlink{classvlc_1_1_media_library_a6394d82a0b79f0f91bb059d20ab43490}{retain} (self)
+\item 
+def \hyperlink{classvlc_1_1_media_library_aea7c4ced230e9462362c980c5ea47b4d}{load} (self)
+\item 
+def \hyperlink{classvlc_1_1_media_library_a34194a0d394238d8794d182b65953952}{media\+\_\+list} (self)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}N/A
+\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classvlc_1_1_media_library_a2ed91930af7622fec54ade5b2d4b2315}\label{classvlc_1_1_media_library_a2ed91930af7622fec54ade5b2d4b2315}} 
+\index{vlc\+::\+Media\+Library@{vlc\+::\+Media\+Library}!\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}!vlc\+::\+Media\+Library@{vlc\+::\+Media\+Library}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+new\+\_\+\+\_\+()}{\_\_new\_\_()}}
+{\footnotesize\ttfamily def \+\_\+\+\_\+new\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{ptr = {\ttfamily \+\_\+internal\+\_\+guard} }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}(INTERNAL) ctypes wrapper constructor.
+\end{DoxyVerb}
+ \mbox{\Hypertarget{classvlc_1_1_media_library_aea7c4ced230e9462362c980c5ea47b4d}\label{classvlc_1_1_media_library_aea7c4ced230e9462362c980c5ea47b4d}} 
+\index{vlc\+::\+Media\+Library@{vlc\+::\+Media\+Library}!load@{load}}
+\index{load@{load}!vlc\+::\+Media\+Library@{vlc\+::\+Media\+Library}}
+\subsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily def load (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Load media library.
+@return: 0 on success, -1 on error.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=292pt]{classvlc_1_1_media_library_aea7c4ced230e9462362c980c5ea47b4d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_media_library_a34194a0d394238d8794d182b65953952}\label{classvlc_1_1_media_library_a34194a0d394238d8794d182b65953952}} 
+\index{vlc\+::\+Media\+Library@{vlc\+::\+Media\+Library}!media\+\_\+list@{media\+\_\+list}}
+\index{media\+\_\+list@{media\+\_\+list}!vlc\+::\+Media\+Library@{vlc\+::\+Media\+Library}}
+\subsubsection{\texorpdfstring{media\+\_\+list()}{media\_list()}}
+{\footnotesize\ttfamily def media\+\_\+list (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Get media library subitems.
+@return: media list subitems.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classvlc_1_1_media_library_a34194a0d394238d8794d182b65953952_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_media_library_a4cd51e19135e5ad4a19eae3ea9c60537}\label{classvlc_1_1_media_library_a4cd51e19135e5ad4a19eae3ea9c60537}} 
+\index{vlc\+::\+Media\+Library@{vlc\+::\+Media\+Library}!release@{release}}
+\index{release@{release}!vlc\+::\+Media\+Library@{vlc\+::\+Media\+Library}}
+\subsubsection{\texorpdfstring{release()}{release()}}
+{\footnotesize\ttfamily def release (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Release media library object. This functions decrements the
+reference count of the media library object. If it reaches 0,
+then the object will be released.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classvlc_1_1_media_library_a4cd51e19135e5ad4a19eae3ea9c60537_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_media_library_a6394d82a0b79f0f91bb059d20ab43490}\label{classvlc_1_1_media_library_a6394d82a0b79f0f91bb059d20ab43490}} 
+\index{vlc\+::\+Media\+Library@{vlc\+::\+Media\+Library}!retain@{retain}}
+\index{retain@{retain}!vlc\+::\+Media\+Library@{vlc\+::\+Media\+Library}}
+\subsubsection{\texorpdfstring{retain()}{retain()}}
+{\footnotesize\ttfamily def retain (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Retain a reference to a media library object. This function will
+increment the reference counting for this object. Use
+L{release}() to decrement the reference count.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=275pt]{classvlc_1_1_media_library_a6394d82a0b79f0f91bb059d20ab43490_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,10 @@
+<map id="set_mrl" name="set_mrl">
+<area shape="rect" id="node2" href="$classvlc_1_1_media.html#a56c15bafa43c856366863fc07fc4021f" title="vlc.Media.get_instance" alt="" coords="129,5,285,32"/>
+<area shape="rect" id="node3" href="$classvlc_1_1_media_list.html#a56c15bafa43c856366863fc07fc4021f" title="vlc.MediaList.get_instance" alt="" coords="119,56,296,83"/>
+<area shape="rect" id="node4" href="$classvlc_1_1_media_list_player.html#a56c15bafa43c856366863fc07fc4021f" title="vlc.MediaListPlayer.get\l_instance" alt="" coords="128,107,287,149"/>
+<area shape="rect" id="node5" href="$classvlc_1_1_media_player.html#a56c15bafa43c856366863fc07fc4021f" title="get_instance" alt="" coords="159,173,255,200"/>
+<area shape="rect" id="node6" href="$classvlc_1_1_media_list.html#a8d4d4151676c2941cdd0cee4e25648c5" title="vlc.MediaList.set_media" alt="" coords="126,224,289,251"/>
+<area shape="rect" id="node8" href="$classvlc_1_1_media_player.html#a8d4d4151676c2941cdd0cee4e25648c5" title="set_media" alt="" coords="166,279,249,305"/>
+<area shape="rect" id="node7" href="$namespacevlc.html#a0d46d9803abd7e8b6dfca391921dcff0" title="vlc.libvlc_media_list\l_set_media" alt="" coords="353,213,492,254"/>
+<area shape="rect" id="node9" href="$namespacevlc.html#ad66d2344f5584cd004b224120ade9077" title="vlc.libvlc_media_player\l_set_media" alt="" coords="344,278,501,319"/>
+</map>

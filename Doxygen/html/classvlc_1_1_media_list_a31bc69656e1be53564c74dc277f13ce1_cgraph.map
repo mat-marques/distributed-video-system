@@ -1,0 +1,6 @@
+<map id="add_media" name="add_media">
+<area shape="rect" id="node2" href="$classvlc_1_1_media.html#a56c15bafa43c856366863fc07fc4021f" title="vlc.Media.get_instance" alt="" coords="142,5,298,32"/>
+<area shape="rect" id="node3" href="$classvlc_1_1_media_list.html#a56c15bafa43c856366863fc07fc4021f" title="get_instance" alt="" coords="172,56,268,83"/>
+<area shape="rect" id="node4" href="$namespacevlc.html#a3e00cfbbf5aa7ede16e3877359d8212e" title="vlc.get_default_instance" alt="" coords="139,107,301,133"/>
+<area shape="rect" id="node5" href="$namespacevlc.html#a98a21d94dfa80441792c173767f7df39" title="vlc.libvlc_media_list\l_add_media" alt="" coords="151,158,289,199"/>
+</map>

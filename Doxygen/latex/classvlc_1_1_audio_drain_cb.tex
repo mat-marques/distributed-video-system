@@ -1,0 +1,36 @@
+\hypertarget{classvlc_1_1_audio_drain_cb}{}\section{Audio\+Drain\+Cb Class Reference}
+\label{classvlc_1_1_audio_drain_cb}\index{Audio\+Drain\+Cb@{Audio\+Drain\+Cb}}
+
+
+Inheritance diagram for Audio\+Drain\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classvlc_1_1_audio_drain_cb__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Audio\+Drain\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classvlc_1_1_audio_drain_cb__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Callback prototype for audio buffer drain.
+LibVLC may invoke this callback when the decoded audio track is ending.
+There will be no further decoded samples for the track, but playback should
+nevertheless continue until all already pending buffers are rendered.
+@param data: data pointer as passed to L{libvlc_audio_set_callbacks}() [IN].
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

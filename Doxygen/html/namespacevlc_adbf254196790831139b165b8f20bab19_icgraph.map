@@ -1,0 +1,6 @@
+<map id="libvlc_media_add_option" name="libvlc_media_add_option">
+<area shape="rect" id="node2" href="$classvlc_1_1_instance.html#ac9af019663459bddfa7376f3692754d9" title="vlc.Instance.media_new" alt="" coords="217,15,380,42"/>
+<area shape="rect" id="node4" href="$classvlc_1_1_media.html#a408d85bfeb76d82131e6e8e817c37e0d" title="vlc.Media.add_option" alt="" coords="226,67,371,94"/>
+<area shape="rect" id="node3" href="$classvlc_1_1_instance.html#a356a94c765e690cec25514e36101c6d7" title="vlc.Instance.media\l_player_new" alt="" coords="438,5,570,47"/>
+<area shape="rect" id="node5" href="$classvlc_1_1_media.html#afc1d9bd3735629f1ffba0c9c18c9306c" title="vlc.Media.add_options" alt="" coords="428,71,580,98"/>
+</map>
