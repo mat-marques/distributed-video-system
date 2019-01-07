@@ -295,10 +295,10 @@ class ClientProducerVideo(threading.Thread):
                     queue_sender.get()
                 if queue_video.full():
                     queue_video_remove.put(queue_video.get())
-                    
+                
                 queue_sender.put(file_name_used)
                 queue_video.put(file_name_used)
-
+                time.sleep(0.5)
 
                 
     def stop(self):
