@@ -302,7 +302,7 @@ class ClientProducerVideo(threading.Thread):
                     
                 queue_sender.put(file_name_used)
                 queue_video.put(file_name_used)
-
+            time.sleep(0.5)
 
                 
     def stop(self):
