@@ -1,0 +1,5 @@
+<map id="libvlc_video_get_size" name="libvlc_video_get_size">
+<area shape="rect" id="node2" href="$classvlc_1_1_media_player.html#a510a2f0ec76549207198544715c65783" title="vlc.MediaPlayer.video\l_get_size" alt="" coords="200,39,351,80"/>
+<area shape="rect" id="node3" href="$classvlc_1_1_media_player.html#a48602f969d067204addde054bf19ac2a" title="vlc.MediaPlayer.video\l_get_width" alt="" coords="399,5,549,47"/>
+<area shape="rect" id="node4" href="$classvlc_1_1_media_player.html#a282ff18f2701edbdab0cb4638f9439ea" title="vlc.MediaPlayer.video\l_get_height" alt="" coords="399,71,549,112"/>
+</map>

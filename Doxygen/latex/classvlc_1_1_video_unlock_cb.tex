@@ -1,0 +1,40 @@
+\hypertarget{classvlc_1_1_video_unlock_cb}{}\section{Video\+Unlock\+Cb Class Reference}
+\label{classvlc_1_1_video_unlock_cb}\index{Video\+Unlock\+Cb@{Video\+Unlock\+Cb}}
+
+
+Inheritance diagram for Video\+Unlock\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classvlc_1_1_video_unlock_cb__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Video\+Unlock\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classvlc_1_1_video_unlock_cb__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Callback prototype to unlock a picture buffer.
+When the video frame decoding is complete, the unlock callback is invoked.
+This callback might not be needed at all. It is only an indication that the
+application can now read the pixel values if it needs to.
+@note: A picture buffer is unlocked after the picture is decoded,
+but before the picture is displayed.
+@param opaque: private pointer as passed to L{libvlc_video_set_callbacks}() [IN].
+@param picture: private pointer returned from the @ref libvlc_video_lock_cb callback [IN].
+@param planes: pixel planes as defined by the @ref libvlc_video_lock_cb callback (this parameter is only for convenience) [IN].
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

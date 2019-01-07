@@ -1,0 +1,4 @@
+<map id="video_get_width" name="video_get_width">
+<area shape="rect" id="node2" href="$classvlc_1_1_media_player.html#a510a2f0ec76549207198544715c65783" title="video_get_size" alt="" coords="169,5,279,32"/>
+<area shape="rect" id="node3" href="$namespacevlc.html#a58dd475be13d1393cc878b2dd94df81a" title="vlc.libvlc_video_get_size" alt="" coords="327,5,493,32"/>
+</map>

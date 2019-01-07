@@ -1,0 +1,38 @@
+\hypertarget{classvlc_1_1_audio_setup_cb}{}\section{Audio\+Setup\+Cb Class Reference}
+\label{classvlc_1_1_audio_setup_cb}\index{Audio\+Setup\+Cb@{Audio\+Setup\+Cb}}
+
+
+Inheritance diagram for Audio\+Setup\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classvlc_1_1_audio_setup_cb__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Audio\+Setup\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classvlc_1_1_audio_setup_cb__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Callback prototype to setup the audio playback.
+This is called when the media player needs to create a new audio output.
+@param opaque: pointer to the data pointer passed to L{libvlc_audio_set_callbacks}() [IN/OUT].
+@param format: 4 bytes sample format [IN/OUT].
+@param rate: sample rate [IN/OUT].
+@param channels: channels count [IN/OUT].
+@return: 0 on success, anything else to skip audio playback.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

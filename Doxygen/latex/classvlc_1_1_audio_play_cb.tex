@@ -1,0 +1,47 @@
+\hypertarget{classvlc_1_1_audio_play_cb}{}\section{Audio\+Play\+Cb Class Reference}
+\label{classvlc_1_1_audio_play_cb}\index{Audio\+Play\+Cb@{Audio\+Play\+Cb}}
+
+
+Inheritance diagram for Audio\+Play\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classvlc_1_1_audio_play_cb__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Audio\+Play\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classvlc_1_1_audio_play_cb__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Callback prototype for audio playback.
+The LibVLC media player decodes and post-processes the audio signal
+asynchronously (in an internal thread). Whenever audio samples are ready
+to be queued to the output, this callback is invoked.
+The number of samples provided per invocation may depend on the file format,
+the audio coding algorithm, the decoder plug-in, the post-processing
+filters and timing. Application must not assume a certain number of samples.
+The exact format of audio samples is determined by L{libvlc_audio_set_format}()
+or L{libvlc_audio_set_format_callbacks}() as is the channels layout.
+Note that the number of samples is per channel. For instance, if the audio
+track sampling rate is 48000 Hz, then 1200 samples represent 25 milliseconds
+of audio signal - regardless of the number of audio channels.
+@param data: data pointer as passed to L{libvlc_audio_set_callbacks}() [IN].
+@param samples: pointer to a table of audio samples to play back [IN].
+@param count: number of audio samples to play back.
+@param pts: expected play time stamp (see libvlc_delay()).
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

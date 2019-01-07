@@ -1,0 +1,107 @@
+\hypertarget{classvlc_1_1_event_manager}{}\section{Event\+Manager Class Reference}
+\label{classvlc_1_1_event_manager}\index{Event\+Manager@{Event\+Manager}}
+
+
+Inheritance diagram for Event\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classvlc_1_1_event_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Event\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=160pt]{classvlc_1_1_event_manager__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{classvlc_1_1_event_manager_a2ed91930af7622fec54ade5b2d4b2315}{\+\_\+\+\_\+new\+\_\+\+\_\+} (cls, ptr=\+\_\+internal\+\_\+guard)
+\item 
+def \hyperlink{classvlc_1_1_event_manager_a969b667ff0326d1baa70343bc882c29d}{event\+\_\+attach} (self, eventtype, callback, args, kwds)
+\item 
+def \hyperlink{classvlc_1_1_event_manager_a9163e98110a74e53366cecc73ac10a55}{event\+\_\+detach} (self, eventtype)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Create an event manager with callback handler.
+
+This class interposes the registration and handling of
+event notifications in order to (a) remove the need for
+decorating each callback functions with the decorator
+'@callbackmethod', (b) allow any number of positional
+and/or keyword arguments to the callback (in addition
+to the Event instance) and (c) to preserve the Python
+objects such that the callback and argument objects
+remain alive (i.e. are not garbage collected) until
+B{after} the notification has been unregistered.
+
+@note: Only a single notification can be registered
+for each event type in an EventManager instance.\end{DoxyVerb}
+ 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classvlc_1_1_event_manager_a2ed91930af7622fec54ade5b2d4b2315}\label{classvlc_1_1_event_manager_a2ed91930af7622fec54ade5b2d4b2315}} 
+\index{vlc\+::\+Event\+Manager@{vlc\+::\+Event\+Manager}!\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+new\+\_\+\+\_\+@{\+\_\+\+\_\+new\+\_\+\+\_\+}!vlc\+::\+Event\+Manager@{vlc\+::\+Event\+Manager}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+new\+\_\+\+\_\+()}{\_\_new\_\_()}}
+{\footnotesize\ttfamily def \+\_\+\+\_\+new\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{cls,  }\item[{}]{ptr = {\ttfamily \+\_\+internal\+\_\+guard} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classvlc_1_1_event_manager_a969b667ff0326d1baa70343bc882c29d}\label{classvlc_1_1_event_manager_a969b667ff0326d1baa70343bc882c29d}} 
+\index{vlc\+::\+Event\+Manager@{vlc\+::\+Event\+Manager}!event\+\_\+attach@{event\+\_\+attach}}
+\index{event\+\_\+attach@{event\+\_\+attach}!vlc\+::\+Event\+Manager@{vlc\+::\+Event\+Manager}}
+\subsubsection{\texorpdfstring{event\+\_\+attach()}{event\_attach()}}
+{\footnotesize\ttfamily def event\+\_\+attach (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{eventtype,  }\item[{}]{callback,  }\item[{}]{args,  }\item[{}]{kwds }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Register an event notification.
+
+@param eventtype: the desired event type to be notified about.
+@param callback: the function to call when the event occurs.
+@param args: optional positional arguments for the callback.
+@param kwds: optional keyword arguments for the callback.
+@return: 0 on success, ENOMEM on error.
+
+@note: The callback function must have at least one argument,
+an Event instance.  Any other, optional positional and keyword
+arguments are in B{addition} to the first one.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{classvlc_1_1_event_manager_a969b667ff0326d1baa70343bc882c29d_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classvlc_1_1_event_manager_a9163e98110a74e53366cecc73ac10a55}\label{classvlc_1_1_event_manager_a9163e98110a74e53366cecc73ac10a55}} 
+\index{vlc\+::\+Event\+Manager@{vlc\+::\+Event\+Manager}!event\+\_\+detach@{event\+\_\+detach}}
+\index{event\+\_\+detach@{event\+\_\+detach}!vlc\+::\+Event\+Manager@{vlc\+::\+Event\+Manager}}
+\subsubsection{\texorpdfstring{event\+\_\+detach()}{event\_detach()}}
+{\footnotesize\ttfamily def event\+\_\+detach (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{eventtype }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}Unregister an event notification.
+
+@param eventtype: the event type notification to be removed.
+\end{DoxyVerb}
+ Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{classvlc_1_1_event_manager_a9163e98110a74e53366cecc73ac10a55_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

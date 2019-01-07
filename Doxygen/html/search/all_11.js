@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['rating',['Rating',['../classvlc_1_1_meta.html#a2a733f4621e083597f59d9c15f64df61',1,'vlc::Meta']]],
+  ['rddescription',['RDDescription',['../classvlc_1_1_r_d_description.html',1,'vlc']]],
+  ['received_5fmsg',['received_msg',['../namespacemain.html#a8d14fa3a443cc15581d7c7b0fe102193',1,'main']]],
+  ['recep_5fclient',['recep_client',['../namespacemain.html#ad58616dba9ef0f00a45619fc8b69274d',1,'main']]],
+  ['recep_5fserver',['recep_server',['../namespacemain.html#a2b1c523c93c469ce345f4d5bd46941a4',1,'main']]],
+  ['rectangle',['Rectangle',['../classvlc_1_1_rectangle.html',1,'vlc']]],
+  ['rectangular',['rectangular',['../classvlc_1_1_video_projection.html#a6f97a7a4261ded2a82decc49dde3b048',1,'vlc::VideoProjection']]],
+  ['red',['red',['../classvlc_1_1_teletext_key.html#a42c3a4a0281e61ee592e36a3eda020f2',1,'vlc::TeletextKey']]],
+  ['refresh',['Refresh',['../classvlc_1_1_video_marquee_option.html#a97dc5a2e4d5bf168bd74b13f406a1321',1,'vlc::VideoMarqueeOption']]],
+  ['release',['release',['../classvlc_1_1_audio_equalizer.html#a4cd51e19135e5ad4a19eae3ea9c60537',1,'vlc.AudioEqualizer.release()'],['../classvlc_1_1_instance.html#a4cd51e19135e5ad4a19eae3ea9c60537',1,'vlc.Instance.release()'],['../classvlc_1_1_media.html#a4cd51e19135e5ad4a19eae3ea9c60537',1,'vlc.Media.release()'],['../classvlc_1_1_media_discoverer.html#a4cd51e19135e5ad4a19eae3ea9c60537',1,'vlc.MediaDiscoverer.release()'],['../classvlc_1_1_media_library.html#a4cd51e19135e5ad4a19eae3ea9c60537',1,'vlc.MediaLibrary.release()'],['../classvlc_1_1_media_list.html#a4cd51e19135e5ad4a19eae3ea9c60537',1,'vlc.MediaList.release()'],['../classvlc_1_1_media_list_player.html#a4cd51e19135e5ad4a19eae3ea9c60537',1,'vlc.MediaListPlayer.release()'],['../classvlc_1_1_media_player.html#a4cd51e19135e5ad4a19eae3ea9c60537',1,'vlc.MediaPlayer.release()'],['../classvlc_1_1_renderer.html#a4cd51e19135e5ad4a19eae3ea9c60537',1,'vlc.Renderer.release()'],['../classvlc_1_1_renderer_discoverer.html#a4cd51e19135e5ad4a19eae3ea9c60537',1,'vlc.RendererDiscoverer.release()']]],
+  ['remove_5findex',['remove_index',['../classvlc_1_1_media_list.html#a44a92e05fc0eb945272ce4cf075779c5',1,'vlc::MediaList']]],
+  ['remove_5fvideo',['remove_video',['../class_client_1_1_garbage_collector.html#af2fd45ce96ebc291f2cf6cb427fb00f0',1,'Client::GarbageCollector']]],
+  ['removeclient',['removeClient',['../class_client_1_1_client_reseiver.html#a0469460401aae7675477714179dfcf6f',1,'Client::ClientReseiver']]],
+  ['renderer',['Renderer',['../classvlc_1_1_renderer.html',1,'vlc']]],
+  ['renderer_5fdiscoverer_5flist_5fget',['renderer_discoverer_list_get',['../classvlc_1_1_instance.html#a59e7fce431e7dc8d89fbe9ee7b531340',1,'vlc::Instance']]],
+  ['renderer_5fdiscoverer_5fnew',['renderer_discoverer_new',['../classvlc_1_1_instance.html#af5af3418f6e41d878b2d6f080df10ea5',1,'vlc::Instance']]],
+  ['rendererdiscoverer',['RendererDiscoverer',['../classvlc_1_1_renderer_discoverer.html',1,'vlc']]],
+  ['rendererdiscovereritemadded',['RendererDiscovererItemAdded',['../classvlc_1_1_event_type.html#a1b9c4cc1c0b2d048930e2a81061ae410',1,'vlc::EventType']]],
+  ['rendererdiscovereritemdeleted',['RendererDiscovererItemDeleted',['../classvlc_1_1_event_type.html#a5a299e7f1336a7b8cf7b57a3303a3c55',1,'vlc::EventType']]],
+  ['repeat',['repeat',['../classvlc_1_1_video_logo_option.html#ac00f64e7ae9c4cbe2575af8554c4401d',1,'vlc.VideoLogoOption.repeat()'],['../classvlc_1_1_playback_mode.html#ac00f64e7ae9c4cbe2575af8554c4401d',1,'vlc.PlaybackMode.repeat()']]],
+  ['restype',['restype',['../namespacevlc.html#ab2283b4bbda0fbadaf5d9500e886ecbe',1,'vlc']]],
+  ['retain',['retain',['../classvlc_1_1_instance.html#a6394d82a0b79f0f91bb059d20ab43490',1,'vlc.Instance.retain()'],['../classvlc_1_1_media.html#a6394d82a0b79f0f91bb059d20ab43490',1,'vlc.Media.retain()'],['../classvlc_1_1_media_library.html#a6394d82a0b79f0f91bb059d20ab43490',1,'vlc.MediaLibrary.retain()'],['../classvlc_1_1_media_list.html#a6394d82a0b79f0f91bb059d20ab43490',1,'vlc.MediaList.retain()'],['../classvlc_1_1_media_list_player.html#a6394d82a0b79f0f91bb059d20ab43490',1,'vlc.MediaListPlayer.retain()'],['../classvlc_1_1_media_player.html#a6394d82a0b79f0f91bb059d20ab43490',1,'vlc.MediaPlayer.retain()']]],
+  ['right',['right',['../classvlc_1_1_video_orient.html#a25331d5f9601b8cb1ce57490930d7c01',1,'vlc.VideoOrient.right()'],['../classvlc_1_1_navigate_mode.html#a25331d5f9601b8cb1ce57490930d7c01',1,'vlc.NavigateMode.right()'],['../classvlc_1_1_position.html#a25331d5f9601b8cb1ce57490930d7c01',1,'vlc.Position.right()'],['../classvlc_1_1_audio_output_channel.html#a338f1941aaeb45ceefaa84416d2aaddb',1,'vlc.AudioOutputChannel.Right()'],['../classvlc_1_1_position.html#ace4946ecd4a66e40705cc19b4bd69723',1,'vlc.Position.Right()']]],
+  ['rstereo',['RStereo',['../classvlc_1_1_audio_output_channel.html#a7c249c9de4146ae067b9819d635fc538',1,'vlc::AudioOutputChannel']]],
+  ['run',['run',['../class_client_1_1_client_reseiver.html#ad22709b2e67308af35f55680d5a026e0',1,'Client.ClientReseiver.run()'],['../class_client_1_1_server_receptor.html#ad22709b2e67308af35f55680d5a026e0',1,'Client.ServerReceptor.run()'],['../class_client_1_1_client_receptor.html#ad22709b2e67308af35f55680d5a026e0',1,'Client.ClientReceptor.run()'],['../class_client_1_1_client_producer_video.html#ad22709b2e67308af35f55680d5a026e0',1,'Client.ClientProducerVideo.run()'],['../class_client_1_1_client_sender.html#ad22709b2e67308af35f55680d5a026e0',1,'Client.ClientSender.run()'],['../class_client_1_1_player_auto.html#ad22709b2e67308af35f55680d5a026e0',1,'Client.PlayerAuto.run()'],['../class_client_1_1_garbage_collector.html#ad22709b2e67308af35f55680d5a026e0',1,'Client.GarbageCollector.run()']]]
+];

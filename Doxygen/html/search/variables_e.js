@@ -1,0 +1,20 @@
+var searchData=
+[
+  ['path',['path',['../class_client_1_1_player.html#aa28dc103258589d9cb421197fe2de90b',1,'Client::Player']]],
+  ['paused',['Paused',['../classvlc_1_1_state.html#abba3b9a9b29998ce7472c02f14243d0e',1,'vlc::State']]],
+  ['player',['player',['../class_client_1_1_player.html#a46afbb77ee4b53026dff7b4f65384dc4',1,'Client.Player.player()'],['../namespacevlc.html#a46afbb77ee4b53026dff7b4f65384dc4',1,'vlc.player()']]],
+  ['player_5fvideo',['player_video',['../class_client_1_1_server_receptor.html#a265f7032febb91142eb6d7d9859eceb6',1,'Client.ServerReceptor.player_video()'],['../class_client_1_1_client_receptor.html#a265f7032febb91142eb6d7d9859eceb6',1,'Client.ClientReceptor.player_video()']]],
+  ['playing',['Playing',['../classvlc_1_1_state.html#adff0cb2b0b9f2305d3d3d0fc7aa6dd46',1,'vlc::State']]],
+  ['playlist',['playlist',['../classvlc_1_1_media_type.html#aa36722b6f83dd34214003df0de80b99e',1,'vlc::MediaType']]],
+  ['podcasts',['podcasts',['../classvlc_1_1_media_discoverer_category.html#a94a26848801d03ca2533b6a41c6587e8',1,'vlc::MediaDiscovererCategory']]],
+  ['popup',['popup',['../classvlc_1_1_navigate_mode.html#add84d0ed4321d9c54dae5b8be84ab605',1,'vlc::NavigateMode']]],
+  ['position',['Position',['../classvlc_1_1_video_marquee_option.html#ab91b34ae619fcdfcba4522b4f335bf83',1,'vlc.VideoMarqueeOption.Position()'],['../classvlc_1_1_video_logo_option.html#a7130b1618285588513fd1ff97884b9d9',1,'vlc.VideoLogoOption.position()']]],
+  ['producervideo',['producerVideo',['../class_client_1_1_server_receptor.html#a8f5ab768a38f5129d304bd00bd90d1b7',1,'Client.ServerReceptor.producerVideo()'],['../class_client_1_1_client_receptor.html#a8f5ab768a38f5129d304bd00bd90d1b7',1,'Client.ClientReceptor.producerVideo()']]],
+  ['production',['Production',['../classvlc_1_1_media_player_role.html#a80472a1a1f2b25b637c31699fc2e1293',1,'vlc::MediaPlayerRole']]],
+  ['publisher',['Publisher',['../classvlc_1_1_meta.html#ae77fe6e4dbe11321074a3e38b4c05d88',1,'vlc::Meta']]],
+  ['pyfile_5fasfd',['PyFile_AsFd',['../namespacevlc.html#aa8ee5f62a4363311eecbf26c79fd6556',1,'vlc']]],
+  ['pyfile_5fasfile',['PyFile_AsFile',['../namespacevlc.html#ab2062f3cf434a12c9ea8c111c5ea6b9b',1,'vlc']]],
+  ['pyfile_5ffromfd',['PyFile_FromFd',['../namespacevlc.html#af733ca8028b4ec8a35c42132b850f65b',1,'vlc']]],
+  ['pyfile_5ffromfile',['PyFile_FromFile',['../namespacevlc.html#a19ea06542f07b72fac5ee1e04a56cc83',1,'vlc']]],
+  ['python3',['PYTHON3',['../namespacevlc.html#a8d13049f8a8796da0124a57cec5d7738',1,'vlc']]]
+];

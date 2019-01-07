@@ -1,0 +1,5 @@
+<map id="libvlc_module_description_list_release" name="libvlc_module_description_list_release">
+<area shape="rect" id="node2" href="$namespacevlc.html#a0b7d068d11a5e7daf054d28358952cc3" title="module_description_list" alt="" coords="224,46,383,73"/>
+<area shape="rect" id="node3" href="$classvlc_1_1_instance.html#a267774a685e64a5f8f666a4b6f8ac85f" title="vlc.Instance.audio\l_filter_list_get" alt="" coords="431,5,559,47"/>
+<area shape="rect" id="node4" href="$classvlc_1_1_instance.html#a72cb3f80f491fa38104614e5966cc396" title="vlc.Instance.video\l_filter_list_get" alt="" coords="431,71,559,112"/>
+</map>

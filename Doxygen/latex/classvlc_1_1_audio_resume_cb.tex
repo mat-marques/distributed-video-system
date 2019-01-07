@@ -1,0 +1,37 @@
+\hypertarget{classvlc_1_1_audio_resume_cb}{}\section{Audio\+Resume\+Cb Class Reference}
+\label{classvlc_1_1_audio_resume_cb}\index{Audio\+Resume\+Cb@{Audio\+Resume\+Cb}}
+
+
+Inheritance diagram for Audio\+Resume\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classvlc_1_1_audio_resume_cb__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Audio\+Resume\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classvlc_1_1_audio_resume_cb__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Callback prototype for audio resumption.
+LibVLC invokes this callback to resume audio playback after it was
+previously paused.
+@note: The resume callback is never called if the audio is not paused.
+@param data: data pointer as passed to L{libvlc_audio_set_callbacks}() [IN].
+@param pts: time stamp of the resumption request (should be elapsed already).
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}

@@ -1,0 +1,7 @@
+<map id="get_default_instance" name="get_default_instance">
+<area shape="rect" id="node2" href="$classvlc_1_1_media.html#acc2aa3fac6a63e8bac4f19efc327102b" title="vlc.Media.__new__" alt="" coords="214,5,349,32"/>
+<area shape="rect" id="node3" href="$classvlc_1_1_media_list.html#acc2aa3fac6a63e8bac4f19efc327102b" title="vlc.MediaList.__new__" alt="" coords="204,56,359,83"/>
+<area shape="rect" id="node4" href="$classvlc_1_1_media_list.html#a31bc69656e1be53564c74dc277f13ce1" title="vlc.MediaList.add_media" alt="" coords="198,107,365,133"/>
+<area shape="rect" id="node5" href="$classvlc_1_1_media_list_player.html#aaff5444cab9af1af2e1471e196ef53e3" title="vlc.MediaListPlayer.\l__new__" alt="" coords="211,158,351,199"/>
+<area shape="rect" id="node6" href="$classvlc_1_1_media_player.html#acc2aa3fac6a63e8bac4f19efc327102b" title="vlc.MediaPlayer.__new__" alt="" coords="196,224,367,251"/>
+</map>

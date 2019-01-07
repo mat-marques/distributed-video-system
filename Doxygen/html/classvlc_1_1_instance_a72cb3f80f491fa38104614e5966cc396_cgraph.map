@@ -1,0 +1,5 @@
+<map id="video_filter_list_get" name="video_filter_list_get">
+<area shape="rect" id="node2" href="$namespacevlc.html#a0b7d068d11a5e7daf054d28358952cc3" title="vlc.module_description_list" alt="" coords="188,13,367,39"/>
+<area shape="rect" id="node4" href="$namespacevlc.html#a9a36ab0bc4560c42db45708f4c31e1f2" title="vlc.libvlc_video_filter\l_list_get" alt="" coords="206,64,349,105"/>
+<area shape="rect" id="node3" href="$namespacevlc.html#a3ae49966acbd43a6b3c1b286cf609912" title="vlc.libvlc_module_description\l_list_release" alt="" coords="415,5,607,47"/>
+</map>

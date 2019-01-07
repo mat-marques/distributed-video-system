@@ -42,22 +42,24 @@ CLIENT_CLIENT_PORT_V = 9094
 # Nome do diretório dos vídeos
 DIR_PATH = "./Movie/"
 
-# Classe que recebe dados dos clientes, porta 9092
+
 class ClientReseiver(threading.Thread):
+    """Classe que recebe dados dos clientes, porta 9092"""
+
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
         self.BUFFER_SIZE = buffer_size
 
-    # Verifica se o cliente já está inserido no canal
     def verifyClient(self, dest):
+        '''Verifica se o cliente já está inserido no canal'''
         global clients
         for info in clients:
             if info[0] == dest[0]:
                 return True
         return False
 
-    # Remove um cliente de um canal
     def removeClient(self, ip):
+        '''Remove um cliente de um canal'''
         global clients
         for info in clients:
             if info[0] == ip:
@@ -66,8 +68,8 @@ class ClientReseiver(threading.Thread):
                 return True
         return False
 
-    # Insere um cliente
     def addClient(self, dest):
+        '''Insere um cliente'''
         global clients
         if not self.verifyClient(dest):
             # Insere o cliente
@@ -145,8 +147,11 @@ class ClientReseiver(threading.Thread):
         self._stopped = True
 
 
-# Classe que recebe os dados do canal - Servidor, porta CLIENT_SERVER_PORT
 class ServerReceptor(threading.Thread):
+    """Classe que recebe os dados do canal - Servidor, porta CLIENT_SERVER_PORT
+
+    """
+
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
         self.BUFFER_SIZE = buffer_size
@@ -164,7 +169,7 @@ class ServerReceptor(threading.Thread):
         self.producerVideo.start()
         self.send_video.start()
         self.player_video.start()
-        #self.garbage_collector.start()
+        self.garbage_collector.start()
 
         print("Thread de captura de dados iniciada (vídeos)!")
 
@@ -205,8 +210,11 @@ class ServerReceptor(threading.Thread):
         print(self._stopped)
 
 
-# Classe que recebe os dados do canal - Cliente, porta 9094
 class ClientReceptor(threading.Thread):
+    """Classe que recebe os dados do canal - Cliente, porta 9094
+
+    """
+
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
         self.BUFFER_SIZE = buffer_size
@@ -221,9 +229,9 @@ class ClientReceptor(threading.Thread):
         global CLIENT_SERVER_PORT_V
 
         self.producerVideo.start()
-        self.player_video.start()
         self.send_video.start()
-        #self.garbage_collector.start()
+        self.player_video.start()
+        self.garbage_collector.start()
 
         print("Thread de captura de dados iniciada (vídeos)!")
 
@@ -240,6 +248,7 @@ class ClientReceptor(threading.Thread):
 
                 # Recebe o nome do arquivo
                 nome = "./Movie/{}.mkv".format(file_num)
+                nome1 = "{}.mkv".format(file_num)
                 sys.stdout.write("Recebendo '{}' de {}.\n".format(nome, address[0]))
                 sys.stdout.flush()
 
@@ -250,7 +259,7 @@ class ClientReceptor(threading.Thread):
                         down_file.write(recv_read)
                         recv_read = content.recv(self.BUFFER_SIZE)
                         # Armazena o nome do arquivo salvo na fila
-                        file_names_stored.put(nome)
+                        file_names_stored.put(nome1)
 
                 content.close()
                 file_num += 1
@@ -262,8 +271,11 @@ class ClientReceptor(threading.Thread):
         self._stopped = True
 
 
-# Classe que pega os nomes dos arquivos armazenados e coloca em um fila - Produtor
 class ClientProducerVideo(threading.Thread):
+    """Classe que pega os nomes dos arquivos armazenados e coloca em um fila - Produtor
+
+    """
+
     def __init__(self):
         threading.Thread.__init__(self)
 
@@ -292,8 +304,11 @@ class ClientProducerVideo(threading.Thread):
         self._stopped = True
 
 
-# Classe que envia os pacotes de stream de video - Consumidor, porta CLIENT_CLIENT_PORT
 class ClientSender(threading.Thread):
+    """Classe que envia os pacotes de stream de video - Consumidor, porta CLIENT_CLIENT_PORT
+
+    """
+
     def __init__(self):
         threading.Thread.__init__(self)
         self.BUFFER_SIZE = 1024
@@ -329,35 +344,32 @@ class ClientSender(threading.Thread):
         self._stopped = True
 
 
-# Classe que trabalha com o player vlc
 class Player:
-    
-    #path = caminho dos arquivos. ex: '../videos/'
+    """Classe que trabalha com o player vlc
+
+    """
+
+
     def __init__(self, path):
         self.vlc_instance = vlc.Instance('--quiet')
         self.player = self.vlc_instance.media_player_new()
         self.path = path
 
-    #file = nome do arquivo. ex: '_000040.mkv'
     def play(self, file):
+        '''file = nome do arquivo. ex: '_000040.mkv'''
         media = self.vlc_instance.media_new(self.path+file)
         self.player.set_media(media)
         self.player.play()
-        #time.sleep(0.5)
-        #duration = self.player.get_length() / 1000
-        #time.sleep(duration-0.5)
 
 
-# Classe que vai executar os videos no VLC - Consumidor
 class PlayerAuto(threading.Thread, Player):
+    """Classe que vai executar os videos no VLC - Consumidor
+
+    """
+
     def __init__(self):
         threading.Thread.__init__(self)
         Player.__init__(self, "./Movie/")
-    
-    """
-    def remove_video(self, file_name):
-        os.remove("./Movie/" + file_name)
-    """
     
     def run(self):
         self._stopped = False
@@ -372,17 +384,23 @@ class PlayerAuto(threading.Thread, Player):
                 time.sleep(2)
                 queue_video_remove.put(video_name)
 
-                #self.remove_video(video_name)
 
     def stop(self):
         self._stopped = True
 
 
 class GarbageCollector(threading.Thread, Player):
+    """Classe que apaga os arquivos já executados
+
+    """
+
     def __init__(self):
         threading.Thread.__init__(self)
 
+
     def remove_video(self, file_name):
+        '''remove o video arquivo como parâmetro'''
+
         os.remove("./Movie/" + file_name)
 
     def run(self):
@@ -392,8 +410,13 @@ class GarbageCollector(threading.Thread, Player):
 
         while not self.stopped:
             if not queue_video_remove.empty():
-                video_name = queue_video_remove.get()
-                self.remove_video(video_name)
+                if not queue_sender.empty():
+                    if (queue_sender.queue[0] != queue_video_remove.queue[0]):
+                        video_name = queue_video_remove.get()
+                        self.remove_video(video_name)
+                else:
+                    video_name = queue_video_remove.get()
+                    self.remove_video(video_name)
             time.sleep(random.random())
     
     def stop(self):

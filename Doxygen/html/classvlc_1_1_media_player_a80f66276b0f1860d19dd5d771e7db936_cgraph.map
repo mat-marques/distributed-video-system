@@ -1,0 +1,6 @@
+<map id="video_get_spu_description" name="video_get_spu_description">
+<area shape="rect" id="node2" href="$namespacevlc.html#a7641c1329f78164fb94c4a89738ff38a" title="vlc.track_description_list" alt="" coords="229,46,396,73"/>
+<area shape="rect" id="node5" href="$namespacevlc.html#a4dee99f1b8023bb53f698403c94b2573" title="vlc.libvlc_video_get\l_spu_description" alt="" coords="245,97,381,139"/>
+<area shape="rect" id="node3" href="$namespacevlc.html#a7f44252e965f874e76b3c2f7a831d88d" title="vlc.libvlc_track_description\l_release" alt="" coords="444,5,623,47"/>
+<area shape="rect" id="node4" href="$namespacevlc.html#a15a83a58b01dc7546ad799fffe743a93" title="vlc.libvlc_track_description\l_list_release" alt="" coords="444,71,623,112"/>
+</map>

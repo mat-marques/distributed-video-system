@@ -1,0 +1,39 @@
+\hypertarget{classvlc_1_1_video_lock_cb}{}\section{Video\+Lock\+Cb Class Reference}
+\label{classvlc_1_1_video_lock_cb}\index{Video\+Lock\+Cb@{Video\+Lock\+Cb}}
+
+
+Inheritance diagram for Video\+Lock\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classvlc_1_1_video_lock_cb__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Video\+Lock\+Cb\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{classvlc_1_1_video_lock_cb__coll__graph}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Callback prototype to allocate and lock a picture buffer.
+Whenever a new video frame needs to be decoded, the lock callback is
+invoked. Depending on the video chroma, one or three pixel planes of
+adequate dimensions must be returned via the second parameter. Those
+planes must be aligned on 32-bytes boundaries.
+@param opaque: private pointer as passed to L{libvlc_video_set_callbacks}() [IN].
+@param planes: start address of the pixel planes (LibVLC allocates the array of void pointers, this callback must initialize the array) [OUT].
+@return: a private pointer for the display and unlock callbacks to identify the picture buffers.
+\end{DoxyVerb}
+ 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/rafael/uel/so/gitmain/distributed-\/video-\/system/\+Cliente/\hyperlink{vlc_8py}{vlc.\+py}\end{DoxyCompactItemize}
