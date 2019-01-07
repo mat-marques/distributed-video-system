@@ -195,7 +195,7 @@ while True:
                     tcp.shutdown(socket.SHUT_RDWR)
 
             if msg == "2":
-                print(file_names_stored)
+                print(list(file_names_stored.queue))
 
             if msg == "0":
                 print("Aplicação encerrada!")

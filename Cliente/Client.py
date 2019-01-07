@@ -138,7 +138,8 @@ class ClientReseiver(threading.Thread):
                         tcp_cl.connect(destResp)
                         # Envia a string de IPs
                         print("Listagem de IPs solicitada! Cliente: ", dest)
-                        tcp_cl.send(bytes(str(clients), encoding='utf-8'))
+                        IP = socket.gethostbyname(socket.getfqdn())
+                        tcp_cl.send(bytes(str((IP, 9092)) + str(clients), encoding='utf-8'))
                         tcp_cl.close()
 
                 content.close()

@@ -63,5 +63,15 @@ Relatório do Trabalho
         responsáveis por transmitir, exibir e excluir os vídeos respectivamente. Para a implementação da lógica do produto consumidor
         utilizamos a estrutura de dados Fila que o python 3 fornece, pois ela já possui um suporte para isso.
 
+        + Todo cliente será um servidor, que servirá para estabelecer a conexão com outros possíveis clientes.
+        Esse servidor está rodando na porta 9092. As respostas retornadas aos clientes serão enviadas na porta 9093 e
+        os vídeos serão enviados na porta 9094.
 
-    
+
+        + Portas de comunicação:
+            + Cliente e Servidor:
+                + A comunicação estará rodando nas portas 6060 e 9091
+            + Cliente e Cliente:
+                + A comunicação estaŕ rodando nas portas 9092 (servidor do cliente), 9093 (respostas) e 9094 (vídeo).
+        
+        + Tolerância a Falhas e Balanceamento de Cargas não foi implementado.
