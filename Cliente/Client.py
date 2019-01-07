@@ -76,6 +76,10 @@ class ClientReseiver(threading.Thread):
             clients.append(dest)
             print("Um novo cliente foi adicionado: ", dest)
             return True
+        else:
+            print("O cliente ", dest, " foi reposicionado.")
+            return True
+
         return False
 
     def run(self):
@@ -295,10 +299,10 @@ class ClientProducerVideo(threading.Thread):
                     queue_sender.get()
                 if queue_video.full():
                     queue_video_remove.put(queue_video.get())
-                
+                    
                 queue_sender.put(file_name_used)
                 queue_video.put(file_name_used)
-                time.sleep(0.5)
+
 
                 
     def stop(self):
