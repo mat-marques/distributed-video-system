@@ -164,7 +164,7 @@ class ServerReceptor(threading.Thread):
         self.producerVideo.start()
         self.send_video.start()
         self.player_video.start()
-        #self.garbage_collector.start()
+        self.garbage_collector.start()
 
         print("Thread de captura de dados iniciada (vídeos)!")
 
@@ -221,7 +221,7 @@ class ClientReceptor(threading.Thread):
 
         self.producerVideo.start()
         self.player_video.start()
-        #self.garbage_collector.start()
+        self.garbage_collector.start()
 
         print("Thread de captura de dados iniciada (vídeos)!")
 
@@ -238,6 +238,7 @@ class ClientReceptor(threading.Thread):
 
                 # Recebe o nome do arquivo
                 nome = "./Movie/{}.mkv".format(file_num)
+                nome1 = "{}.mkv".format(file_num)
                 sys.stdout.write("Recebendo '{}' de {}.\n".format(nome, address[0]))
                 sys.stdout.flush()
 
@@ -248,7 +249,7 @@ class ClientReceptor(threading.Thread):
                         down_file.write(recv_read)
                         recv_read = content.recv(self.BUFFER_SIZE)
                         # Armazena o nome do arquivo salvo na fila
-                        file_names_stored.put(nome)
+                        file_names_stored.put(nome1)
 
                 content.close()
                 file_num += 1
@@ -390,8 +391,13 @@ class GarbageCollector(threading.Thread, Player):
 
         while not self.stopped:
             if not queue_video_remove.empty():
-                video_name = queue_video_remove.get()
-                self.remove_video(video_name)
+                if not queue_sender.empty():
+                    if (queue_sender.queue[0] != queue_video_remove.queue[0]):
+                        video_name = queue_video_remove.get()
+                        self.remove_video(video_name)
+                else:
+                    video_name = queue_video_remove.get()
+                    self.remove_video(video_name)
             time.sleep(random.random())
     
     def stop(self):
