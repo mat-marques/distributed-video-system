@@ -263,8 +263,9 @@ class ClientReceptor(threading.Thread):
                     while recv_read:
                         down_file.write(recv_read)
                         recv_read = content.recv(self.BUFFER_SIZE)
-                        # Armazena o nome do arquivo salvo na fila
-                        file_names_stored.put(nome1)
+
+                # Armazena o nome do arquivo salvo na fila
+                file_names_stored.put(nome1)
 
                 content.close()
                 file_num += 1
