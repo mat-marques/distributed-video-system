@@ -1,6 +1,7 @@
 Requisitos:
     + Sistema operacioanl Linux
     + Python 3 instalado
+    + vlc
 
 Instruções para rodar o servidor:
     + Servidor:
