@@ -39,6 +39,9 @@ CLIENT_CLIENT_PORT_S = 9093
 # Número da porta da comunicação entre cliente e cliente - vídeo
 CLIENT_CLIENT_PORT_V = 9094
 
+# Nome do diretório dos vídeos
+DIR_PATH = "./Movie/"
+
 # Classe que recebe dados dos clientes, porta 9092
 class ClientReseiver(threading.Thread):
     def __init__(self, buffer_size):
@@ -207,11 +210,18 @@ class ClientReceptor(threading.Thread):
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
         self.BUFFER_SIZE = buffer_size
+        self.producerVideo = ClientProducerVideo()
+        self.player_video = PlayerAuto()
+        self.garbage_collector = GarbageCollector()
 
     def run(self):
         self._stopped = False
         global file_names_stored
         global CLIENT_SERVER_PORT_V
+
+        self.producerVideo.start()
+        self.player_video.start()
+        self.garbage_collector.start()
 
         print("Thread de captura de dados iniciada (vídeos)!")
 
@@ -291,6 +301,7 @@ class ClientSender(threading.Thread):
         global queue_sender
         global file_names_stored
         global qtd_clients_connected
+        global DIR_PATH
 
         print("Thread de envio dos pacotes de stream para os clientes iniciada!")
 
@@ -303,7 +314,7 @@ class ClientSender(threading.Thread):
                         sk_client.connect(clients[cont])
                         print("Tranmitindo vídeo para: ", clients[cont])
                         # Envia o arquivo
-                        with open(file_name, 'rb') as up_file:
+                        with open(DIR_PATH + file_name, 'rb') as up_file:
                             send_read = up_file.read(self.BUFFER_SIZE)
                             while send_read:
                                 sk_client.send(send_read)
