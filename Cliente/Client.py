@@ -211,6 +211,7 @@ class ClientReceptor(threading.Thread):
         threading.Thread.__init__(self)
         self.BUFFER_SIZE = buffer_size
         self.producerVideo = ClientProducerVideo()
+        self.send_video =  ClientSender()
         self.player_video = PlayerAuto()
         self.garbage_collector = GarbageCollector()
 
@@ -221,6 +222,7 @@ class ClientReceptor(threading.Thread):
 
         self.producerVideo.start()
         self.player_video.start()
+        self.send_video.start()
         #self.garbage_collector.start()
 
         print("Thread de captura de dados iniciada (vídeos)!")

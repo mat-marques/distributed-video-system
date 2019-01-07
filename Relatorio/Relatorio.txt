@@ -1,0 +1,66 @@
+Requisitos:
+    + Sistema operacioanl Linux
+    + Python 3 instalado
+
+Instruções para rodar o servidor:
+    + Servidor:
+        + Abrir o terminal dentro da pasta "Servidor" do projeto;
+        + Com o terminal aberto, digite "python3 server.py" (sem aspas duplas);
+
+
+Instruções para rodar o cliente:
+    + Cliente:
+        + Abir o terminal dentro da pasta "Cliente" do projeto;
+        + Com o terminal aberto, digite "python3 main.py" (sem aspas duplas);
+            + Esse comando irá executar o cliente;
+            + Caso algum erro ocorrá, verifique se o python 3 está instalado em sua máquina;
+                + Caso o erro persista, pesquise na internet;
+        + Quando a aplicação for iniciada, o usuário deverá preencher algumas informações:
+            + Fornecer a quantidade de clientes máxima que podem se conectar a ele;
+            + Selecionar a forma de execução da aplicação:
+                + 1 para servidor: o cliente se comunica diretamente com o servidor;
+                + 2 para cliente: o cliente se comunica diretamente com outro cliente;
+            + Com a opção selecionada, basta seguir as instruções que aparecem na tela;
+
+
+Relatório do Trabalho
+    + As mensagens entre cliente e servidor são:
+        + 10C (C = Canal), entrar em um canal C;
+        + 11C (C = Canal), listagem de clientes em um canal C;
+        + 12C (C = Canal), sair de um canal C;
+        + 13C (C = Canal), número de clientes conectados no canal C;
+
+    + As mensagens entre cliente e cliente são:
+        + 10, solicitação de entrada para um cliente;
+        + 11, solicitação de listagem dos clientes conectados no cliente;
+
+    + Arquitetura:
+        + Nós desenvolvemos a aplicação em python 3 e para as comunicações usamos o protocolo TCP/IP.
+        Nosso projeto foi dividido em duas partes: Servidor e Cliente. Assim, quando ele é executado deve-se
+        definir um desses estilos para ser executado.
+
+        + A aplicação possui três arquivos principais, onde o arquivo "main.py" é o que será executado no terminal
+        e possui a lógica para a interação com o usuário. Já o arquivo "Client.py" é composto por um conjunto de classes
+        e variáveis globais para execução do programa, nele contém o necessário para o recebimento, retransmissão,
+        execução e exclusão dos vídeos. Além deles, temos o arquivo "vlc.py" que é responsável por manipular o vlc do cliente.
+        Note que o "vlc.py" foi produzido por terceiros, então todos os créditos de manipulação do VLC são de seus desenvolvedores.
+        
+        + A aplicação foi desenvolvida com o uso de 7 classe que são manipuladas como threads para interação com os vídeos. 
+        Elas estão no arquivo "Client.py".
+            + Classe ClientReseiver: Classe responsável por fazer a comunicação entre os clientes e é executada como uma thread.
+            + Classe ServerReceptor: Classe responsável por receber os vídeos do servidor e é executada como uma thread.
+            + Classe ClientReceptor: Classe responsável por receber os vídeos do cliente e é executada como uma thread.
+            + Classe ClientProducerVideo: Classe responsável por colocar os nome dos arquivos recebidos em um buffer e é executada como uma thread.
+            + Classe ClientSender: Classe responsável pro fazer a tranmissão dos vídeos para os clientes conectados e é executada como uma thread.
+            + Classe PlayerAuto: Classe responsável por executar os arquivos de vídeos em mkv e é executada como uma thread.
+            + Classe GarbageCollector: Classe responsável por remover os arquivos de vídeos já executados e é executada como uma thread.
+            + Classe Player: Uma classe para se utilizar o vlc. Não é uma thread.
+
+        + A classe ClientProducerVideo trabalha com a lógica do produto consumidor. Assim, quando um arquivo é armazenado
+        no disco, seu nome é inserido em um buffer e que poderá ser usado pelos consumidores. O tamanho do buffer é de 1.
+        Em relação aos consumidores, temos 3, sendo eles as classes ClientSender, PlayerAuto e GarbageCollector. Eles são 
+        responsáveis por transmitir, exibir e excluir os vídeos respectivamente. Para a implementação da lógica do produto consumidor
+        utilizamos a estrutura de dados Fila que o python 3 fornece, pois ela já possui um suporte para isso.
+
+
+    
