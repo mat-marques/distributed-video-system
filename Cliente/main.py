@@ -48,7 +48,7 @@ while True:
     elif CONNECTION == "2":
         TCP_HOST = input("Digite o IP do cliente: ")
         #CLIENT_PORT = input("Digite o número da porta do cliente: ")
-        dest = (TCP_HOST, CLIENT_CLIENT_PORT)
+        dest = (TCP_HOST, CLIENT_CLIENT_PORT_M)
 
     elif CONNECTION == "0":
         print("Aplicação finalizada!")
@@ -131,7 +131,6 @@ while True:
             if not is_connected:
                 #tcp.connect(dest)
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
-                    tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
                     print(dest)
                     tcp.connect(dest)
                     tcp.send(bytes("10", encoding='utf-8'))
@@ -139,7 +138,7 @@ while True:
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
                         tcp_cl.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-                        tcp_cl.bind(('', CLIENT_CLIENT_PORT))
+                        tcp_cl.bind(('', CLIENT_CLIENT_PORT_S))
                         tcp_cl.listen(1)
                         content, address = tcp_cl.accept()
                         received_msg = content.recvmsg(BUFFER_SIZE)
@@ -177,14 +176,13 @@ while True:
             if msg == "1":
                 #tcp.connect(dest)
                 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
-                    tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
                     tcp.connect(dest)
                     tcp.send(bytes("11", encoding='utf-8'))
 
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
                         tcp_cl.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-                        tcp_cl.bind(('', CLIENT_CLIENT_PORT))
+                        tcp_cl.bind(('', CLIENT_CLIENT_PORT_S))
                         tcp_cl.listen(1)
                         content, address = tcp_cl.accept()
                         received_msg = content.recvmsg(BUFFER_SIZE)

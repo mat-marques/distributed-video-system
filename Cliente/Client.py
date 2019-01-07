@@ -31,10 +31,15 @@ qtd_clients_connected = 0
 
 # Número da porta da comunicação entre cliente e servidor
 CLIENT_SERVER_PORT = 9091
-# Número da porta da comunicação entre cliente e cliente
-CLIENT_CLIENT_PORT = 9092
 
-# Classe que recebe dados dos clientes, porta CLIENT_CLIENT_PORT
+# Número da porta da comunicação entre cliente e cliente - mensagens
+CLIENT_CLIENT_PORT_M = 9092
+# Número da porta da comunicação entre cliente e cliente - servidor de espera para as respostas
+CLIENT_CLIENT_PORT_S = 9093
+# Número da porta da comunicação entre cliente e cliente - vídeo
+CLIENT_CLIENT_PORT_V = 9094
+
+# Classe que recebe dados dos clientes, porta 9092
 class ClientReseiver(threading.Thread):
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
@@ -73,7 +78,8 @@ class ClientReseiver(threading.Thread):
         global clients
         global qtd_clients_connected
         global QTD_CLIENTS
-        global CLIENT_CLIENT_PORT
+        global CLIENT_CLIENT_PORT_M
+        global CLIENT_CLIENT_PORT_S
 
         print("Thread de captura de dados dos clientes iniciada!")
 
@@ -81,7 +87,7 @@ class ClientReseiver(threading.Thread):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
             tcp.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-            tcp.bind(('', CLIENT_CLIENT_PORT))
+            tcp.bind(('', CLIENT_CLIENT_PORT_M))
             tcp.listen(1)
 
             file_num = 0
@@ -96,7 +102,7 @@ class ClientReseiver(threading.Thread):
                 # Conectar no canal
                 if message[0:2] == "10":
                     # IP e Porta do cliente que fez a requisição
-                    dest = (address[0], CLIENT_CLIENT_PORT)
+                    dest = (address[0], CLIENT_CLIENT_PORT_S)
 
                     print("Solicitação de conexão com o cliente: ", str(dest))
                     
@@ -203,14 +209,14 @@ class ClientReceptor(threading.Thread):
     def run(self):
         self._stopped = False
         global file_names_stored
-        global CLIENT_SERVER_PORT
-        
+        global CLIENT_SERVER_PORT_V
+
         print("Thread de captura de dados iniciada (vídeos)!")
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_server:
             sk_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-            sk_server.bind(('', CLIENT_CLIENT_PORT))
+            sk_server.bind(('', CLIENT_CLIENT_PORT_V))
             sk_server.listen()
 
             file_num = 0
