@@ -164,7 +164,7 @@ class ServerReceptor(threading.Thread):
         self.producerVideo.start()
         self.send_video.start()
         self.player_video.start()
-        self.garbage_collector.start()
+        #self.garbage_collector.start()
 
         print("Thread de captura de dados iniciada (vídeos)!")
 
@@ -221,7 +221,7 @@ class ClientReceptor(threading.Thread):
 
         self.producerVideo.start()
         self.player_video.start()
-        self.garbage_collector.start()
+        #self.garbage_collector.start()
 
         print("Thread de captura de dados iniciada (vídeos)!")
 
