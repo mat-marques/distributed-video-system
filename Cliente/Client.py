@@ -101,15 +101,17 @@ class ClientReseiver(threading.Thread):
                 
                 # Conectar no canal
                 if message[0:2] == "10":
-                    # IP e Porta do cliente que fez a requisição
-                    dest = (address[0], CLIENT_CLIENT_PORT_S)
+                    # IP e Porta do cliente - vídeo
+                    dest = (address[0], CLIENT_CLIENT_PORT_V)
+                    # IP e Porta do cliente - mensagem
+                    destResp = (address[0], CLIENT_CLIENT_PORT_S)
 
                     print("Solicitação de conexão com o cliente: ", str(dest))
                     
                     if qtd_clients_connected < QTD_CLIENTS:
                         if self.addClient(dest):
                             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
-                                tcp_cl.connect(dest)
+                                tcp_cl.connect(destResp)
 
                                 # Envia a confirmação da operação: Sucesso
                                 tcp_cl.send(bytes("01", encoding='utf-8'))
@@ -118,7 +120,7 @@ class ClientReseiver(threading.Thread):
                             qtd_clients_connected += 1
                         else:
                             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
-                                tcp_cl.connect(dest)
+                                tcp_cl.connect(destResp)
                                 
                                 # Envia a confirmação da operação: Fracasso
                                 tcp.send(bytes("00", encoding='utf-8'))
@@ -128,7 +130,7 @@ class ClientReseiver(threading.Thread):
                 # Listar Conexões
                 if message == "11":
                     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp_cl:
-                        tcp_cl.connect(dest)
+                        tcp_cl.connect(destResp)
                         # Envia a string de IPs
                         print("Listagem de IPs solicitada! Cliente: ", dest)
                         tcp_cl.send(bytes(str(clients), encoding='utf-8'))
@@ -200,7 +202,7 @@ class ServerReceptor(threading.Thread):
         print(self._stopped)
 
 
-# Classe que recebe os dados do canal - Cliente, porta CLIENT_CLIENT_PORT
+# Classe que recebe os dados do canal - Cliente, porta 9094
 class ClientReceptor(threading.Thread):
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
@@ -312,7 +314,6 @@ class ClientSender(threading.Thread):
 
     def stop(self):
         self._stopped = True
-
 
 
 # Classe que trabalha com o player vlc
