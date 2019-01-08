@@ -148,12 +148,20 @@ while True:
 
             if msg == "E":
                 print("Iniciando processo de fechamento da aplicação")
+                recep_client.stop()
+                recep_server.stop()
                 break
             
             if msg == "L":
                 print(list(file_names_stored.queue))
 
         if msg == "E":
+            if recep_client.is_alive:
+                recep_client.join()
+
+            if recep_server.is_alive:
+                recep_server.join()
+            
             print("Aplicação finalizada!")
             break
     else:
