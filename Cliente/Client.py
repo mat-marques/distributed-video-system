@@ -146,6 +146,10 @@ class ClientReseiver(threading.Thread):
                         tcp_cl.send(bytes(str((IP, 9092)) + str(clients), encoding='utf-8'))
                         tcp_cl.close()
 
+                # Listar Conexões
+                if message == "12":
+                    self.removeClient(dest[0])
+
                 content.close()
 
     def stop(self):
@@ -176,7 +180,7 @@ class ServerReceptor(threading.Thread):
         self.player_video.start()
         self.garbage_collector.start()
 
-        print("Thread de captura de dados iniciada (vídeos)!")
+        print("Thread de captura de dados iniciada cliente/servidor (vídeos)!")
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_server:
             sk_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -212,7 +216,10 @@ class ServerReceptor(threading.Thread):
 
     def stop(self):
         self._stopped = True
-        print(self._stopped)
+        self.send_video.stop()
+        self.player_video.stop()
+        self.garbage_collector.stop()
+        self.producerVideo.stop()
 
 
 class ClientReceptor(threading.Thread):
@@ -238,7 +245,7 @@ class ClientReceptor(threading.Thread):
         self.player_video.start()
         self.garbage_collector.start()
 
-        print("Thread de captura de dados iniciada (vídeos)!")
+        print("Thread de captura de dados iniciada cliente/cliente (vídeos)!")
 
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sk_server:
             sk_server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
@@ -275,6 +282,10 @@ class ClientReceptor(threading.Thread):
 
     def stop(self):
         self._stopped = True
+        self.send_video.stop()
+        self.player_video.stop()
+        self.garbage_collector.stop()
+        self.producerVideo.stop()
 
 
 class ClientProducerVideo(threading.Thread):

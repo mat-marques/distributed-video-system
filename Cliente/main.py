@@ -10,10 +10,10 @@ BUFFER_SIZE = 1024 # Normally 1024
 opt = ""
 
 # 1 para servidor e 2 para cliente
-CONNECTION = 1
+CONNECTION = 0
 msg = None
-CLIENT_CONNECTED = None
 CANAL = 0
+TCP_CLIENT_HOST = ""
 
 # Thread que vai receber os vídeos do servidor
 recep_server = ServerReceptor(BUFFER_SIZE)
@@ -22,6 +22,7 @@ recep_server = ServerReceptor(BUFFER_SIZE)
 recep_client = ClientReceptor(BUFFER_SIZE)
 
 list_clients = []
+# IP do cliente
 
 # Leitura da quantidade de clientes que podem se conectar neste cliente
 QTD_CLIENTS = int(input("Digite o número de clientes máximo: "), 10)
@@ -86,8 +87,10 @@ while True:
                     elif not recep_server.is_alive():
                         recep_server.start()
                         msg = "0"
-                        connected = True 
-                        continue
+                        connected = True
+                        CONNECTION = 1
+
+                    sk_server.close()
 
             # lista de clientes conectados
             if msg[0:2] == '11':
@@ -135,7 +138,10 @@ while True:
                         print("Solicitação de entrada no canal aceita.")
                         recep_client.start()
                         connected = True
-                    
+                        CONNECTION = 2
+                        TCP_CLIENT_HOST = cl
+                        break
+
                     sk_server.close()
                 tcp.close()
     
@@ -147,20 +153,35 @@ while True:
             msg = input("Opção: ")
 
             if msg == "E":
+                if CONNECTION == 1:
+                    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
+                        tcp.connect((TCP_HOST, TCP_PORT))
+
+                        tcp.send(bytes("12"+CANAL, encoding='utf-8'))
+                        tcp.close()
+
+                if CONNECTION == 2:
+                        with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as tcp:
+                            tcp.connect((TCP_CLIENT_HOST, CLIENT_CLIENT_PORT_M))
+
+                            tcp.send(bytes("12", encoding='utf-8'))
+                            tcp.close()
+
                 print("Iniciando processo de fechamento da aplicação")
                 recep_client.stop()
                 recep_server.stop()
                 thread_client_reseiver.stop()
+                msg = "E"
                 break
             
             if msg == "L":
                 print(list(file_names_stored.queue))
 
         if msg == "E":
-            if recep_client.is_alive:
+            if recep_client.is_alive():
                 recep_client.join()
 
-            if recep_server.is_alive:
+            if recep_server.is_alive():
                 recep_server.join()
             
             print("Aplicação finalizada!")

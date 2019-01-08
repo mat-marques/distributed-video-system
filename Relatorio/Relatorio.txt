@@ -32,6 +32,7 @@ Relatório do Trabalho
     + As mensagens entre cliente e cliente são:
         + 10, solicitação de entrada para um cliente;
         + 11, solicitação de listagem dos clientes conectados no cliente;
+        + 12, solicitação de saida do canal;
 
     + Arquitetura:
         + Nós desenvolvemos a aplicação em python 3 e para as comunicações usamos o protocolo TCP/IP.
