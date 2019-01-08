@@ -150,6 +150,7 @@ while True:
                 print("Iniciando processo de fechamento da aplicação")
                 recep_client.stop()
                 recep_server.stop()
+                thread_client_reseiver.stop()
                 break
             
             if msg == "L":
