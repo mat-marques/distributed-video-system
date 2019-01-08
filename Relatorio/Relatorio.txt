@@ -18,10 +18,8 @@ Instruções para rodar o cliente:
                 + Caso o erro persista, pesquise na internet;
         + Quando a aplicação for iniciada, o usuário deverá preencher algumas informações:
             + Fornecer a quantidade de clientes máxima que podem se conectar a ele;
-            + Selecionar a forma de execução da aplicação:
-                + 1 para servidor: o cliente se comunica diretamente com o servidor;
-                + 2 para cliente: o cliente se comunica diretamente com outro cliente;
-            + Com a opção selecionada, basta seguir as instruções que aparecem na tela;
+            + Fornecer o IP do servidor;
+            + Fornecer o canal que deseja-se conectar;
 
 
 Relatório do Trabalho
@@ -37,8 +35,8 @@ Relatório do Trabalho
 
     + Arquitetura:
         + Nós desenvolvemos a aplicação em python 3 e para as comunicações usamos o protocolo TCP/IP.
-        Nosso projeto foi dividido em duas partes: Servidor e Cliente. Assim, quando ele é executado deve-se
-        definir um desses estilos para ser executado.
+        Nosso projeto foi desenvolvido para que quando for executado ele se conecte automaticamente em um possível
+        candidato para receber os vídeos. Os candidatos podem ser o servidor ou algun cliente conectado no canal x.
 
         + A aplicação possui três arquivos principais, onde o arquivo "main.py" é o que será executado no terminal
         e possui a lógica para a interação com o usuário. Já o arquivo "Client.py" é composto por um conjunto de classes
