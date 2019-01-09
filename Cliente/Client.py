@@ -11,7 +11,7 @@ import os
 queue_sender = queue.Queue(1)
 
 # Fila para usar na thread de vídeo
-queue_video = queue.Queue(1)
+queue_video = queue.Queue(0)
 
 # Fila para armazenar todos os nomes de arquivos que foram armazenados em disco
 file_names_stored = queue.Queue(0)
@@ -49,6 +49,10 @@ class ClientReseiver(threading.Thread):
     def __init__(self, buffer_size):
         threading.Thread.__init__(self)
         self.BUFFER_SIZE = buffer_size
+
+    def getClients(self):
+        global clients
+        return clients
 
     def verifyClient(self, dest):
         '''Verifica se o cliente já está inserido no canal'''
@@ -309,8 +313,8 @@ class ClientProducerVideo(threading.Thread):
                 file_name_used = file_names_stored.get()
                 if queue_sender.full():
                     queue_sender.get()
-                if queue_video.full():
-                    queue_video_remove.put(queue_video.get())
+                #if queue_video.full():
+                #    queue_video_remove.put(queue_video.get())
                     
                 queue_sender.put(file_name_used)
                 queue_video.put(file_name_used)

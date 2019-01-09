@@ -149,6 +149,7 @@ while True:
     if connected:
         while True:
             print("- Digite L para listar os nomes dos arquivos de vídeos.")
+            print("- Digite C para listar as conexões")
             print("- Digite E para fechar a aplicação.")
             msg = input("Opção: ")
 
@@ -175,7 +176,21 @@ while True:
                 break
             
             if msg == "L":
-                print(list(file_names_stored.queue))
+                print(list(queue_video.queue))
+
+            if msg == "C":
+                if CONNECTION == 1:
+                    print("Servidor: ")
+                    print(TCP_HOST)
+                elif CONNECTION == 2:
+                    print("Cliente: ")
+                    print(TCP_CLIENT_HOST)
+
+                if thread_client_reseiver.getClients():
+                    print("Clientes conectados: ")
+                    print(thread_client_reseiver.getClients())
+                else:
+                    print("Nenhum cliente conectado")
 
         if msg == "E":
             if recep_client.is_alive():
